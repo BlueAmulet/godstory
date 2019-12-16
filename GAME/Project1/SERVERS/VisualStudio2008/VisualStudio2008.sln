@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AccountServer", "AccountServer\AccountServer.vcproj", "{EA231460-8B24-4B52-BEDF-75AA22D2E424}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataAgent", "DataAgent\DataAgent.vcproj", "{DCB4D6CA-7204-47C4-B96A-E64830C57F4E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NetGate", "NETGATE\NetGate.vcproj", "{DA3EF3D0-625D-4318-82E0-E2C6A9316192}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WorldServer", "WorldServer\WorldServer.vcproj", "{98CFD78D-266F-47F9-877D-FF45763BC5A9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LogServer", "LogServer\LogServer.vcproj", "{F4B8BE85-510C-4CE8-9C92-661CB22CB0CE}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA231460-8B24-4B52-BEDF-75AA22D2E424}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EA231460-8B24-4B52-BEDF-75AA22D2E424}.Debug|Win32.Build.0 = Debug|Win32
+		{EA231460-8B24-4B52-BEDF-75AA22D2E424}.Release|Win32.ActiveCfg = Release|Win32
+		{EA231460-8B24-4B52-BEDF-75AA22D2E424}.Release|Win32.Build.0 = Release|Win32
+		{DCB4D6CA-7204-47C4-B96A-E64830C57F4E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DCB4D6CA-7204-47C4-B96A-E64830C57F4E}.Debug|Win32.Build.0 = Debug|Win32
+		{DCB4D6CA-7204-47C4-B96A-E64830C57F4E}.Release|Win32.ActiveCfg = Release|Win32
+		{DCB4D6CA-7204-47C4-B96A-E64830C57F4E}.Release|Win32.Build.0 = Release|Win32
+		{DA3EF3D0-625D-4318-82E0-E2C6A9316192}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DA3EF3D0-625D-4318-82E0-E2C6A9316192}.Debug|Win32.Build.0 = Debug|Win32
+		{DA3EF3D0-625D-4318-82E0-E2C6A9316192}.Release|Win32.ActiveCfg = Release|Win32
+		{DA3EF3D0-625D-4318-82E0-E2C6A9316192}.Release|Win32.Build.0 = Release|Win32
+		{98CFD78D-266F-47F9-877D-FF45763BC5A9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{98CFD78D-266F-47F9-877D-FF45763BC5A9}.Debug|Win32.Build.0 = Debug|Win32
+		{98CFD78D-266F-47F9-877D-FF45763BC5A9}.Release|Win32.ActiveCfg = Release|Win32
+		{98CFD78D-266F-47F9-877D-FF45763BC5A9}.Release|Win32.Build.0 = Release|Win32
+		{F4B8BE85-510C-4CE8-9C92-661CB22CB0CE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F4B8BE85-510C-4CE8-9C92-661CB22CB0CE}.Debug|Win32.Build.0 = Debug|Win32
+		{F4B8BE85-510C-4CE8-9C92-661CB22CB0CE}.Release|Win32.ActiveCfg = Release|Win32
+		{F4B8BE85-510C-4CE8-9C92-661CB22CB0CE}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

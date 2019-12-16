@@ -1,0 +1,215 @@
+//===========================================================================================================
+// 文档说明:复活界面
+// 创建时间:2009-11-16
+// 创建人: soar
+//=========================================================================================================== 
+
+new GuiControl(ResurgenceWnd) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "relative";
+   vertSizing = "relative";
+   position = "0 0";
+   extent = "800 600";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+   
+   new GuiControl() {
+      profile = "GuiDefaultProfile";
+      horizSizing = "center";
+      vertSizing = "center";
+      position = "0 0";
+      extent = "185 169";
+      minExtent = "8 8";
+      visible = "1";
+      helpTag = "0";
+      useVariable = "0";
+      tile = "0";
+      
+      new GuiBitmapCtrl() {
+         profile = "GuiDefaultProfile";
+         horizSizing = "center";
+         vertSizing = "center";
+         position = "0 0";                      
+         extent = "185 169";                     
+         minExtent = "8 8";                      
+         visible = "1";                          
+         helpTag  = "0";                          
+         bitmap = "./images/GUIWindow56_1_001";
+      };
+      
+      new GuiButtonCtrl(ResurgenceButton_1) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "23 45";
+         Extent = "140 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         text = "传回复活点";
+         command = "riserequest(0);CloseResurgenceWnd();";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiButtonCtrl(ResurgenceButton_2) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "23 73";
+         Extent = "140 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         text = "道具原地复活";     
+         command = "riserequest(1);CloseResurgenceWnd();";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiButtonCtrl(ResurgenceButton_3) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "23 101";
+         Extent = "140 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         text = "等待仙友复活";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiTextCtrl(ResurgenceWnd_Time) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_4";
+         HorizSizing = "center";
+         VertSizing = "top";
+         position = "107 141";
+         Extent = "68 20";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "09:50";
+         maxLength = "1024";
+      };
+   };
+};
+
+//new GuiControl(ResurgenceWnd_Answer) {
+//   profile = "GuiDefaultProfile";
+//   horizSizing = "relative";
+//   vertSizing = "relative";
+//   position = "0 0";
+//   extent = "800 600";
+//   minExtent = "8 8";
+//   visible = "0";
+//   helpTag = "0";
+//   useVariable = "0";
+//   tile = "0";
+//
+//   new GuiControl() {
+//      canSaveDynamicFields = "0";
+//      Enabled = "1";
+//      isContainer = "1";
+//      HorizSizing = "right";
+//      VertSizing = "bottom";
+//      position = "0 0";
+//      Extent = "320 120";
+//      MinExtent = "8 2";
+//      canSave = "1";
+//      Visible = "0";
+//      profile = "GuiResurgenceWndProfile";
+//   
+//   		new GuiRichTextCtrl(ResurgenceWnd_AnswerRichText) {
+//         canSaveDynamicFields = "0";
+//         Enabled = "1";
+//         isContainer = "0";
+//         Profile = "GuiRichTextProfile";
+//         HorizSizing = "center";
+//         VertSizing = "center";
+//         position = "10 10";
+//         Extent = "310 80";
+//         MinExtent = "8 2";
+//         canSave = "1";
+//         Visible = "1";
+//         hovertime = "1000";
+//         lineSpacing = "2";
+//         allowColorChars = "0";
+//         maxChars = "-1";
+//         text = "撒发撒旦发生发生发撒旦发撒旦发生大法沙发沙发沙发上发生大幅撒旦发萨仿盛大服务而且玩儿而vc误区二沃尔沃而";
+//      };
+//      
+//      new GuiButtonCtrl(ResurgenceWnd_AnswerButton_1) {
+//         canSaveDynamicFields = "0";
+//         Enabled = "1";
+//         isContainer = "0";
+//         Profile = "GuiResurgenceButtonProfile_1";
+//         HorizSizing = "right";
+//         VertSizing = "bottom";
+//         position = "80 70";
+//         Extent = "80 26";
+//         MinExtent = "8 2";
+//         canSave = "1";
+//         Visible = "1";
+//         text = "确定";
+//         hovertime = "1000";
+//         groupNum = "-1";
+//         buttonType = "PushButton";
+//         useMouseEvents = "0";
+//         IsStateOn = "0";
+//      };
+//      
+//      new GuiButtonCtrl(ResurgenceWnd_AnswerButton_2) {
+//         canSaveDynamicFields = "0";
+//         Enabled = "1";
+//         isContainer = "0";
+//         Profile = "GuiResurgenceButtonProfile_1";
+//         HorizSizing = "right";
+//         VertSizing = "bottom";
+//         position = "200 70";
+//         Extent = "80 26";
+//         MinExtent = "8 2";
+//         canSave = "1";
+//         Visible = "1";
+//         text = "返回";
+//         hovertime = "1000";
+//         groupNum = "-1";
+//         buttonType = "PushButton";
+//         useMouseEvents = "0";
+//         IsStateOn = "0";
+//      };
+//   };
+//};
+
+GameMainWndGui_Layer5.Add(ResurgenceWnd);
+//GameMainWndGui_Layer5.Add(ResurgenceWnd_Answer);

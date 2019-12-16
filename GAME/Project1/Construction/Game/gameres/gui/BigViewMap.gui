@@ -1,0 +1,424 @@
+//--- OBJECT WRITE BEGIN ---
+//===========================================================================================================
+// 文档说明:世界地圖
+// 创建时间:2009-6-22
+// 创建人: Batcel
+//===========================================================================================================
+new GuiControl(BigViewMap) {
+   Profile = "GuiModelessDialogProfile";
+   HorizSizing = "center";
+   VertSizing = "center";
+   Position = "0 0";
+   Extent = "1024 768";
+   Visible = "0";
+   hovertime = "1000";
+          
+   new GuiBigViewMap(BigViewMapCtrl){
+      Profile = "guiBigViewMapProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "12 34";
+      Extent = "1000 700";
+      MinExtent = "8 2";
+      Visible = "1";
+      mMustPrerender = "1";
+      SelfIconFileName    = $GUI::GUISkinDirectory @ "GUIWindow30_1_009.dds"; 
+      NpcIconFileName     = $GUI::GUISkinDirectory @ "GUIWindow30_1_001.png";
+      DestIconFileName    = $GUI::GUISkinDirectory @ "GUIWindow30_1_011.png";
+      PathIconFileName    = $GUI::GUISkinDirectory @ "GUIWindow30_1_010.png";
+      MonsterIconFileName = $GUI::GUISkinDirectory @ "GUIWindow30_1_004.png";
+      PlayerIconFileName  = $GUI::GUISkinDirectory @ "GUIWindow30_1_005.png";
+      TeammateIconFileName= $GUI::GUISkinDirectory @ "GUIWindow30_1_006.png";
+      CameraImageFileName = $GUI::GUISkinDirectory @ "GUIWindow30_1_008.png"; 
+      //MarkIconFileName    = $GUI::GUISkinDirectory @ "GUIWindow34_1_003.png";
+      
+      new GuiBitmapCtrl() {
+          HorizSizing = "right";
+          VertSizing = "bottom";
+          position = "44 19";
+          Extent = "913 30";
+          Visible = "1";
+          mustPrerender = "0";
+          hovertime = "1000";
+          bitmap = "gameres/gui/images/GUIWindow34_1_003.png";
+          wrap = "0";
+       };
+       new GuiPopUpMenuCtrl(BigMapMenu_DisplayMainland) {
+          Profile = "GuiPopUpMenuProfile_Currency_2";
+          HorizSizing = "right";
+          VertSizing = "bottom";
+          position = "145 27";
+          Extent = "89 16";
+          MinExtent = "8 2";
+          Visible = "1";
+          maxPopupHeight = "10";
+          sbUsesNAColor = "0";
+          reverseTextList = "0";
+          bitmapBounds = "16 16";
+       };
+       new GuiPopUpMenuCtrl(BigMapMenu_DisplayScene) {
+          Profile = "GuiPopUpMenuProfile_Currency_2";
+          HorizSizing = "right";
+          VertSizing = "bottom";
+          position = "276 27";
+          Extent = "89 16";
+          MinExtent = "8 2";
+          Visible = "1";
+          maxPopupHeight = "200";
+          sbUsesNAColor = "0";
+          reverseTextList = "0";
+          bitmapBounds = "16 16";
+       };
+       new GuiPopUpMenuCtrl(BigMapMenu_SelectDisplayObj) {
+          Profile = "GuiPopUpMenuProfile_Currency_2";
+          HorizSizing = "right";
+          VertSizing = "bottom";
+          position = "409 27";
+          Extent = "89 16";
+          Visible = "1";
+          maxPopupHeight = "10";
+          reverseTextList = "0";
+          bitmapBounds = "16 16";
+       };
+       new GuiPopUpMenuCtrl(BigMapMenu_SeekLoadList) {
+          Profile = "GuiPopUpMenuProfile_Currency_2";
+          HorizSizing = "right";
+          VertSizing = "bottom";
+          position = "778 27";
+          Extent = "116 16";
+          Visible = "1";
+          maxPopupHeight = "10";
+          reverseTextList = "0";
+          bitmapBounds = "16 16";
+       };
+       new GuiTextEditCtrl(BigViewMap_Xpos) {
+          Profile = "GuiCurrencyTextEditProfile_1";
+          HorizSizing = "right";
+          VertSizing = "bottom";
+          position = "560 27";
+          Extent = "26 16";
+          Visible = "1";
+          maxLength = "3";
+          historySize = "0";
+          password = "0";
+          tabComplete = "0";
+          KeyEnter = "1";
+          bUseMaxNum = "1";
+          bUseMinNum = "1";
+          maxNum = "100";
+          minNum = "0";
+       };
+       new GuiTextEditCtrl(BigViewMap_Ypos) {
+          Profile = "GuiCurrencyTextEditProfile_1";
+          HorizSizing = "right";
+          VertSizing = "bottom";
+          position = "592 27";
+          Extent = "26 16";
+          Visible = "1";
+          maxLength = "3";
+          password = "0";
+          tabComplete = "0";
+          KeyEnter = "1";
+          bUseMaxNum = "1";
+          bUseMinNum = "1";
+          maxNum = "100";
+          minNum = "0";
+       };
+       new GuiButtonCtrl(BigViewMapBtn_Startoff) {
+          Profile = "GuiBigViewMapButtonProfile";
+          HorizSizing = "right";
+          VertSizing = "bottom";
+          position = "630 22";
+          Extent = "65 25";
+          Visible = "1";
+          Command = "StartoffFindPath();";
+          hovertime = "1000";
+          text = "出发";
+          groupNum = "-1";
+          buttonType = "PushButton";
+       };
+       new GuiButtonCtrl() {
+          Profile = "GuiBigViewMapButtonProfile";
+          HorizSizing = "right";
+          VertSizing = "bottom";
+          position = "703 22";
+          Extent = "65 25";
+          MinExtent = "8 2";
+          Visible = "1";
+          mustPrerender = "0";
+          hovertime = "1000";
+          text = "标记";
+          groupNum = "-1";
+          buttonType = "PushButton";
+       };
+       new GuiScrollCtrl() {
+          Profile = "GuiCurrencyScrollProfile_1";
+          HorizSizing = "right";
+          VertSizing = "bottom";
+          position = "746 73";
+          Extent = "201 391";
+          MinExtent = "8 2";
+          Visible = "1";
+          willFirstRespond = "1";
+          hScrollBar = "alwaysOff";
+          vScrollBar = "alwaysOn";
+          constantThumbHeight = "0";
+          childMargin = "0 0";
+    
+          new GuiTreeViewCtrl(BigViewMapTree) {
+             Profile = "GuiTreeViewProfile";
+             HorizSizing = "right";
+             VertSizing = "bottom";
+             position = "1 1";
+             Extent = "190 477";
+             Visible = "1";
+             mustPrerender = "0";
+             hovertime = "1000";
+             CellSize = "190 16";
+             tabSize = "16";
+             textOffset = "2";
+             fullRowSelect = "0";
+             itemHeight = "21";
+             destroyTreeOnSleep = "1";
+             MouseDragging = "1";
+             MultipleSelections = "1";
+             DeleteObjectAllowed = "1";
+             DragToItemAllowed = "1";
+             TexRolloverName = "gameres/gui/images/GUIWindow34_1_005";
+             TexSelectedName = "gameres/gui/images/GUIWindow34_1_006";
+             Sorted = "0";
+             SortedMid = "1";
+          };
+       };
+       new GuiTextCtrl() {
+         Profile = "GuiCurrencyShowInfoTextProfile_14";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "752 480";
+         Extent = "122 18";
+         Visible = "1";
+         text = "寻径记录:";
+         maxLength = "32";
+       };
+       new GuiScrollCtrl() {
+         Profile = "GuiCurrencyScrollProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "740 500";
+         Extent = "240 110";
+         Visible = "1";
+         willFirstRespond = "1";
+         hScrollBar = "alwaysOff";
+         vScrollBar = "alwaysOff";
+         constantThumbHeight = "0";
+         childMargin = "0 0";
+         
+         new guiMessageList(BigViewMapPathList) {
+           HorizSizing = "right";
+           VertSizing = "bottom";
+           position = "0 0";
+           extent = "210 100";
+           ContentSize = "210 100";
+           EntrySize = "210 16";
+           TextOffset	= "0";
+           MaxStorageLine = "5";
+           LineHeight = "16";
+           visible = "1";
+         };
+       };
+       new GuiButtonCtrl() {
+          Profile = "GuiMissionTraceCloseButtonProfile";
+          HorizSizing = "right";
+          VertSizing = "bottom";
+          position = "914 26";
+          Extent = "29 29";
+          MinExtent = "8 2";
+          Visible = "1";
+          mustPrerender = "0";
+          hovertime = "1000";
+          groupNum = "-1";
+          buttonType = "PushButton";
+          Command ="CloseBigViewMap();";
+       };
+   };
+  
+     
+   new GuiBitmapCtrl(BigViewMap_Resize){
+    	Profile = "GuiModelessDialogProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "650 560";
+      Extent = "111 111";
+      MinExtent = "8 2";
+      Visible = "0";
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow34_1_004.png";
+        	
+      new GuiButtonCtrl() {
+         Profile = "GuiMapEastBtnProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "66 41";
+         Extent = "44 36";
+         Visible = "1";
+         //Text = "东";
+         Command = "moveImageToPosition(4);";
+         buttonType = "PushButton";
+      };
+      new GuiButtonCtrl() {
+         Profile = "GuiMapWestBtnProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "0 41";
+         Extent = "44 36";
+         Visible = "1";
+         //Text = "西";
+         Command = "moveImageToPosition(3);";
+         buttonType = "PushButton";
+      };
+      new GuiButtonCtrl() {
+         Profile = "GuiMapSouthBtnProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "39 68";
+         Extent = "36 44";
+         Visible = "1";
+         //Text = "南";
+         Command = "moveImageToPosition(2);";
+         buttonType = "PushButton";
+      };
+      new GuiButtonCtrl() {
+         Profile = "GuiMapNorthBtnProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "39 1";
+         Extent = "36 44";
+         Visible = "1";
+         //Text = "北";
+         Command = "moveImageToPosition(1);";
+         buttonType = "PushButton";
+      };
+   };     
+};
+
+//寻径对话窗口
+new GuiControl(SeekLoadDialogWnd) {
+   profile = "GuiModelessDialogProfile";
+   horizSizing = "center";
+   vertSizing = "";
+   position = "350 180";
+   extent = "470 78";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+    
+   new GuiBitmapCtrl() {
+   	  profile = "GuiModelessDialogProfile";
+      horizSizing = "";
+      vertSizing = "";
+      position = "0 0"; 
+      extent = "470 60";
+      minExtent = "8 8";
+      visible = "1";
+      helpTag = "0";
+   	  bitmap   = $GUI::GUISkinDirectory @ "GUIWindow30_1_023";
+     };   
+   
+      new GuiTextCtrl(){
+	    	 profile="GuiCurrencyWndNameTextProfile_1";
+         HorizSizing = "center";
+         VertSizing = "top";
+         position = "70 2";
+         Extent = "78 15";
+         MinExtent = "8 2";
+         Visible = "1";
+         text   = "";
+         hovertime = "1000";
+	    };
+   new GuiControl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "bottom";
+      position = "68 19";
+      extent = "335 20";
+      minExtent = "8 8";
+      visible = "1";
+      helpTag = "0";	
+          
+	  new GuiRichTextCtrl(SeekLoadText) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiCurrencyWndNameTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "0 0";
+      Extent = "335 20";
+      MinExtent = "8 2";
+      Visible = "1";
+      hovertime = "1000";
+     };
+   };	     
+};
+//寻径到达目地的窗口
+new GuiControl(ArriveAimDialogWnd) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "center";
+   vertSizing = "";
+   position = "350 250";
+   extent = "211 91";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+    
+   new GuiBitmapCtrl() {
+   	  profile = "GuiDefaultProfile";
+      horizSizing = "";
+      vertSizing = "";
+      position = "0 0"; 
+      extent = "211 91";
+      minExtent = "8 8";
+      visible = "1";
+      helpTag = "0";
+   	  bitmap   = $GUI::GUISkinDirectory @ "GUIWindow28_1_010";
+     };   
+   
+      new GuiTextCtrl(){
+	    	 profile="GuiCurrencyWndNameTextProfile_1";
+         HorizSizing = "center";
+         VertSizing = "top";
+         position = "70 2";
+         Extent = "78 15";
+         MinExtent = "8 2";
+         Visible = "1";
+         text   = "";
+         hovertime = "1000";
+	    };	    
+      new GuiTextCtrl(ArriveAimText){
+	    	 profile="GuiTextProfile2";
+         HorizSizing = "center";
+         VertSizing = "";
+         position = "10 25";
+         Extent = "190 20";
+         MinExtent = "8 2";
+         Visible = "1";
+         text   = "你已到达火星,前面是黑洞!";         
+	    };
+	    
+	    new GuiButtonCtrl() {
+         Profile = "GuiBigViewMapButtonProfile";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         Position = "80 60";
+         Extent = "55 25";
+         MinExtent = "8 8";
+         Visible = "1";
+         Command = "";
+         hovertime = "1000";
+         text = "取 消";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };	     
+};
+GameMainWndGui_Layer5.Add(BigViewMap);
+GameMainWndGui_Layer5.Add(SeekLoadDialogWnd);
+GameMainWndGui_Layer5.Add(ArriveAimDialogWnd);

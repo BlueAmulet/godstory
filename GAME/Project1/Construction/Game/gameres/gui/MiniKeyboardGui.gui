@@ -1,0 +1,1110 @@
+//===========================================================================================================
+// 文档说明:小键盘界面
+// 创建时间:2009-2-27
+// 创建人: soar
+//=========================================================================================================== 
+new GuiControl(MiniKeyboardGui) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "center";
+   vertSizing = "center";
+   position = "98 160";
+   extent = "326 130";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+   
+   new GuiBitmapCtrl() {
+   	 profile = "GuiDefaultProfile";
+      horizSizing = "center";
+      vertSizing = "center";
+      position = "0 0";
+      extent = "326 130";
+      minExtent = "8 8";
+      visible = "1";
+      helpTag = "0";
+   	 bitmap   = "./images/GUIlogin02_1_004";
+   };
+   
+   new GuiButtonCtrl(MiniKeyborad_0) {          //esc
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "9 9";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "0";
+ 	   Command = "MiniKeyboardDown0();";
+ 	   hovertime = "1000";
+ 	   text = "esc";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_1) {          //~
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "9 9";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown1();";
+ 	   hovertime = "1000";
+ 	   text = "~";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_2) {          //1
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "31 9";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown2();";
+ 	   hovertime = "1000";
+ 	   text = "1";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_3) {          //2
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "53 9";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown3();";
+ 	   hovertime = "1000";
+ 	   text = "2";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_4) {          //3
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "75 9";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown4();";
+ 	   hovertime = "1000";
+ 	   text = "3";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_5) {          //4
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "97 9";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown5();";
+ 	   hovertime = "1000";
+ 	   text = "4";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+   
+   new GuiButtonCtrl(MiniKeyborad_6) {          //5
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "119 9";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown6();";
+ 	   hovertime = "1000";
+ 	   text = "5";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_7) {          //6
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "141 9";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown7();";
+ 	   hovertime = "1000";
+ 	   text = "6";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_8) {          //7
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "163 9";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown8();";
+ 	   hovertime = "1000";
+ 	   text = "7";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_9) {          //8
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "185 9";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown9();";
+ 	   hovertime = "1000";
+ 	   text = "8";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_10) {          //9
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "207 9";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown10();";
+ 	   hovertime = "1000";
+ 	   text = "9";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+   
+   new GuiButtonCtrl(MiniKeyborad_11) {          //0
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "229 9";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown11();";
+ 	   hovertime = "1000";
+ 	   text = "0";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_12) {          //-
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "251 9";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown12();";
+ 	   hovertime = "1000";
+ 	   text = "-";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_13) {          //=
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "273 9";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown13();";
+ 	   hovertime = "1000";
+ 	   text = "=";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_14) {          //backspace
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "295 9";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown14();";
+ 	   hovertime = "1000";
+ 	   text = "←";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_15) {          //tab
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "9 32";
+ 	   Extent = "32 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "0";
+ 	   Command = "MiniKeyboardDown15();";
+ 	   hovertime = "1000";
+ 	   text = "tab";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_16) {          //q
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "9 32";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown16();";
+ 	   hovertime = "1000";
+ 	   text = "q";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_17) {          //w
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "31 32";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown17();";
+ 	   hovertime = "1000";
+ 	   text = "w";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_18) {          //e
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "53 32";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown18();";
+ 	   hovertime = "1000";
+ 	   text = "e";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_19) {          //r
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "75 32";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown19();";
+ 	   hovertime = "1000";
+ 	   text = "r";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_20) {          //t
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "97 32";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown20();";
+ 	   hovertime = "1000";
+ 	   text = "t";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_21) {          //y
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "119 32";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown21();";
+ 	   hovertime = "1000";
+ 	   text = "y";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_22) {          //u
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "141 32";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown22();";
+ 	   hovertime = "1000";
+ 	   text = "u";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_23) {          //i
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "163 32";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown23();";
+ 	   hovertime = "1000";
+ 	   text = "i";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_24) {          //o
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "185 32";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown24();";
+ 	   hovertime = "1000";
+ 	   text = "o";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_25) {          //p
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "207 32";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown25();";
+ 	   hovertime = "1000";
+ 	   text = "p";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_26) {          //[
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "229 32";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown26();";
+ 	   hovertime = "1000";
+ 	   text = "[";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_27) {          //]
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "251 32";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown27();";
+ 	   hovertime = "1000";
+ 	   text = "]";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_28) {          //\
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "273 32";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown28();";
+ 	   hovertime = "1000";
+ 	   text = "|";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+   
+   new GuiButtonCtrl(MiniKeyborad_29) {          //lock
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "9 44";
+ 	   Extent = "34 16";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "0";
+ 	   //Command = "MiniKeyboardDown29();";
+ 	   hovertime = "1000";
+ 	   text = "lock";
+ 	   groupNum = "-1";
+ 	   buttonType = "ToggleButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_30) {          //a
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "295 32";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown30();";
+ 	   hovertime = "1000";
+ 	   text = "a";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_31) {          //s
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "9 55";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown31();";
+ 	   hovertime = "1000";
+ 	   text = "s";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_32) {          //d
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "31 55";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown32();";
+ 	   hovertime = "1000";
+ 	   text = "d";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_33) {          //f
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "53 55";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown33();";
+ 	   hovertime = "1000";
+ 	   text = "f";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_34) {          //g
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "75 55";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown34();";
+ 	   hovertime = "1000";
+ 	   text = "g";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_35) {          //h
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "97 55";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown35();";
+ 	   hovertime = "1000";
+ 	   text = "h";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_36) {          //j
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "119 55";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown36();";
+ 	   hovertime = "1000";
+ 	   text = "j";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_37) {          //k
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "141 55";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown37();";
+ 	   hovertime = "1000";
+ 	   text = "k";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_38) {          //l
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "163 55";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown38();";
+ 	   hovertime = "1000";
+ 	   text = "l";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_39) {          //;
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "185 55";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown39();";
+ 	   hovertime = "1000";
+ 	   text = ":";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_40) {          //'
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "207 55";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown40();";
+ 	   hovertime = "1000";
+ 	   text = "'";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_41) {          //enter
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "273 78";
+ 	   Extent = "44 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown41();";
+ 	   hovertime = "1000";
+ 	   text = "Enter";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_42) {          //shift
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "207 78";
+ 	   Extent = "66 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   //Command = "MiniKeyboardDown42();";
+ 	   hovertime = "1000";
+ 	   text = "Shift";
+ 	   groupNum = "-1";
+ 	   buttonType = "ToggleButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_43) {          //z
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "229 55";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown43();";
+ 	   hovertime = "1000";
+ 	   text = "z";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_44) {          //x
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "251 55";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown44();";
+ 	   hovertime = "1000";
+ 	   text = "x";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_45) {          //c
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "273 55";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown45();";
+ 	   hovertime = "1000";
+ 	   text = "c";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_46) {          //v
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "295 55";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown46();";
+ 	   hovertime = "1000";
+ 	   text = "v";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_47) {          //b
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "9 78";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown47();";
+ 	   hovertime = "1000";
+ 	   text = "b";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_48) {          //n
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "31 78";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown48();";
+ 	   hovertime = "1000";
+ 	   text = "n";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_49) {          //m
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "53 78";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown49();";
+ 	   hovertime = "1000";
+ 	   text = "m";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_50) {          //,
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "75 78";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown50();";
+ 	   hovertime = "1000";
+ 	   text = ",";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_51) {          //.
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "97 78";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown51();";
+ 	   hovertime = "1000";
+ 	   text = ".";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_52) {          //?
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "119 78";
+ 	   Extent = "22 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown52();";
+ 	   hovertime = "1000";
+ 	   text = "?";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+ 	new GuiButtonCtrl(MiniKeyborad_53) {          //space
+ 	   canSaveDynamicFields = "0";
+ 	   Enabled = "1";
+ 	   isContainer = "0";
+ 	   Profile = "GuiKeyboardButtonProfile";
+ 	   HorizSizing = "Relative";
+ 	   VertSizing = "Relative";
+ 	   Position = "141 78";
+ 	   Extent = "66 22";
+ 	   MinExtent = "8 8";
+ 	   canSave = "1";
+ 	   Visible = "1";
+ 	   Command = "MiniKeyboardDown53();";
+ 	   hovertime = "1000";
+ 	   text = "Space";
+ 	   groupNum = "-1";
+ 	   buttonType = "PushButton";
+ 	   useMouseEvents = "0";
+ 	};
+ 	
+};
+
+InputInfoWnd1.Add(MiniKeyboardGui);

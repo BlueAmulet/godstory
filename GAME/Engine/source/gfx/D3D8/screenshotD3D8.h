@@ -1,0 +1,24 @@
+//-----------------------------------------------------------------------------
+// PowerEngine 
+// Copyright (C) FairRain.com, Inc.
+//-----------------------------------------------------------------------------
+#ifndef _SCREENSHOTD3D8_H_
+#define _SCREENSHOTD3D8_H_
+
+#include "gfx/screenshot.h"
+
+//**************************************************************************
+// D3D implementation of screenshot
+//**************************************************************************
+class ScreenShotD3D8 : public ScreenShot
+{
+
+public:
+   
+   /// captures the back buffer
+   virtual void captureStandard();
+
+};
+
+
+#endif  // _SCREENSHOTD3D_H_

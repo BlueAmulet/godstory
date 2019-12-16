@@ -1,0 +1,181 @@
+//===========================================================================================================
+// 文档说明:喊话窗口
+// 创建时间:2009-4-10
+// 创建人: soar
+//=========================================================================================================== 
+
+new GuiWindowCtrl(ShoutWndGui) {
+   canSaveDynamicFields = "0";
+   Profile = "GuiGeneralDialogProfile_1";
+   HorizSizing = "center";
+   VertSizing = "center";
+   Position = "320 280";
+   Extent = "330 220";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+   text = "";
+   maxLength = "255";
+   resizeWidth = "0";
+   resizeHeight = "0";
+   canMove = "0";
+   canClose = "1";
+   canHelp  = "1";
+   canMinimize = "0";
+   canMaximize = "0";
+   minSize = "50 50";
+   TitleHeight = 40;
+   closeCommand = "OpenShoutWnd();";
+   //command = "revertAVOptionChanges(); Canvas.popDialog(OptionsDlg);";
+   //accelerator = "escape";  
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiDefaultProfile";
+      horizSizing = "center";
+      vertSizing = "top";
+      position = "25 42";                      
+      extent = "279 155";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = "./images/GUIWindow15_1_024.png";
+   };
+   
+   new GuiButtonCtrl(ShoutButton_1) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiGeneralButtonProfile_5";
+      HorizSizing = "center";
+      VertSizing = "top";
+      Position = "37 55";
+      Extent = "46 20";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      //Command = "CreatePlayerOK();";
+      hovertime = "1000";
+      text = "全服";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   }; 
+   
+   new GuiButtonCtrl(ShoutButton_2) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiGeneralButtonProfile_5";
+      HorizSizing = "center";
+      VertSizing = "top";
+      Position = "37 80";
+      Extent = "46 20";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      //Command = "CreatePlayerOK();";
+      hovertime = "1000";
+      text = "跨服";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   }; 
+   
+   new GuiButtonCtrl(ShoutButton_3) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiGeneralButtonProfile_5";
+      HorizSizing = "center";
+      VertSizing = "top";
+      Position = "37 105";
+      Extent = "46 20";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      //Command = "CreatePlayerOK();";
+      hovertime = "1000";
+      text = "跑马";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   }; 
+   
+   new GuiButtonCtrl(ShoutButton_Font) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiGeneralButtonProfile_5";
+      HorizSizing = "center";
+      VertSizing = "top";
+      Position = "37 141";
+      Extent = "46 20";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      //Command = "CreatePlayerOK();";
+      hovertime = "1000";
+      text = "字体";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   }; 
+   
+   new GuiButtonCtrl(ShoutButton_Face) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiGeneralButtonProfile_5";
+      HorizSizing = "center";
+      VertSizing = "top";
+      Position = "37 166";
+      Extent = "46 20";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      //Command = "CreatePlayerOK();";
+      hovertime = "1000";
+      text = "表情";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   }; 
+   
+   new GuiButtonCtrl(ShoutButton_Clear) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiGeneralButtonProfile_5";
+      HorizSizing = "center";
+      VertSizing = "top";
+      Position = "98 166";
+      Extent = "46 20";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      //Command = "CreatePlayerOK();";
+      hovertime = "1000";
+      text = "清除";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   }; 
+   
+   new GuiButtonCtrl(ShoutButton_OK) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiGeneralButtonProfile_5";
+      HorizSizing = "center";
+      VertSizing = "top";
+      Position = "232 166";
+      Extent = "64 20";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      //Command = "CreatePlayerOK();";
+      hovertime = "1000";
+      text = "确定发送";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   }; 
+   
+};
+
+
+GameMainWndGui_Layer4.Add(ShoutWndGui);

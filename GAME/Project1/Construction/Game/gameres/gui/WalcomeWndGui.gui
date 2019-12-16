@@ -1,0 +1,79 @@
+//===========================================================================================================
+// 文档说明:欢迎界面
+// 创建时间:2009-10-6
+// 创建人: soar
+//=========================================================================================================== 
+
+new GuiControl(WalcomeWnd) {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   Profile = "GuiDefaultProfile";
+   HorizSizing = "center";
+   VertSizing = "center";
+   position = "216 173";
+   Extent = "600 400";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+
+   new GuiBitmapCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "0 0";
+      Extent = "600 400";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      bitmap = "gameres/gui/images/GUIWindow99_1_006.png";
+      wrap = "0";
+   };
+   new GuiRichTextCtrl(WalcomeWnd_RichText) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "53 101";
+      Extent = "495 204";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      Margin = "0 0 0 0";
+      Padding = "0 0 0 0";
+      AnchorTop = "1";
+      AnchorBottom = "0";
+      AnchorLeft = "1";
+      AnchorRight = "0";
+      maxLength = "1024";
+   };
+   new GuiButtonCtrl(WalcomeWnd_OkButton) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiWalcomeButtonProfile_1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "245 309";
+      Extent = "110 46";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      command = "CloseWalcomeWnd();";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+   };
+};
+
+GameMainWndGui_Layer4.Add(WalcomeWnd); 

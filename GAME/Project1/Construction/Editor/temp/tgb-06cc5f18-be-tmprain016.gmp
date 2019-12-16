@@ -1,0 +1,51 @@
+//*****************************************************************************
+// PowerEngine -- HLSL procedural shader                                              
+//*****************************************************************************
+//-----------------------------------------------------------------------------
+// Structures                                                                  
+//-----------------------------------------------------------------------------
+struct ConnectData
+{
+   float4 vtcol           : COLOR0;
+   float2 texCoord        : TEXCOORD0;
+   float4 dlightshading   : COLOR1;
+   float4 dlightCoord     : TEXCOORD1;
+   float4 dlightCoordSec  : TEXCOORD2;
+   float3 fogCoord        : TEXCOORD3;
+};
+
+
+struct Fragout
+{
+   float4 col : COLOR0;
+};
+
+
+//-----------------------------------------------------------------------------
+// Main                                                                        
+//-----------------------------------------------------------------------------
+Fragout main( ConnectData IN,
+              uniform sampler2D diffuseMap      : register(S0),
+              uniform sampler3D dlightMap       : register(S1),
+              uniform float4    lightColor      : register(C2),
+              uniform sampler3D dlightMapSec    : register(S2),
+              uniform float4    lightColorSec   : register(C5),
+              uniform float     visibility      : register(C6),
+              uniform float     colorExposure   : register(C15),
+              uniform sampler2D fogMap          : register(S3)
+)
+{
+   Fragout OUT;
+
+   float4 diffuseColor = tex2D(diffuseMap, IN.texCoord);
+  OUT.col *= diffuseColor;
+   float4 attn = tex3D(dlightMap, IN.dlightCoord) * lightColor * IN.dlightshading.x;
+   float4 attnsec = tex3D(dlightMapSec, IN.dlightCoordSec) * lightColorSec * IN.dlightshading.w;
+   OUT.col = (attn*4 + attnsec*4);
+   OUT.col.a *= visibility;
+   OUT.col.rgb *= colorExposure;
+   float4 fogColor = tex2D(fogMap, IN.fogCoord);
+   OUT.col.a = 1.0 - fogColor.a * IN.fogCoord.z;
+
+   return OUT;
+}

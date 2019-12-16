@@ -1,0 +1,97 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON1               ICON                    "res\\client.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 21
+//
+
+IDR_DEFAULT             21                      "res\\Default.ani"
+IDR_BATCHBUY            21                      "res\\BatchBuy.ani"
+IDR_BUY                 21                      "res\\Buy.ani"
+IDR_CUTTING             21                      "res\\Cutting.ani"
+IDR_DESTORY             21                      "res\\Destory.ani"
+IDR_FISH                21                      "res\\Fish.ani"
+IDR_GATHER              21                      "res\\Gather.ani"
+IDR_MINE                21                      "res\\Mine.ani"
+IDR_PICKUP              21                      "res\\PickUp.ani"
+IDR_PLAYERTRADE         21                      "res\\PlayerTrade.ani"
+IDR_REPAIR              21                      "res\\Repair.ani"
+IDR_SELL                21                      "res\\Sell.ani"
+IDR_SPILT               21                      "res\\Spilt.ani"
+IDR_STALL               21                      "res\\Stall.ani"
+IDR_USING               21                      "res\\Using.ani"
+IDR_DIALOG              21                      "res\\Dialog.ani"
+IDR_ATTACK              21                      "res\\Attack.ani"
+IDR_TAME                21                      "res\\tame.ani"
+IDR_IDENTIFY            21                      "res\\Identify.ani"
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

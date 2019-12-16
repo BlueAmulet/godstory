@@ -1,0 +1,51 @@
+$#include "GMFunctions.h"
+
+void    GM_AccountQuery(const char* name,int mode);
+void    GM_AccountFreeze(const char* accountName,int time,int isIPFreeze,const char* reason);
+void    GM_AccountUnFreeze(const char* accountName,const char* reason);
+void    GM_ActorFreeze(const char* actorName,int time,const char* reason);
+void    GM_ActorUnFreeze(const char* actorName,const char* reason);
+void    GM_AccountChatMute(const char* accountName,int time,const char* reason);
+void    GM_AccountChatUnMute(const char* accountName,int time,const char* reason);
+void    GM_ActorChatMute(const char* actorName,int time,const char* reason);
+void    GM_ActorChatUnMute(const char* actorName,int time,const char* reason);
+void    GM_Kick(const char* accountName);
+void    GM_ActorKick(const char* actorName);
+void    GM_ActorBaseInfo(int accountId,const char* actorName);
+void    GM_ActorDeletedBaseInfo(int accountId,const char* actorName);
+void    GM_ActorSkill(int playerId);
+void    GM_ActorSkillAdd(int playerId,unsigned int skillId);
+void    GM_ActorSkillDel(int playerId,unsigned int skillId);
+void    GM_ActorSkillMdf(int playerId,unsigned int oldId,unsigned int newSkillId);
+void    GM_ActorLivingSkill(int playerId);
+void    GM_ActorQuestFinished(int actorId);
+void    GM_ActorQuestCycle(int actorId);
+void    GM_ActorQuestAccepted(int actorId);
+void    GM_ActorFriend(int playerId);
+void	GM_ActorRide(int playerId);
+void    GM_ActorMail(int accountId,int actorId);
+void    GM_ActorItem(int accountId,int actorId,int slot);
+void    GM_ActorItemDetail(int actorId,const char* itemUID);
+void    GM_ActorItemModify(int actorId,const char* UID);
+void    GM_ActorItemDel(int actorId,const char* UID);
+void	GM_ActorPet(int playerId);
+void	GM_ActorPetInfo(int playerId,int petId);
+void    GM_ActorTransport(int playerId,int mapId,float x,float y,float z);
+void    GM_ActorLevelMdf(int accountId,int playerId,int newLevel);
+void    GM_ActorExpMdf(int accountId,int playerId,int newExp);
+void    GM_ActorGoldMdf(int accountId,int playerId,int newGold);
+void    GM_ActorPos(int accountId,int playerId);
+void    GM_ActorRename(int playerId,const char* newName);
+void    GM_ActorDelete(int accountId,int playerId);
+void    GM_ActorUnDelete(int accountId,int playerId);
+void    GM_QueryDelActor(int accountId);
+
+void    GM_GMRole(int gmFlag);
+void    GM_GMAddRole(int gmFlag,const char* role);
+void    GM_GMDelRole(int gmFlag,const char* role);
+void    GM_GMQueryAccount(int gmFlag);
+void    GM_GMMdfAccount(const char* accountName,int gmFlag);
+
+void    GM_ChangePassword(const char* accountName,const char* oldPassword,const char* newPassword);
+void    GM_Chat(const char* playerName,int channel);
+void    GM_ChatAuto(const char* playerName,int channel,int isSysMsg);

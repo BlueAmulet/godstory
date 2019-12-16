@@ -1,0 +1,1383 @@
+//==========================================================================================================
+// 文档说明:装备强化
+// 创建时间:2009-8-19
+// 创建人: hly
+// 修改人：hanfei
+// 修改时间：2010-1-5
+//--- OBJECT WRITE BEGIN ---
+ new GuiBitmapWindowCtrl(EquipStrengthenWnd) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      HorizSizing = "Proportion";
+      VertSizing = "Proportion";
+      position = "0 120";
+      Extent = "365 402";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "0";
+      mustPrerender = "0";
+      hovertime = "1000";
+      alpha = "0";
+      useFadeout = "1";
+      wrap = "0";
+      MoveHotspot = "0 0 1024 768";
+ 
+    new GuiControl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         Profile = "GuiShopControlProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "0 11";
+         Extent = "70 390";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+
+         new GuiButtonCtrl() {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiBagButtonProfile_1";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "1 1";
+            Extent = "68 24";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            text = " 相关商品";
+            groupNum = "-1";
+            buttonType = "RadioButton";
+            useMouseEvents = "0";
+            IsStateOn = "1";
+         };
+         new GuiButtonCtrl() {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiBagButtonProfile_1";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "1 365";
+            Extent = "68 24";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            text = " 更多商品";
+            groupNum = "-1";
+            buttonType = "RadioButton";
+            useMouseEvents = "0";
+            IsStateOn = "0";
+         };
+         new GuiBitmapCtrl() {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "2 26";
+            Extent = "66 55";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            alpha = "255";
+            useFadeout = "1";
+            bitmap = "gameres/gui/images/GUIWindow99_1_019.png";
+            wrap = "0";
+
+            new dGuiShortCut() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "17 2";
+               Extent = "32 32";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               slotType = "0";
+               slotCol = "0";
+               boudary = "0 0 32 32";
+               disabledrag = "0";
+            };
+            new GuiTextCtrl() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               Profile = "GuiCurrencyShowInfoTextProfile_1";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "3 38";
+               Extent = "61 16";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               Margin = "0 0 0 0";
+               Padding = "0 0 0 0";
+               AnchorTop = "1";
+               AnchorBottom = "0";
+               AnchorLeft = "1";
+               AnchorRight = "0";
+               text = "9999";
+               maxLength = "1024";
+            };
+         };
+         new GuiBitmapCtrl() {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "2 83";
+            Extent = "66 55";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            alpha = "255";
+            useFadeout = "1";
+            bitmap = "gameres/gui/images/GUIWindow99_1_019.png";
+            wrap = "0";
+
+            new dGuiShortCut() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "17 2";
+               Extent = "32 32";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               slotType = "0";
+               slotCol = "0";
+               boudary = "0 0 32 32";
+               disabledrag = "0";
+            };
+            new GuiTextCtrl() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               Profile = "GuiCurrencyShowInfoTextProfile_1";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "3 38";
+               Extent = "61 16";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               Margin = "0 0 0 0";
+               Padding = "0 0 0 0";
+               AnchorTop = "1";
+               AnchorBottom = "0";
+               AnchorLeft = "1";
+               AnchorRight = "0";
+               text = "9999";
+               maxLength = "1024";
+            };
+         };
+         new GuiBitmapCtrl() {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "2 140";
+            Extent = "66 55";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            alpha = "255";
+            useFadeout = "1";
+            bitmap = "gameres/gui/images/GUIWindow99_1_019.png";
+            wrap = "0";
+
+            new dGuiShortCut() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "17 2";
+               Extent = "32 32";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               slotType = "0";
+               slotCol = "0";
+               boudary = "0 0 32 32";
+               disabledrag = "0";
+            };
+            new GuiTextCtrl() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               Profile = "GuiCurrencyShowInfoTextProfile_1";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "3 38";
+               Extent = "61 16";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               Margin = "0 0 0 0";
+               Padding = "0 0 0 0";
+               AnchorTop = "1";
+               AnchorBottom = "0";
+               AnchorLeft = "1";
+               AnchorRight = "0";
+               text = "9999";
+               maxLength = "1024";
+            };
+         };
+         new GuiBitmapCtrl() {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "2 197";
+            Extent = "66 55";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            alpha = "255";
+            useFadeout = "1";
+            bitmap = "gameres/gui/images/GUIWindow99_1_019.png";
+            wrap = "0";
+
+            new dGuiShortCut() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "17 2";
+               Extent = "32 32";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               slotType = "0";
+               slotCol = "0";
+               boudary = "0 0 32 32";
+               disabledrag = "0";
+            };
+            new GuiTextCtrl() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               Profile = "GuiCurrencyShowInfoTextProfile_1";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "3 38";
+               Extent = "61 16";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               Margin = "0 0 0 0";
+               Padding = "0 0 0 0";
+               AnchorTop = "1";
+               AnchorBottom = "0";
+               AnchorLeft = "1";
+               AnchorRight = "0";
+               text = "9999";
+               maxLength = "1024";
+            };
+         };
+         new GuiBitmapCtrl() {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "2 254";
+            Extent = "66 55";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            alpha = "255";
+            useFadeout = "1";
+            bitmap = "gameres/gui/images/GUIWindow99_1_019.png";
+            wrap = "0";
+
+            new dGuiShortCut() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "17 2";
+               Extent = "32 32";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               slotType = "0";
+               slotCol = "0";
+               boudary = "0 0 32 32";
+               disabledrag = "0";
+            };
+            new GuiTextCtrl() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               Profile = "GuiCurrencyShowInfoTextProfile_1";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "3 38";
+               Extent = "61 16";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               Margin = "0 0 0 0";
+               Padding = "0 0 0 0";
+               AnchorTop = "1";
+               AnchorBottom = "0";
+               AnchorLeft = "1";
+               AnchorRight = "0";
+               text = "9999";
+               maxLength = "1024";
+            };
+         };
+         new GuiBitmapCtrl() {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "2 311";
+            Extent = "66 55";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            alpha = "255";
+            useFadeout = "1";
+            bitmap = "gameres/gui/images/GUIWindow99_1_019.png";
+            wrap = "0";
+
+            new dGuiShortCut() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "17 2";
+               Extent = "32 32";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               slotType = "0";
+               slotCol = "0";
+               boudary = "0 0 32 32";
+               disabledrag = "0";
+            };
+            new GuiTextCtrl() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               Profile = "GuiCurrencyShowInfoTextProfile_1";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "3 38";
+               Extent = "61 16";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               Margin = "0 0 0 0";
+               Padding = "0 0 0 0";
+               AnchorTop = "1";
+               AnchorBottom = "0";
+               AnchorLeft = "1";
+               AnchorRight = "0";
+               text = "9999";
+               maxLength = "1024";
+            };
+         };
+    };     
+    new GuiBitmapCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      Profile = "GuiModelessDialogProfile";
+      HorizSizing = "Proportion";
+      VertSizing = "Proportion";
+      position = "69 0";
+      Extent = "295 402";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      alpha = "0";
+      useFadeout = "1";
+      bitmap = "gameres/gui/images/GUIWindow51_1_001.png";
+      wrap = "0";
+
+      new GuiBitmapCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "48 55";
+         Extent = "208 236";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow51_1_002.png";
+         wrap = "0";
+      };
+      new GuiTextCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_8";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "107 24";
+         Extent = "99 23";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "0";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "装备强化";
+         maxLength = "1024";
+      };
+      new GuiButtonCtrl(EquipStrengthen_btnHelp) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiHelpButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "247 1";
+         Extent = "21 21";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+         Command = "playFlash($Flash::Help::FlashEquipStrengthenWnd, 0);";
+      };
+      new GuiButtonCtrl(EquipStrengthen_btnClose) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCloseButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "268 6";
+         Extent = "25 25";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipStrengthenWnd_Close();";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new dGuiShortCut() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "135 99";
+         Extent = "32 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         slotType = "15";
+         slotCol = "0";
+         boudary = "0 0 32 32";
+         disabledrag = "0";
+      };
+      new GuiBitmapCtrl(EquipStrengthenNeedMoneyBmp_Gold) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "180 300";
+         Extent = "16 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow31_1_020.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipStrengthenNeedMoneyBmp_Silver) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "217 300";
+         Extent = "16 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow31_1_021.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipStrengthenNeedMoneyBmp_Copper) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "250 299";
+         Extent = "16 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow31_1_022.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipStrengthenHavaMoneyBmp_Gold) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "181 342";
+         Extent = "16 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow31_1_024.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipStrengthenHavaMoneyBmp_Silver) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "217 342";
+         Extent = "16 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow31_1_025.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipStrengthenHavaMoneyBmp_Copper) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "250 343";
+         Extent = "16 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow31_1_026.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipStrengthen_BindGoldBmp) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "180 321";
+         Extent = "16 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow31_1_020.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipStrengthen_BindSliverBmp) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "217 321";
+         Extent = "16 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow31_1_021.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipStrengthen_BindCopperBmp) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "250 321";
+         Extent = "16 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow31_1_022.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipStrengthen_Introduce) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "13 160";
+         Extent = "53 49";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow51_1_003.png";
+         wrap = "0";
+      };
+      new GuiTextCtrl(EquipStrengthen_txt11) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiTextProfile5";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "140 300";
+         Extent = "41 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "999999";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(EquipStrengthen_txt12) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "202 300";
+         Extent = "19 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "99";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(EquipStrengthen_txt13) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "235 300";
+         Extent = "19 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "99";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(EquipStrengthen_txt21) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiTextProfile5";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "140 322";
+         Extent = "41 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "999999";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(EquipStrengthen_txt22) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "202 322";
+         Extent = "19 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "99";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(EquipStrengthen_txt23) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "235 322";
+         Extent = "19 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "99";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(EquipStrengthen_txt31) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiTextProfile5";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "140 344";
+         Extent = "41 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "999999";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(EquipStrengthen_txt32) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "202 344";
+         Extent = "19 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "99";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(EquipStrengthen_txt33) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "235 344";
+         Extent = "19 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "99";
+         maxLength = "1024";
+      };
+      new GuiButtonCtrl(EquipStrengthen_btnDoStrengthen) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "197 370";
+         Extent = "70 22";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipStrengthenWnd_DoStrengthen();";
+         hovertime = "1000";
+         text = "强化";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new dGuiShortCut(EquipStrengthen_uiMaterial) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "135 148";
+         Extent = "32 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         slotType = "15";
+         slotCol = "4";
+         boudary = "0 0 32 32";
+         disabledrag = "1";
+      };
+      new dGuiShortCut() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "57 222";
+         Extent = "32 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         slotType = "15";
+         slotCol = "1";
+         boudary = "0 0 32 32";
+         disabledrag = "0";
+      };
+      new dGuiShortCut() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "137 231";
+         Extent = "32 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         slotType = "15";
+         slotCol = "2";
+         boudary = "0 0 32 32";
+         disabledrag = "0";
+      };
+      new dGuiShortCut() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "214 222";
+         Extent = "32 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         slotType = "15";
+         slotCol = "3";
+         boudary = "0 0 32 32";
+         disabledrag = "0";
+      };
+      new GuiTextCtrl(EquipStrengthen_txtEquipName) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "53 65";
+         Extent = "188 19";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "一二三我是一个装备名称 强化+";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(EquipStrengthenWnd_txtMaterial) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "118 194";
+         Extent = "70 19";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "主材料 一/";
+         maxLength = "1024";
+      };
+      new GuiButtonCtrl(EquipStrengthenWnd_Succ) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiXianZhuanNoteButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "48 261";
+         Extent = "51 19";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipStrengthenWnd_Succ_Click();";
+         hovertime = "1000";
+         text = "成功符";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiButtonCtrl(EquipStrengthenWnd_Luck) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiXianZhuanNoteButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "206 261";
+         Extent = "51 19";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipStrengthenWnd_Luck_Click();";
+         hovertime = "1000";
+         text = "幸运符";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiButtonCtrl(EquipStrengthenWnd_Link) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiXianZhuanNoteButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "128 270";
+         Extent = "51 19";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipStrengthenWnd_Link_Click();";
+         hovertime = "1000";
+         text = "连升符";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiMoveBitmapCtrl(EquipStrengthenWnd_MovBmp1) {     
+         profile = "GuiDefaultProfile";
+         horizSizing = "Relative";
+         vertSizing = "Relative";
+    	 	 position = "57 222";                      
+    	 	 extent = "32 32";                     
+     		 minExtent = "8 2";                      
+    		 visible = "0";                          
+    	   helpTag  = "0"; 
+    	     
+     		 IsMove = "1";    
+	       MoveType = "1";
+	       UpdateTime = "50";
+      
+         bitmap = "gameres/gui/images/GUIEffects03_1_003.png";
+         wrap = "0";
+      };
+      new GuiMoveBitmapCtrl(EquipStrengthenWnd_MovBmp2) {     
+         profile = "GuiDefaultProfile";
+         horizSizing = "Relative";
+         vertSizing = "Relative";
+    	 	 position = "137 231";                      
+    	 	 extent = "32 32";                     
+     		 minExtent = "8 2";                      
+    		 visible = "0";                          
+    	   helpTag  = "0"; 
+    	     
+     		 IsMove = "1";    
+	       MoveType = "1";
+	       UpdateTime = "50";
+      
+         bitmap = "gameres/gui/images/GUIEffects03_1_003.png";
+         wrap = "0";
+      };
+      new GuiMoveBitmapCtrl(EquipStrengthenWnd_MovBmp3) {     
+         profile = "GuiDefaultProfile";
+         horizSizing = "Relative";
+         vertSizing = "Relative";
+    	 	 position = "214 222";                      
+    	 	 extent = "32 32";                     
+     		 minExtent = "8 2";                      
+    		 visible = "0";                          
+    	   helpTag  = "0"; 
+    	     
+     		 IsMove = "1";    
+	       MoveType = "1";
+	       UpdateTime = "50";
+      
+         bitmap = "gameres/gui/images/GUIEffects03_1_003.png";
+         wrap = "0";
+      };
+    };
+};
+//--- OBJECT WRITE END ---
+
+//客户端得到服务端打孔槽的更新时，进行刷新界面
+function EquipStrengthenWnd_RefreshDialog()
+{
+	%bHaveEquipItem = EquipStrengthen_HaveEquipItem();
+	%player = GetPlayer();
+	if (%bHaveEquipItem)
+	{
+		EquipStrengthen_txtEquipName.text = EquipStrengthen_GetEquipName();
+		EquipStrengthenWnd_txtMaterial.text = "主材料 " @ EquipStrengthen_GetMaterialText();
+		%canStrengthen = EquipStrengthen_CanStrengthen();
+		EquipStrengthen_btnDoStrengthen.setActive(%canStrengthen);
+		
+		//花费金钱
+		%money = EquipStrengthen_GetCostMoney();
+		
+		if(%money >= 10000)
+		{
+		 %gold = mfloor(%money / 10000);
+	   %silver	=mfloor((%money - (%gold * 10000)) / 100);
+	   %copper	= (%money - (%gold * 10000 + (%silver * 100)));
+		
+		 EquipStrengthen_txt11.text = %gold;
+		 EquipStrengthen_txt12.text = %silver;
+		 EquipStrengthen_txt13.text = %copper;
+		 
+		 EquipStrengthenNeedMoneyBmp_Gold.setVisible(1);
+		 EquipStrengthenNeedMoneyBmp_Silver.setVisible(1);
+		}
+		else if(%money < 100)
+		{
+		  %copper = %money;
+		  EquipStrengthen_txt11.text = "";
+		  EquipStrengthen_txt12.text = "";
+		  EquipStrengthen_txt13.text = %copper;
+		  
+		  EquipStrengthenNeedMoneyBmp_Gold.setVisible(0);
+		  EquipStrengthenNeedMoneyBmp_Silver.setVisible(0);
+	  }
+		else
+		{
+		   %silver = mfloor(%money / 100);
+		   %copper = (%money - (%silver * 100));
+		   
+		   EquipStrengthen_txt11.text = "";
+		   EquipStrengthen_txt12.text = %silver;
+		   EquipStrengthen_txt13.text = %copper;
+		   
+		   EquipStrengthenNeedMoneyBmp_Gold.setVisible(0);
+		   EquipStrengthenNeedMoneyBmp_Silver.setVisible(1);
+		}
+	}
+	else
+	{
+		EquipStrengthen_txtEquipName.text = "";
+		EquipStrengthenWnd_txtMaterial.text = "";
+		
+		EquipStrengthen_txt11.text = "";
+		EquipStrengthen_txt12.text = "";
+		EquipStrengthen_txt13.text = "0";
+		
+		EquipStrengthenNeedMoneyBmp_Gold.setVisible(0);
+		EquipStrengthenNeedMoneyBmp_Silver.setVisible(0);
+		
+		EquipStrengthen_btnDoStrengthen.setActive(0);
+	}
+	
+	EquipStrengthen_UpdateMaterialUI();	
+}
+
+function RefreshPlayerEquipStrengthenMoney(%gold,%silver,%copper)
+{
+ 	if(%gold == 0 && %silver == 0)
+	{
+		%gold = "";
+		%silver = "";
+	  EquipStrengthenHavaMoneyBmp_Gold.setVisible(0);
+		EquipStrengthenHavaMoneyBmp_Silver.setVisible(0);
+	}
+	else if(%gold == 0 && %silver != 0)
+	{
+		%gold = "";
+	  EquipStrengthenHavaMoneyBmp_Gold.setVisible(0);
+		EquipStrengthenHavaMoneyBmp_Silver.setVisible(1);
+	}
+	else
+	{
+		EquipStrengthenHavaMoneyBmp_Gold.setVisible(1);
+		EquipStrengthenHavaMoneyBmp_Silver.setVisible(1);
+  }
+  EquipStrengthen_txt31.setText(%gold);
+	EquipStrengthen_txt32.setText(%silver);
+	EquipStrengthen_txt33.settext(%copper);
+}
+
+function RefreshPlayerEquipStrengthenBindMoney(%gold,%silver,%copper)
+{
+  echo(%gold @ %silver @ %copper);
+ 	if(%gold == 0 && %silver == 0)
+	{
+		%gold = "";
+		%silver = "";
+		EquipStrengthen_BindGoldBmp.setVisible(0);
+		EquipStrengthen_BindSliverBmp.setVisible(0);
+	}
+	else if(%gold == 0 && %silver != 0)
+	{
+		%gold = "";
+		EquipStrengthen_BindGoldBmp.setVisible(0);
+		EquipStrengthen_BindSliverBmp.setVisible(1);
+	}
+	else
+	{
+	  EquipStrengthen_BindGoldBmp.setVisible(1);
+		EquipStrengthen_BindSliverBmp.setVisible(1);
+  }
+  EquipStrengthen_txt21.settext(%gold);
+	EquipStrengthen_txt22.settext(%silver);
+	EquipStrengthen_txt23.settext(%copper);
+}
+
+function EquipStrengthenWnd_Close()
+{
+	$IsDirty--;
+	CloseEquipStrengthenDialog();
+}
+
+function OnClient_CloseEquipStrengthenDlg()
+{
+	EquipStrengthenWnd.setvisible(0);
+}
+
+function OnClient_OpenEquipStrengthenDlg()
+{
+	$IsDirty++;
+	ForceOpenBag();
+	EquipStrengthenWnd_RefreshDialog();
+	EquipStrengthenWnd.setvisible(1);
+}
+
+function EquipStrengthenWnd_DoStrengthen()
+{
+	EquipStrengthen_doStrengthen();
+}
+
+function EquipStrengthenWnd_Succ_Click()
+{
+	if(EquipStrengthenWnd_MovBmp1.IsVisible())
+	{
+		EquipStrengthenWnd_MovBmp1.setVisible(0);
+	}
+	else
+	{
+		EquipStrengthenWnd_MovBmp1.setVisible(1);
+	}
+}
+function EquipStrengthenWnd_Luck_Click()
+{
+	if(EquipStrengthenWnd_MovBmp3.IsVisible())
+	{
+		EquipStrengthenWnd_MovBmp3.setVisible(0);
+	}
+	else
+	{
+		EquipStrengthenWnd_MovBmp3.setVisible(1);
+	}
+}
+function EquipStrengthenWnd_Link_Click()
+{
+	if(EquipStrengthenWnd_MovBmp2.IsVisible())
+	{
+		EquipStrengthenWnd_MovBmp2.setVisible(0);
+	}
+	else
+	{
+		EquipStrengthenWnd_MovBmp2.setVisible(1);
+	}
+}
+
+GameMainWndGui_Layer3.Add(EquipStrengthenWnd);
+//--- OBJECT WRITE END ---

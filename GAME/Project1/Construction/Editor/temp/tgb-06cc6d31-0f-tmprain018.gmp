@@ -1,0 +1,42 @@
+//*****************************************************************************
+// PowerEngine -- HLSL procedural shader                                              
+//*****************************************************************************
+//-----------------------------------------------------------------------------
+// Structures                                                                  
+//-----------------------------------------------------------------------------
+struct ConnectData
+{
+   float2 texCoord        : TEXCOORD0;
+   float4 dlightshading   : COLOR0;
+   float4 dlightCoord     : TEXCOORD1;
+};
+
+
+struct Fragout
+{
+   float4 col : COLOR0;
+};
+
+
+//-----------------------------------------------------------------------------
+// Main                                                                        
+//-----------------------------------------------------------------------------
+Fragout main( ConnectData IN,
+              uniform sampler2D diffuseMap      : register(S0),
+              uniform sampler3D dlightMap       : register(S1),
+              uniform float4    lightColor      : register(C2),
+              uniform float     visibility      : register(C6),
+              uniform float     colorExposure   : register(C15)
+)
+{
+   Fragout OUT;
+
+   OUT.col = tex2D(diffuseMap, IN.texCoord);
+   OUT.col.a = 1.0;
+   float4 attn = tex3D(dlightMap, IN.dlightCoord) * lightColor * IN.dlightshading.x;
+   OUT.col *= (attn*4);
+   OUT.col.a *= visibility;
+   OUT.col.rgb *= colorExposure;
+
+   return OUT;
+}

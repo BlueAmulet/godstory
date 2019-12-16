@@ -1,0 +1,92 @@
+//===========================================================================================================
+// 文档说明:通用消息对话框
+// 创建时间:2009-7-02
+// 创建人: Batcel
+//=========================================================================================================== 
+new GuiControl(CurrencyMessageBoxGui) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "center";
+   vertSizing = "";
+   position = "250 250";
+   extent = "211 91";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+          
+     new GuiBitmapCtrl() {
+   	  profile = "GuiDefaultProfile";
+      horizSizing = "";
+      vertSizing = "";
+      position = "0 0"; 
+      extent = "211 91";
+      minExtent = "8 8";
+      visible = "1";
+      helpTag = "0";
+   	  bitmap   = $GUI::GUISkinDirectory @ "GUIWindow28_1_010";
+     };
+      
+      new GuiTextCtrl(CurrencyMsgTypeText){
+	    	 Profile = "GuiCurrencyWndNameTextProfile_1";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "70 2";
+         Extent = "76 20";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         text   = "商 店";
+         hovertime = "1000";
+	    };
+      
+      new GuiTextCtrl(CurrencyMsgText){
+	    	 Profile = "GuiTextProfile2";
+         HorizSizing = "center";
+         VertSizing = "center";
+         position = "30 30";
+         Extent = "150 20";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         text   = "";
+         hovertime = "1000";
+	    };
+	    
+      new GuiButtonCtrl(CurrencyMsgBoxBtn_Sure) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiTradeButtonProfile_3";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         Position = "30 65";
+         Extent = "56 23";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         Command = "HandleMakeSure();";
+         hovertime = "1000";
+         text = "确 定";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };
+      new GuiButtonCtrl(CurrencyMsgBoxBtn_Cancel) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiTradeButtonProfile_3";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         Position = "130 65";
+         Extent = "56 23";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         Command = "HandleCancel();";
+         hovertime = "1000";
+         text = "取 消";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };      
+};
+
+GameMainWndGui_Layer5.Add(CurrencyMessageBoxGui);

@@ -1,0 +1,216 @@
+//===========================================================================================================
+// PowerEngine 
+// Copyright (C) FireRain.com, Inc.
+
+// 文档说明:物品合成
+// 创建时间:2010-01-18
+// 创建人: thinking
+//===========================================================================================================
+new GuiBitmapWindowCtrl(itemComposeGui) {
+  Profile = "GuiDefaultProfile";
+  HorizSizing = "Proportion";
+  VertSizing = "Proportion";
+  position = "0 132";
+  Extent = "295 318";
+  Visible = "0";
+  useFadeout = "1";
+  MoveHotspot = "0 0 1024 768"; 
+
+  new GuiBitmapCtrl() {
+    Profile = "GuiModelessDialogProfile";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "0 0";
+    Extent = "295 318";
+    Visible = "1";
+    bitmap = $GUI::GUISkinDirectory @ "GUIWindow57_1_007.png";
+    	
+    //帮助按钮
+    new GuiButtonCtrl() {
+      Profile = "GuiHelpButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "247 0";
+      Extent = "21 21";
+      Visible = "1";
+      Command = "playFlash($Flash::Help::FlashitemComposeGui, 0);";
+      buttonType = "PushButton";
+    };
+    //关闭按钮
+    new GuiButtonCtrl() {
+      Profile = "GuiCloseButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "266 6";
+      Extent = "25 25";
+      Visible = "1";
+      command = "closeItemComposeGui();";
+      buttonType = "PushButton";
+    };
+    //合成产物
+    new dGuiShortCut(ShortCut_itemCompose0) {
+    	Profile = "GuiDefaultProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "133 131";
+      Extent = "32 32";
+      Visible = "1";
+      slotType = "42";
+      slotCol = "0";
+      boudary = "0 0 32 32";
+      disabledrag = "0";
+    };    
+    //合成8个材料位
+    new dGuiShortCut(ShortCut_itemCompose1) {
+    	Profile = "GuiDefaultProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "133 67";
+      Extent = "32 32";
+      Visible = "1";
+      slotType = "42";
+      slotCol = "1";
+      boudary = "0 0 32 32";
+      disabledrag = "0";
+    };    
+    new dGuiShortCut(ShortCut_itemCompose2) {
+    	Profile = "GuiDefaultProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "184 80";
+      Extent = "32 32";
+      Visible = "1";
+      slotType = "42";
+      slotCol = "2";
+      boudary = "0 0 32 32";
+      disabledrag = "0";
+    };    
+    new dGuiShortCut(ShortCut_itemCompose3) {
+    	Profile = "GuiDefaultProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "197 131";
+      Extent = "32 32";
+      Visible = "1";
+      slotType = "42";
+      slotCol = "3";
+      boudary = "0 0 32 32";
+      disabledrag = "0";
+    };    
+    new dGuiShortCut(ShortCut_itemCompose4) {
+    	Profile = "GuiDefaultProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "182 179";
+      Extent = "32 32";
+      Visible = "1";
+      slotType = "42";
+      slotCol = "4";
+      boudary = "0 0 32 32";
+      disabledrag = "0";
+    };    
+    new dGuiShortCut(ShortCut_itemCompose5) {
+    	Profile = "GuiDefaultProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "133 195";
+      Extent = "32 32";
+      Visible = "1";
+      slotType = "42";
+      slotCol = "5";
+      boudary = "0 0 32 32";
+      disabledrag = "0";
+    };    
+    new dGuiShortCut(ShortCut_itemCompose6) {
+    	Profile = "GuiDefaultProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "84 179";
+      Extent = "32 32";
+      Visible = "1";
+      slotType = "42";
+      slotCol = "6";
+      boudary = "0 0 32 32";
+      disabledrag = "0";
+    };    
+    new dGuiShortCut(ShortCut_itemCompose7) {
+    	Profile = "GuiDefaultProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "69 131";
+      Extent = "32 32";
+      Visible = "1";
+      slotType = "42";
+      slotCol = "7";
+      boudary = "0 0 32 32";
+      disabledrag = "0";
+    };    
+    new dGuiShortCut(ShortCut_itemCompose8) {
+    	Profile = "GuiDefaultProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "83 80";
+      Extent = "32 32";
+      Visible = "1";
+      slotType = "42";
+      slotCol = "8";
+      boudary = "0 0 32 32";
+      disabledrag = "0";
+    };  
+      
+    new GuiMLTextCtrl(itemCompose_MLText) {
+      Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "40 246";
+      Extent = "220 24";
+      Visible = "1";
+      lineSpacing = "1";
+      text = "(可直接将包裹栏合成材料拖进合成槽中)";
+    };
+    //合成按钮
+    new GuiButtonCtrl(itemSplit_BntCtrl) {
+      Profile = "GuiUpgradeButtonProfile_1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "112 278";
+      Extent = "70 22";
+      Visible = "1";
+      Text = "合  成";
+      command = "uiItemComposeStart();";
+      buttonType = "PushButton";
+    };
+  };
+  
+  //合成说明
+  new GuiBitmapCtrl(itemSplit_Desc_Bitmap) {
+    Profile = "GuiModelessDialogProfile";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "295 11";
+    Extent = "163 307";
+    Visible = "1";
+    bitmap = $GUI::GUISkinDirectory @ "GUIWindow57_1_008.png";
+    //产物	
+    new GuiRichTextCtrl(itemSplit_ItemDesc_Text){
+	 		Profile = "GuiRichTextProfile";
+      HorizSizing = "center";
+      VertSizing = "center";
+      position = "8 48";
+      Extent = "140 22";
+      Visible = "1";
+      text   = "";
+	  }; 
+	  //所需材料
+	  new GuiRichTextCtrl(itemSplit_Material_Text) {
+      Profile = "GuiRichTextProfile";
+      HorizSizing = "center";
+      VertSizing = "center";
+      position = "8 88";
+      Extent = "152 210";
+      Visible = "1";
+    };  
+  };
+};
+
+GameMainWndGui_Layer3.Add(itemComposeGui);

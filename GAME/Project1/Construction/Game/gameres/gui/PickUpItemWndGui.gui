@@ -1,0 +1,368 @@
+//===========================================================================================================
+// 文档说明:物品拾取
+// 创建时间:2009-6-08
+// 创建人: Batcel
+//=========================================================================================================== 
+
+%guiContent = new GuiBitmapWindowCtrl(PickUpItemWndGui) {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   HorizSizing = "Proportion";
+   VertSizing = "Proportion";
+   position = "400 300";
+   Extent = "163 219";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   mustPrerender = "0";
+   hovertime = "1000";
+   bitmap = "gameres/gui/images/GUIWindow31_1_014.png";
+   wrap = "0";
+   MoveHotspot = "0 0 1024 768";
+
+//   new GuiTextCtrl() {
+//      canSaveDynamicFields = "0";
+//      Enabled = "1";
+//      isContainer = "0";
+//      Profile = "GuiCurrencyShowInfoTextProfile_8";
+//      HorizSizing = "right";
+//      VertSizing = "bottom";
+//      position = "16 11";
+//      Extent = "36 15";
+//      MinExtent = "8 2";
+//      canSave = "1";
+//      Visible = "1";
+//      mustPrerender = "0";
+//      hovertime = "1000";
+//      Margin = "0 0 0 0";
+//      Padding = "0 0 0 0";
+//      AnchorTop = "1";
+//      AnchorBottom = "0";
+//      AnchorLeft = "1";
+//      AnchorRight = "0";
+//      text = "物品";
+//      maxLength = "3";
+//   };
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiCloseButtonProfile1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "130 10";
+      Extent = "21 21";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      Command = "PickupList_CloseDropList();";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+   };
+   new dGuiShortCut(PickUpItemIcon_1) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "12 37";
+      Extent = "32 32";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      slotType = "10";
+      slotCol = "0";
+      boudary = "0 0 32 32";
+      disabledrag = "1";
+      MouseDownCommand = "PickupRelateiveItem(0);";
+   };
+   new dGuiShortCut(PickUpItemIcon_2) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "12 74";
+      Extent = "32 32";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      slotType = "10";
+      slotCol = "1";
+      boudary = "0 0 32 32";
+      disabledrag = "1";
+      MouseDownCommand = "PickupRelateiveItem(1);";
+   };
+   new dGuiShortCut(PickUpItemIcon_3) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "12 111";
+      Extent = "32 32";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      slotType = "10";
+      slotCol = "2";
+      boudary = "0 0 32 32";
+      disabledrag = "1";
+      MouseDownCommand = "PickupRelateiveItem(2);";
+   };
+   new dGuiShortCut(PickUpItemIcon_4) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "12 148";
+      Extent = "32 32";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      slotType = "10";
+      slotCol = "3";
+      boudary = "0 0 32 32";
+      disabledrag = "1";
+      MouseDownCommand = "PickupRelateiveItem(3);";
+   };
+   new GuiButtonCtrl(ItemPageBtn_Left) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiStallButtonProfile_2";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "90 191";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      Command = "PageLeft();";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "1";
+      IsStateOn = "0";
+   };
+   new GuiButtonCtrl(ItemPageBtn_Right) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiStallButtonProfile_3";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "140 191";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      Command = "PageRight();";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "1";
+      IsStateOn = "0";
+   };
+   new GuiTextCtrl(ItemPageNum_Display) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "108 191";
+      Extent = "28 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      Margin = "0 0 0 0";
+      Padding = "0 0 0 0";
+      AnchorTop = "1";
+      AnchorBottom = "0";
+      AnchorLeft = "1";
+      AnchorRight = "0";
+      text = "1/10";
+      maxLength = "1024";
+   };
+   new GuiTextCtrl(PickUpItemText_1) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "49 38";
+      Extent = "102 30";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      Margin = "0 0 0 0";
+      Padding = "0 0 0 0";
+      AnchorTop = "1";
+      AnchorBottom = "0";
+      AnchorLeft = "1";
+      AnchorRight = "0";
+      maxLength = "1024";
+   };
+   new GuiTextCtrl(PickUpItemText_2) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "49 74";
+      Extent = "102 32";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      Margin = "0 0 0 0";
+      Padding = "0 0 0 0";
+      AnchorTop = "1";
+      AnchorBottom = "0";
+      AnchorLeft = "1";
+      AnchorRight = "0";
+      maxLength = "1024";
+   };
+   new GuiTextCtrl(PickUpItemText_3) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "49 111";
+      Extent = "102 32";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      Margin = "0 0 0 0";
+      Padding = "0 0 0 0";
+      AnchorTop = "1";
+      AnchorBottom = "0";
+      AnchorLeft = "1";
+      AnchorRight = "0";
+      maxLength = "1024";
+   };
+   new GuiTextCtrl(PickUpItemText_4) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "49 148";
+      Extent = "102 32";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      Margin = "0 0 0 0";
+      Padding = "0 0 0 0";
+      AnchorTop = "1";
+      AnchorBottom = "0";
+      AnchorLeft = "1";
+      AnchorRight = "0";
+      maxLength = "1024";
+   };
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiUpgradeButtonProfile_1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "12 187";
+      Extent = "69 22";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      Command = "PickupList_GetAllItems();";
+      hovertime = "1000";
+      text = "全部拾取";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+   };
+};
+
+GameMainWndGui_Layer4.Add(PickUpItemWndGui);
+
+function ClosePickupItemWnd()
+{
+	PickupItemWndGui.SetVisible(0);
+}
+
+function PageLeft()
+{
+	if (PickupList_DecPageIndex())
+	{
+		ShowPickupList();
+	}
+}
+
+function PageRight()
+{
+	if (PickupList_IncPageIndex())
+	{
+		ShowPickupList();
+	}
+}
+
+function ShowPickupList()
+{
+	PickUpItemText_1.text = PickupList_GetItemName(0);
+	PickUpItemText_2.text = PickupList_GetItemName(1);
+	PickUpItemText_3.text = PickupList_GetItemName(2);
+	PickUpItemText_4.text = PickupList_GetItemName(3);
+	
+	%curPage = PickupList_GetCurrentPage();		//从0开始索引
+	%totalPage = PickupList_GetTotalPage();
+	ItemPageNum_Display.text = (%curPage+1) @ ("/") @ (%totalPage);
+	
+	PickUpItemWndGui.setvisible(1);
+}
+
+function ClearPickupListText()
+{
+	PickUpItemText_1.text = "";
+	PickUpItemText_2.text = "";
+	PickUpItemText_3.text = "";
+	PickUpItemText_4.text = "";
+	
+	ItemPageNum_Display.text = "0/0";
+	PickUpItemWndGui.setvisible(0);
+}
+
+function PickupRelateiveItem(%nIndex) 			//相对索引
+{
+	%curPage = PickupList_GetCurrentPage();		//从0开始索引
+	%nIndex = %nIndex + 4 * %curPage;					//根据当前页及相对索引计算绝对索引
+	PickupList_GetSingleItem(%nIndex);
+}
+
+//// .player.transportobject(0, 1001, -307, 306, 133);

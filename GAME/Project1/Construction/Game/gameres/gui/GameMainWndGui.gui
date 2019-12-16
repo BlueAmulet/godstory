@@ -1,0 +1,85 @@
+//===========================================================================================================
+// 文档说明:游戏主界面
+// 创建时间:2009-3-19
+// 创建人: soar
+//=========================================================================================================== 
+
+new GuiControl(GameMainWndGui) {
+   profile = "GuiModelessDialogProfile";
+   horizSizing = "width";
+   vertSizing = "height";
+   position = "0 0";
+   extent = "800 600";
+   minExtent = "8 8";
+   visible = "1";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+   
+   new GuiControl(GameMainWndGui_Layer1) {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "width";
+      vertSizing = "height";
+      position = "0 0";
+      extent = "800 600";
+      minExtent = "8 8";
+      visible = "1";
+      helpTag = "0";
+      useVariable = "0";
+      tile = "0";
+   };
+   
+   new GuiControl(GameMainWndGui_Layer2) {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "width";
+      vertSizing = "height";
+      position = "0 0";
+      extent = "800 600";
+      minExtent = "8 8";
+      visible = "1";
+      helpTag = "0";
+      useVariable = "0";
+      tile = "0";
+   };
+   
+   new GuiControl(GameMainWndGui_Layer3) {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "width";
+      vertSizing = "height";
+      position = "0 0";
+      extent = "800 600";
+      minExtent = "8 8";
+      visible = "1";
+      helpTag = "0";
+      useVariable = "0";
+      tile = "0";
+   };
+   
+   new GuiControl(GameMainWndGui_Layer4) {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "width";
+      vertSizing = "height";
+      position = "0 0";
+      extent = "800 600";
+      minExtent = "8 8";
+      visible = "1";
+      helpTag = "0";
+      useVariable = "0";
+      tile = "0";
+   };
+   
+   new GuiControl(GameMainWndGui_Layer5) {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "width";
+      vertSizing = "height";
+      position = "0 0";
+      extent = "800 600";
+      minExtent = "8 8";
+      visible = "1";
+      helpTag = "0";
+      useVariable = "0";
+      tile = "0";
+   };
+   
+};
+

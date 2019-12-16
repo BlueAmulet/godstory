@@ -1,0 +1,87 @@
+
+//===========================================================================================================
+// 文档说明:区域触发图片显示
+// 创建时间:2009-7-23
+// 创建人: Batcel
+//===========================================================================================================
+new GuiControl(AreaTriggerGui) {
+   profile = "GuiModelessDialogProfile";
+   horizSizing = "center";
+   vertSizing = "";
+   position = "230 20";
+   extent = "512 256";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+   
+     new GuiScreenShowCtrl(AreaTriggerShow) {
+      profile = "GuiModelessDialogProfile";
+      HorizSizing = "center";
+      VertSizing = "center";
+      position = "0 0";
+      Extent = "512 256";
+      MinExtent = "8 2";
+      visible = "1";      
+      ScreenTextureName = $GUI::GUISkinDirectory @ "LOGO1101.PNG";
+      };
+     new GuiTextCtrl(AreaTriggerText){
+	 		Profile = "GuiTextProfile";
+      HorizSizing = "center";
+      VertSizing = "center";
+      position = "30 3";
+      Extent = "400 20";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "0";
+      text   = "测试专用文本";
+      hovertime = "1000";
+	 };  
+};
+
+
+
+//===========================================================================================================
+// 文档说明:传送触发图片显示
+// 创建时间:2009-11-11
+// 创建人: Batcel
+//===========================================================================================================
+new GuiControl(TransportTriggerGui) {
+   profile = "GuiModelessDialogProfile";
+   horizSizing = "center";
+   vertSizing = "bottom";
+   position = "260 300";
+   extent = "399 67";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+   
+     new GuiScreenShowCtrl(TransportTriggerShow) {
+      profile = "GuiModelessDialogProfile";
+      HorizSizing = "center";
+      VertSizing = "center";
+      position = "0 0";
+      Extent = "399 67";
+      MinExtent = "8 2";
+      visible = "1";      
+      ScreenTextureName = $GUI::GUISkinDirectory @ "LOGO1101.PNG";
+      };
+     new GuiTextCtrl(TransportTriggerText){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "center";
+      VertSizing = "center";
+      position = "135 43";
+      Extent = "125 20";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "正在前往....";
+      hovertime = "1000";
+	 };  
+};
+
+GameMainWndGui_Layer4.Add(AreaTriggerGui);
+GameMainWndGui_Layer4.Add(TransportTriggerGui);

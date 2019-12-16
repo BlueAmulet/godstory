@@ -1,0 +1,151 @@
+//===========================================================================================================
+// 文档说明:宠物列表界面
+// 创建时间:2009-12-1
+// 创建人: soar
+// 修改人：hanfei
+//=========================================================================================================== 
+
+  new GuiBitmapWindowCtrl(PetHelpWnd) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "500 183";
+      Extent = "198 328";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "0";
+      mustPrerender = "0";
+      hovertime = "1000";
+      alpha = "0";
+      useFadeout = "1";
+      bitmap = "gameres/gui/images/GUIWindow35_1_073.png";
+      wrap = "0";
+      MoveHotspot = "0 0 1024 768";
+
+      new GuiTextCtrl(PetHelpWnd_Name) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_8";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "44 10";
+         Extent = "120 20";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "0";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "灵兽列表";
+         maxLength = "1024";
+      };
+      //new GuiButtonCtrl(PetHelpWnd_CloseButton) {
+      //   canSaveDynamicFields = "0";
+      //   Enabled = "1";
+      //   isContainer = "0";
+      //   Profile = "GuiCloseButtonProfile1";
+      //   HorizSizing = "right";
+      //   VertSizing = "bottom";
+      //   position = "168 9";
+      //   Extent = "21 21";
+      //   MinExtent = "8 2";
+      //   canSave = "1";
+      //   Visible = "1";
+      //   mustPrerender = "0";
+      //   Command = "ClsePetHelpWnd();";
+      //   hovertime = "1000";
+      //   groupNum = "-1";
+      //   buttonType = "PushButton";
+      //   useMouseEvents = "0";
+      //   IsStateOn = "0";
+      //};
+      new GuiScrollCtrl(PetHelpWnd_Scroll) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         Profile = "GuiCurrencyScrollProfile_4";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "14 42";
+         Extent = "165 249";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         willFirstRespond = "1";
+         hScrollBar = "alwaysOff";
+         vScrollBar = "dynamic";
+         constantThumbHeight = "0";
+         childMargin = "0 0";
+
+         new GuiControl(PetScroll_Floor) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "1";
+            Profile = "GuiDefaultProfile";
+            HorizSizing = "center";
+            VertSizing = "center";
+            position = "-4 1";
+            Extent = "175 8";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+         };
+      };
+      new GuiButtonCtrl(PetHelpWnd_Select) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "59 299";
+         Extent = "55 22";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "PetHelpWnd_SendSelectMsg();";
+         hovertime = "1000";
+         text = "选择";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiButtonCtrl(PetHelpWnd_SeeInfo) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "117 299";
+         Extent = "70 22";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "PetHelpWnd_ShowProperty();";
+         hovertime = "1000";
+         text = "查看信息";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+   };
+
+GameMainWndGui_Layer3.Add(PetHelpWnd);

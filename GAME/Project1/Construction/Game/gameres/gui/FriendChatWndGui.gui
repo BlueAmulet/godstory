@@ -1,0 +1,413 @@
+//===========================================================================================================
+// 文档说明:仙友聊天信息盒
+// 创建时间:2009-12-31
+// 创建人: Batcel
+//===========================================================================================================      
+new GuiControl(FriendChatBoxGui) {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";  
+   Profile = "GuiDialogControlProfile";
+   HorizSizing = "left";
+   VertSizing = "top";
+   position = "460 450";
+   Extent = "140 10";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+   
+    new GuiTextListCtrl(FriendChat_NameList) {
+      canSaveDynamicFields = "0";                 
+      Enabled = "1";                 
+      isContainer = "1";                              
+      Profile = "GuiCurrencyShowInfoTextProfile_4";                 
+      HorizSizing = "right";                 
+      VertSizing = "bottom";                 
+      position = "7 5";                 
+      Extent = "140 20";                 
+      MinExtent = "8 2";                 
+      canSave = "1";                 
+      Visible = "1";                 
+      mustPrerender = "0";                 
+      Command = "SelectedFriendChatName();";                 
+      hovertime = "1000";                 
+      CellSize = "120 20";                 
+      enumerate = "0";                 
+      resizeCell = "1";                 
+      columns = "0";                 
+      fitParentWidth = "1";                 
+      clipColumnText = "0";                 
+      TextListSelectImageFile = "gameres/gui/images/GUIbutton02_1_014";                 
+      TextListMouseOnImageFile = "gameres/gui/images/GUIbutton02_1_013";                 
+    };
+};
+
+
+
+//===========================================================================================================
+// 文档说明:仙友聊天界面
+// 创建时间:2009-12-21
+// 创建人: 
+//=========================================================================================================== 
+
+   new GuiBitmapWindowCtrl(FriendChatIcon) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "left";
+      VertSizing = "top";
+      position = "641 507";
+      Extent = "32 32";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "0";
+      mustPrerender = "0";
+      hovertime = "1000";
+      bitmap = "";
+      wrap = "0";
+      MoveHotspot = "0 0 1024 768";
+      
+      new GuiBitmapButtonCtrl() {
+         Profile = "GuiButtonProfile";
+         horizSizing = "center";
+         vertSizing = "center";
+         Position = "0 0";
+         Extent = "32 32";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         command = "OpenFriendChatNameList();";
+         text = "";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         bitmap = $GUI::GUISkinDirectory @ "playeraskfor.png";
+         helpTag = "0";
+      };
+   };
+   
+GameMainWndGui_Layer3.add(FriendChatIcon);
+   
+function BuildChatDialogUI(%playerId,%States,%IconIndex)
+{
+	 %bVisible =1;
+	 %IconVisible = 0;
+	if(%States ==2)
+	{
+		%bVisible =0;
+		%IconVisible = 1;		
+	}
+	
+	%playername = Cache_getPlayerName(%playerId);
+	AddFriendChatList(%playerId,%playername);
+	FriendChatIcon.setVisible(1);
+	
+  new GuiBitmapWindowCtrl("FriendChatGui_" @ %playerId) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "Proportion";
+      VertSizing = "Proportion";
+      position = "149 149";
+      Extent = "393 293";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = %bVisible;
+      mustPrerender = "0";
+      hovertime = "1000";
+      bitmap = "gameres/gui/images/GUIWindow57_1_002.png";
+      wrap = "0";
+      MoveHotspot = "0 0 1024 768";
+
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiChatFriendButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "335 8";
+         Extent = "21 21";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+         Command = "SptMinChatDialog(" @ %playerId @ ");";
+      };
+      new GuiButtonCtrl(ChatFriendWnd_CloseButton) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCloseButtonProfile1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "357 8";
+         Extent = "21 21";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "SptClostChatDialog(" @ %playerId @ ");";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiTextCtrl(ChatFriendWnd_TextBoolOnline) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_8";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "251 7";
+         Extent = "48 26";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "0";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "在线";
+         maxLength = "1024";
+      };
+      new GuiScrollCtrl(ChatFriendWnd_NoteScroll) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         Profile = "GuiCurrencyScrollProfile_4";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "17 64";
+         Extent = "364 174";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         willFirstRespond = "1";
+         hScrollBar = "alwaysOn";
+         vScrollBar = "alwaysOn";
+         constantThumbHeight = "0";
+         childMargin = "0 0";
+         
+         new guiMessageList("FriendChat_NoteList"@ %playerId)    
+         {
+         	  profile = "GuiCurrencyShowInfoTextProfile_4";
+         	  horizSizing = "right";
+            vertSizing = "top";
+            position = "20 0";
+            extent = "340 160";
+            minExtent = "8 8";
+            ContentSize = "340 160";
+            EntrySize = "340 20";
+            TextOffset	= "1";
+            MaxStorageLine = 50;
+            visible = "1";
+            
+            Colors[0] = "255 255 0 255";    //仙友
+         };
+      };
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiMailButtonProfile_2";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "7 236";
+         Extent = "21 21";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiTextCtrl(ChatFriendWnd_TextFriendNameTop) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_8";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "71 8";
+         Extent = "116 26";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = %playername;
+         maxLength = "1024";
+      };
+      
+
+      new GuiButtonCtrl(ChatFriendWnd_AddButton) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "98 39";
+         Extent = "72 22";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         text = "加为好友";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+         Command = "";
+      };
+      new GuiButtonCtrl(ChatFriendWnd_SendButton) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "305 260";
+         Extent = "74 22";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         text = "发送";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+         Command = "SendMessageToFriend(" @ %playerId @ ");";
+      };
+      new GuiButtonCtrl(ChatFriendWnd_WriteLett) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiXianZhuanNoteButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "29 237";
+         Extent = "44 20";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         text = "清除";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };      
+       new GuiTextEditCtrl("FriendChatTextEdit_"@ %playerId) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiGeneralTextEditProfile_3";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "9 263";
+         Extent = "286 22";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         lineSpacing = "2";
+         allowColorChars = "0";
+         maxChars = "30";
+         
+      };
+      new GuiCheckBoxCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiSystemSettingCheckBtnProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "300 41";
+         Extent = "18 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         text = "Button";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+         useInactiveState = "0";
+      };
+      new GuiButtonCtrl(ChatFriendWnd_ChatLogButton) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "226 39";
+         Extent = "72 22";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         text = "聊天记录";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiButtonCtrl(ChatFriendWnd_WriteLetterButton) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "23 39";
+         Extent = "72 22";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         text = "写信";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+   };
+   
+  GameMainWndGui_Layer3.Add("FriendChatGui_"@%playerId);
+}
+GameMainWndGui_Layer4.Add(FriendChatBoxGui);

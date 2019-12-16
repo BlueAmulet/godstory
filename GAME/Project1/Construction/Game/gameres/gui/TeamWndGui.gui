@@ -1,0 +1,172 @@
+//===========================================================================================================
+// 文档说明:组队界面
+// 创建时间:2009-4-28
+// 创建人: soar
+//=========================================================================================================== 
+
+new GuiControl(TeamWndGui) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "center";
+   vertSizing = "center";
+   position = "250 155";
+   extent = "300 200";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+
+   new GuiWindowCtrl() {
+      canSaveDynamicFields = "0";
+      Profile = "GuiGeneralDialogProfile_1";
+      HorizSizing = "center";
+      VertSizing = "center";
+      Position = "0 0";
+      Extent = "300 200";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      text = "";
+      maxLength = "255";
+      resizeWidth = "0";
+      resizeHeight = "0";
+      canMove = "0";
+      canClose = "0";
+      canHelp  = "0";
+      canMinimize = "0";
+      canMaximize = "0";
+      minSize = "50 50";
+      TitleHeight = 40;
+      //closeCommand = "revertAVOptionChanges(); Canvas.popDialog(OptionsDlg);";
+      //command = "revertAVOptionChanges(); Canvas.popDialog(OptionsDlg);";
+      //accelerator = "escape";  
+      
+      new GuiTextCtrl(TeamRequestMessage){
+	    	 Profile = "GuiTextProfile";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "75 80";
+         Extent = "150 20";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         text   = "组队申请";
+         hovertime = "1000";
+	    };
+      
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiWnd2ServerSelectGameButtonProfile";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         Position = "40 130";
+         Extent = "81 36";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         Command = "TeamBuildOK();";
+         hovertime = "1000";
+         text = "接  受";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiWnd2ServerSelectGameButtonProfile";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         Position = "180 130";
+         Extent = "81 36";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         Command = "CloseTeamWndGui();";
+         hovertime = "1000";
+         text = "拒  绝";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };
+      
+   };
+   
+   
+   
+};
+
+new GuiControl(TeamMassageWnd) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "center";
+   vertSizing = "center";
+   position = "250 155";
+   extent = "300 200";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+
+   new GuiWindowCtrl() {
+      canSaveDynamicFields = "0";
+      Profile = "GuiGeneralDialogProfile_1";
+      HorizSizing = "center";
+      VertSizing = "center";
+      Position = "0 0";
+      Extent = "300 200";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      text = "";
+      maxLength = "255";
+      resizeWidth = "0";
+      resizeHeight = "0";
+      canMove = "0";
+      canClose = "0";
+      canHelp  = "0";
+      canMinimize = "0";
+      canMaximize = "0";
+      minSize = "50 50";
+      TitleHeight = 40;
+      closeCommand = "revertAVOptionChanges(); Canvas.popDialog(OptionsDlg);";
+      //command = "revertAVOptionChanges(); Canvas.popDialog(OptionsDlg);";
+      //accelerator = "escape";  
+   
+      new GuiTextCtrl(TeamShowMessage){
+	    	 Profile = "GuiTextProfile";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "75 80";
+         Extent = "150 20";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         text   = "";
+         hovertime = "1000";
+	    };
+	    
+	    new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiWnd2ServerSelectGameButtonProfile";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         Position = "40 130";
+         Extent = "81 36";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         Command = "CloseTeamMassageWnd();";
+         hovertime = "1000";
+         text = "确  定";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };
+	    
+	 };
+	 
+};
+
+GameMainWndGui_Layer5.Add(TeamWndGui);
+GameMainWndGui_Layer5.Add(TeamMassageWnd);

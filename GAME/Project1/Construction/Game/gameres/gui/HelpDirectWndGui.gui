@@ -1,0 +1,141 @@
+//===========================================================================================================
+// 文档说明:帮助指引
+// 创建时间:2010-3-10
+// 创建人: Batcel
+//=========================================================================================================== 
+
+//1 左上  2 右上 3 右下 4 左下
+
+new GuiControl(HelpDirectWndGui_1) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      profile = "GuiHelpDirectProfile_1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "0 0";
+      Extent = "160 136";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "0";
+      mustPrerender = "0";
+      hovertime = "1000";
+         
+    new GuiRichTextCtrl(HelpDirectContent_1) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      profile = "GuiCurrencyShowInfoTextProfile_5";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "10 18";
+      Extent = "140 120";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      
+   };
+};
+
+
+new GuiControl(HelpDirectWndGui_2) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      profile = "GuiHelpDirectProfile_2";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "0 0";
+      Extent = "160 136";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "0";
+      mustPrerender = "0";
+      hovertime = "1000";
+         
+    new GuiRichTextCtrl(HelpDirectContent_2) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      profile = "GuiCurrencyShowInfoTextProfile_5";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "10 18";
+      Extent = "140 120";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      
+   };
+};
+
+new GuiControl(HelpDirectWndGui_3) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      profile = "GuiHelpDirectProfile_3";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "0 0";
+      Extent = "205 35";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "0";
+      mustPrerender = "0";
+      hovertime = "1000";
+         
+    new GuiRichTextCtrl(HelpDirectContent_3) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      profile = "GuiCurrencyShowInfoTextProfile_5";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "10 18";
+      Extent = "140 120";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      
+   };
+};
+
+new GuiControl(HelpDirectWndGui_4) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      profile = "GuiHelpDirectProfile_4";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "0 0";
+      Extent = "160 136";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "0";
+      mustPrerender = "0";
+      hovertime = "1000";
+         
+    new GuiRichTextCtrl(HelpDirectContent_4) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      profile = "GuiCurrencyShowInfoTextProfile_5";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "10 18";
+      Extent = "140 120";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      
+   };
+};
+
+GameMainWndGui_Layer5.Add(HelpDirectWndGui_1);
+GameMainWndGui_Layer5.Add(HelpDirectWndGui_2);
+GameMainWndGui_Layer5.Add(HelpDirectWndGui_3);
+GameMainWndGui_Layer5.Add(HelpDirectWndGui_4);

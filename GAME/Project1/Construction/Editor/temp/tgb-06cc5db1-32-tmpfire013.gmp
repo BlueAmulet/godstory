@@ -1,0 +1,116 @@
+//*****************************************************************************
+// PowerEngine -- HLSL procedural shader                                              
+//*****************************************************************************
+//-----------------------------------------------------------------------------
+// Structures                                                                  
+//-----------------------------------------------------------------------------
+struct VertData
+{
+   float2 texCoord        : TEXCOORD0;
+   float2 lmCoord         : TEXCOORD1;
+   float2 inTex0          : TEXCOORD2;
+   float2 inTex1          : TEXCOORD3;
+   float2 inTex2          : TEXCOORD4;
+   float2 inTex3          : TEXCOORD5;
+   float4 T4              : TEXCOORD6;
+   float3 N               : TEXCOORD7;
+   float3 org_normal      : NORMAL;
+   float4 vcolor          : COLOR0;
+   float4 org_position    : POSITION;
+};
+
+
+struct ConnectData
+{
+   float4 hpos            : POSITION;
+   float4 vtcol           : COLOR0;
+   float2 outTexCoord     : TEXCOORD0;
+   float4 dlightshading   : COLOR1;
+   float4 dlightCoord     : TEXCOORD1;
+   float3 fogCoord        : TEXCOORD2;
+};
+
+
+//-----------------------------------------------------------------------------
+// Main                                                                        
+//-----------------------------------------------------------------------------
+ConnectData main( VertData IN,
+                  uniform sampler2D vertexMap       : register(S0),
+                  uniform float    boneCount       : register(C48),
+                  uniform float4x4 modelview       : register(C0),
+                  uniform float4   lightPos        : register(C23),
+                  uniform float4x4 objTrans        : register(C12),
+                  uniform float4x4 lightingMatrix  : register(C8),
+                  uniform float3   eyePos          : register(C20),
+                  uniform float4   fogData         : register(C22)
+)
+{
+   ConnectData OUT;
+
+   float4 position = IN.org_position;
+   float3 normal = IN.org_normal;
+   float4x4 boneMx;
+   if ( boneCount>0 ) {
+		position = float4(0,0,0,0);
+		normal = float3(0,0,0);
+		if(IN.inTex0.y>0){
+			boneMx[0] = tex2Dlod(vertexMap, float4( (IN.inTex0.x + 0.5)/boneCount,0.5,0,0) );
+			boneMx[1] = tex2Dlod(vertexMap, float4( (IN.inTex0.x + 1.5)/boneCount,0.5,0,0) );
+			boneMx[2] = tex2Dlod(vertexMap, float4( (IN.inTex0.x + 2.5)/boneCount,0.5,0,0) );
+			boneMx[3] = tex2Dlod(vertexMap, float4( (IN.inTex0.x + 3.5)/boneCount,0.5,0,0) );
+			position += mul(boneMx, IN.org_position) * IN.inTex0.y;
+			normal += mul(boneMx, IN.org_normal).xyz * IN.inTex0.y;
+		}
+
+		if(IN.inTex1.y>0){
+			boneMx[0] = tex2Dlod(vertexMap, float4( (IN.inTex1.x + 0.5)/boneCount,0.5,0,0) );
+			boneMx[1] = tex2Dlod(vertexMap, float4( (IN.inTex1.x + 1.5)/boneCount,0.5,0,0) );
+			boneMx[2] = tex2Dlod(vertexMap, float4( (IN.inTex1.x + 2.5)/boneCount,0.5,0,0) );
+			boneMx[3] = tex2Dlod(vertexMap, float4( (IN.inTex1.x + 3.5)/boneCount,0.5,0,0) );
+			position += mul(boneMx, IN.org_position) * IN.inTex1.y;
+			normal += mul(boneMx, IN.org_normal).xyz * IN.inTex1.y;
+		}
+
+		if(IN.inTex2.y>0){
+			boneMx[0] = tex2Dlod(vertexMap, float4( (IN.inTex2.x + 0.5)/boneCount,0.5,0,0) );
+			boneMx[1] = tex2Dlod(vertexMap, float4( (IN.inTex2.x + 1.5)/boneCount,0.5,0,0) );
+			boneMx[2] = tex2Dlod(vertexMap, float4( (IN.inTex2.x + 2.5)/boneCount,0.5,0,0) );
+			boneMx[3] = tex2Dlod(vertexMap, float4( (IN.inTex2.x + 3.5)/boneCount,0.5,0,0) );
+			position += mul(boneMx, IN.org_position) * IN.inTex2.y;
+			normal += mul(boneMx, IN.org_normal).xyz * IN.inTex2.y;
+		}
+
+		if(IN.inTex3.y>0){
+			boneMx[0] = tex2Dlod(vertexMap, float4( (IN.inTex3.x + 0.5)/boneCount,0.5,0,0) );
+			boneMx[1] = tex2Dlod(vertexMap, float4( (IN.inTex3.x + 1.5)/boneCount,0.5,0,0) );
+			boneMx[2] = tex2Dlod(vertexMap, float4( (IN.inTex3.x + 2.5)/boneCount,0.5,0,0) );
+			boneMx[3] = tex2Dlod(vertexMap, float4( (IN.inTex3.x + 3.5)/boneCount,0.5,0,0) );
+			position += mul(boneMx, IN.org_position) * IN.inTex3.y;
+			normal += mul(boneMx, IN.org_normal).xyz * IN.inTex3.y;
+		}
+
+		position.w = 1.0;
+   }
+
+   OUT.hpos = mul(modelview, position);
+   OUT.vtcol = IN.vcolor;
+   OUT.outTexCoord = IN.texCoord;
+
+   float3 lightdir;
+   float3 worldpos = mul(objTrans, position.xyz);
+   lightdir = worldpos - mul(objTrans, lightPos.xyz);
+   OUT.dlightCoord.xyz = lightdir * lightPos.w;
+   OUT.dlightCoord.xyz = mul(lightingMatrix, OUT.dlightCoord.xyz) + 0.5;
+   OUT.dlightCoord.w = 1.0;
+
+   float3 worldnorm = normalize(mul((float3x3)objTrans, normal));
+   OUT.dlightshading.xyz = saturate(dot(normalize(-lightdir), worldnorm));
+   OUT.dlightshading.w = 1.0;
+
+   // fog setup
+   float3 transPos = mul( objTrans, position );
+   OUT.fogCoord.x = 1.0 - ( distance( position, eyePos ) / fogData.z );
+   OUT.fogCoord.y = (transPos.z - fogData.x) * fogData.y;
+   OUT.fogCoord.z = fogData.w;
+   return OUT;
+}

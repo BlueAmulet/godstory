@@ -1,0 +1,1176 @@
+//--- OBJECT WRITE BEGIN ---
+// 主任务对话窗口
+%guiContent = new GuiBitmapWindowCtrl(MissionDialogWndGui) {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   Profile = "GuiCurrencyScrollProfile_1";
+   HorizSizing = "Proportion";
+   VertSizing = "Proportion";
+   position = "0 110";
+   Extent = "326 424";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+   bitmap = "gameres/gui/images/GUIWindow25_1_003.png";
+   wrap = "0";
+   MoveHotspot = "0 0 1 1";
+
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiCloseButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "299 6";
+      Extent = "25 25";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "CloseMissionDialog(2);";
+   };
+   new GuiButtonCtrl(MissionDialogGui_HelpButton) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiHelpButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "278 0";
+      Extent = "21 22";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      Command = "playFlash($Flash::Help::FlashPlayerInfoGui, 0);";
+      tooltipWidth = "100";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+   		};
+   new GuiTextCtrl(GUIDialogNpcName) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiCurrencyShowInfoTextProfile_11";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "80 20";
+      Extent = "154 21";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      Margin = "0 0 0 0";
+      Padding = "0 0 0 0";
+      AnchorTop = "1";
+      AnchorBottom = "0";
+      AnchorLeft = "1";
+      AnchorRight = "0";
+      text = "NPC名称";
+      maxLength = "1024";
+   };
+   new GuiScrollCtrl(GUIDialogNpcScroll) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      Profile = "GuiCurrencyScrollProfile_4";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "23 50";
+      Extent = "282 335";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      willFirstRespond = "1";
+      hScrollBar = "alwaysOff";
+      vScrollBar = "dynamic";
+      constantThumbHeight = "0";
+      childMargin = "0 0";
+
+      new GuiRichTextCtrl(GUIDialogText) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "1 11";
+         Extent = "270 335";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         Profile = "GuiRichTextProfile_Mission";
+      };
+   };
+   new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "243 394";
+         Extent = "70 22";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         tooltipWidth = "100";
+         hovertime = "1000";
+         text = "关闭";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+         Command = "CloseMissionDialog(2);";
+   };
+};
+// 接交任务详细描述窗口
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiControl(MissionDialog2WndGui) {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   Profile = "GuiDefaultProfile";
+   HorizSizing = "relative";
+   VertSizing = "relative";
+   position = "0 0";
+   Extent = "800 600";
+   MinExtent = "8 8";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+   
+   new GuiBitmapCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      position = "0 0";
+      Extent = "800 600";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      bitmap = "gameres/gui/images/GUIWindow99_1_4.png";
+      wrap = "0";
+     // MoveHotspot = "0 0 1 1";
+   };
+   
+		new GuiBitmapWindowCtrl() {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   Profile = "GuiCurrencyScrollProfile_4";
+   HorizSizing = "center";
+   VertSizing = "center";
+   position = "295 150";
+   Extent = "326 474";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+   bitmap = "gameres/gui/images/GUIWindow25_1_004.png";
+   wrap = "0";
+   MoveHotspot = "0 0 1 1";
+
+	 new GuiBitmapCtrl(MissionDialog2Icon) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "37 68";
+            Extent = "57 61";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            tooltipWidth = "100";
+            hovertime = "1000";
+            alpha = "255";
+            useFadeout = "1";
+            wrap = "0";
+   };
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiCloseButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "299 6";
+      Extent = "25 25";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "CloseMissionDialog(3);";
+   };
+   new GuiButtonCtrl(MissionDialog2Gui_HelpButton) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiHelpButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "278 0";
+      Extent = "21 22";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      Command = "playFlash($Flash::Help::FlashPlayerInfoGui, 0);";
+      tooltipWidth = "100";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+   		};
+   new GuiButtonCtrl(GUIDialogDescButton) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiUpgradeButtonProfile_1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "160 443";
+      Extent = "70 22";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      text = "接受";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+   };
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiUpgradeButtonProfile_1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "242 443";
+      Extent = "70 22";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      text = "关闭";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "CloseMissionDialog(3);";
+   };
+   new GuiTextCtrl(GUIDialog2NpcName) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiCurrencyShowInfoTextProfile_10";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "115 87";
+      Extent = "154 21";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      Margin = "0 0 0 0";
+      Padding = "0 0 0 0";
+      AnchorTop = "1";
+      AnchorBottom = "0";
+      AnchorLeft = "1";
+      AnchorRight = "0";
+      text = "NPC名称";
+      maxLength = "1024";
+   };
+   new GuiScrollCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1"; 
+      isContainer = "1";
+      Profile = "GuiCurrencyScrollProfile_4";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "23 149";
+      Extent = "290 282";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      willFirstRespond = "1";
+      hScrollBar = "alwaysOff";
+      vScrollBar = "dynamic";
+      constantThumbHeight = "0";
+      childMargin = "0 0";
+
+      new GuiRichTextCtrl(GUIDialog2Text) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiRichTextProfile_Mission";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "1 1";
+         Extent = "278 276";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+      };
+   };
+};
+};
+
+
+//--- OBJECT WRITE END ---
+
+//任务上缴物品界面
+%guiContent = new GuiBitmapWindowCtrl(MissionDialog3WndGui) {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   Profile = "GuiCurrencyScrollProfile_1";
+   HorizSizing = "Proportion";
+   VertSizing = "Proportion";
+   position = "0 150";
+   Extent = "320 414";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+   bitmap = "gameres/gui/images/GUIWindow25_1_011.png";
+   wrap = "0";
+   MoveHotspot = "0 0 1 1";
+
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiSystemSettingCloseBtnProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "288 1";
+      Extent = "25 25";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "";
+   };
+   new GuiTextCtrl(GUIDialogNpcName3) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiCurrencyShowInfoTextProfile_11";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "80 13";
+      Extent = "154 21";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      Margin = "0 0 0 0";
+      Padding = "0 0 0 0";
+      AnchorTop = "1";
+      AnchorBottom = "0";
+      AnchorLeft = "1";
+      AnchorRight = "0";
+      text = "NPC名称";
+      maxLength = "1024";
+   };
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiMissionDialogButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "225 371";
+      Extent = "76 26";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      text = "上缴物品";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "";
+   };
+   
+   new GuiScrollCtrl(GUIDialogNpcScroll3) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      Profile = "GuiCurrencyScrollProfile_4";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "23 50";
+      Extent = "282 192";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      willFirstRespond = "1";
+      hScrollBar = "alwaysOff";
+      vScrollBar = "dynamic";
+      constantThumbHeight = "0";
+      childMargin = "0 0";
+
+      new GuiRichTextCtrl(GUIDialog3Text) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "1 11";
+         Extent = "270 189";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         Profile = "GuiRichTextProfile_Mission";
+      };      
+   };
+   
+    new dGuiShortCut(TestShortCutName) {
+       canSaveDynamicFields = "0";
+       Enabled = "1";
+       isContainer = "0";
+       HorizSizing = "right";
+       VertSizing = "bottom";
+       position = "40 266";
+       Extent = "32 32";
+       MinExtent = "8 2";
+       canSave = "1";
+       Visible = "1";
+       hovertime = "1000";
+       slotType = "0";
+       slotCol = "0";
+       boudary = "0 0 32 32";
+       disabledrag = "0";
+     };
+    new dGuiShortCut(TestShortCutName1) {
+       canSaveDynamicFields = "0";
+       Enabled = "1";
+       isContainer = "0";
+       HorizSizing = "right";
+       VertSizing = "bottom";
+       position = "81 266";
+       Extent = "32 32";
+       MinExtent = "8 2";
+       canSave = "1";
+       Visible = "1";
+       hovertime = "1000";
+       slotType = "0";
+       slotCol = "1";
+       boudary = "0 0 32 32";
+       disabledrag = "0";
+    };
+    new dGuiShortCut(TestShortCutName2) {
+       canSaveDynamicFields = "0";
+       Enabled = "1";
+       isContainer = "0";
+       HorizSizing = "right";
+       VertSizing = "bottom";
+       position = "122 266";
+       Extent = "32 32";
+       MinExtent = "8 2";
+       canSave = "1";
+       Visible = "1";
+       hovertime = "1000";
+       slotType = "0";
+       slotCol = "2";
+       boudary = "0 0 32 32";
+       disabledrag = "0";
+    };
+    new dGuiShortCut(TestShortCutName3) {
+       canSaveDynamicFields = "0";
+       Enabled = "1";
+       isContainer = "0";
+       HorizSizing = "right";
+       VertSizing = "bottom";
+       position = "163 266";
+       Extent = "32 32";
+       MinExtent = "8 2";
+       canSave = "1";
+       Visible = "1";
+       hovertime = "1000";
+       slotType = "0";
+       slotCol = "3";
+       boudary = "0 0 32 32";
+       disabledrag = "0";
+    };
+    new dGuiShortCut(TestShortCutName4) {
+       canSaveDynamicFields = "0";
+       Enabled = "1";
+       isContainer = "0";
+       HorizSizing = "right";
+       VertSizing = "bottom";
+       position = "204 266";
+       Extent = "32 32";
+       MinExtent = "8 2";
+       canSave = "1";
+       Visible = "1";
+       hovertime = "1000";
+       slotType = "0";
+       slotCol = "4";
+       boudary = "0 0 32 32";
+       disabledrag = "0";
+    };
+    new dGuiShortCut(TestShortCutName5) {
+       canSaveDynamicFields = "0";
+       Enabled = "1";
+       isContainer = "0";
+       HorizSizing = "right";
+       VertSizing = "bottom";
+       position = "245 266";
+       Extent = "32 32";
+       MinExtent = "8 2";
+       canSave = "1";
+       Visible = "1";
+       hovertime = "1000";
+       slotType = "0";
+       slotCol = "5";
+       boudary = "0 0 32 32";
+       disabledrag = "0";
+    };
+    new dGuiShortCut(TestShortCutName6) {
+       canSaveDynamicFields = "0";
+       Enabled = "1";
+       isContainer = "0";
+       HorizSizing = "right";
+       VertSizing = "bottom";
+       position = "40 308";
+       Extent = "32 32";
+       MinExtent = "8 2";
+       canSave = "1";
+       Visible = "1";
+       hovertime = "1000";
+       slotType = "0";
+       slotCol = "6";
+       boudary = "0 0 32 32";
+       disabledrag = "0";
+    };
+    new dGuiShortCut(TestShortCutName7) {
+       canSaveDynamicFields = "0";
+       Enabled = "1";
+       isContainer = "0";
+       HorizSizing = "right";
+       VertSizing = "bottom";
+       position = "81 308";
+       Extent = "32 32";
+       MinExtent = "8 2";
+       canSave = "1";
+       Visible = "1";
+       hovertime = "1000";
+       slotType = "0";
+       slotCol = "7";
+       boudary = "0 0 32 32";
+       disabledrag = "0";
+    };
+    new dGuiShortCut(TestShortCutName8) {
+       canSaveDynamicFields = "0";
+       Enabled = "1";
+       isContainer = "0";
+       HorizSizing = "right";
+       VertSizing = "bottom";
+       position = "122 308";
+       Extent = "32 32";
+       MinExtent = "8 2";
+       canSave = "1";
+       Visible = "1";
+       hovertime = "1000";
+       slotType = "0";
+       slotCol = "8";
+       boudary = "0 0 32 32";
+       disabledrag = "0";
+    };
+    new dGuiShortCut(TestShortCutName9) {
+       canSaveDynamicFields = "0";
+       Enabled = "1";
+       isContainer = "0";
+       HorizSizing = "right";
+       VertSizing = "bottom";
+       position = "163 308";
+       Extent = "32 32";
+       MinExtent = "8 2";
+       canSave = "1";
+       Visible = "1";
+       hovertime = "1000";
+       slotType = "0";
+       slotCol = "9";
+       boudary = "0 0 32 32";
+       disabledrag = "0";
+    };
+    new dGuiShortCut(TestShortCutName10) {
+       canSaveDynamicFields = "0";
+       Enabled = "1";
+       isContainer = "0";
+       HorizSizing = "right";
+       VertSizing = "bottom";
+       position = "204 308";
+       Extent = "32 32";
+       MinExtent = "8 2";
+       canSave = "1";
+       Visible = "1";
+       hovertime = "1000";
+       slotType = "0";
+       slotCol = "10";
+       boudary = "0 0 32 32";
+       disabledrag = "0";
+    };
+    new dGuiShortCut(TestShortCutName11) {
+       canSaveDynamicFields = "0";
+       Enabled = "1";
+       isContainer = "0";
+       HorizSizing = "right";
+       VertSizing = "bottom";
+       position = "245 308";
+       Extent = "32 32";
+       MinExtent = "8 2";
+       canSave = "1";
+       Visible = "1";
+       hovertime = "1000";
+       slotType = "0";
+       slotCol = "11";
+       boudary = "0 0 32 32";
+       disabledrag = "0";
+    };
+};
+
+// 带确定按钮NPC对话窗口
+%guiContent = new GuiBitmapWindowCtrl(MissionDialog4WndGui) {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   Profile = "GuiCurrencyScrollProfile_1";
+   HorizSizing = "Proportion";
+   VertSizing = "Proportion";
+   position = "0 110";
+   Extent = "326 424";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+   bitmap = "gameres/gui/images/GUIWindow25_1_003.png";
+   wrap = "0";
+   MoveHotspot = "0 0 1 1";
+
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiCloseButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "299 6";
+      Extent = "25 25";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "";
+   		};
+   new GuiButtonCtrl(MissionDialog4Gui_HelpButton) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiHelpButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "278 0";
+      Extent = "21 22";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      Command = "playFlash($Flash::Help::FlashPlayerInfoGui, 0);";
+      tooltipWidth = "100";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+   };
+   new GuiTextCtrl(GUIDialog4NpcName) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiCurrencyShowInfoTextProfile_11";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "80 20";
+      Extent = "154 21";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      Margin = "0 0 0 0";
+      Padding = "0 0 0 0";
+      AnchorTop = "1";
+      AnchorBottom = "0";
+      AnchorLeft = "1";
+      AnchorRight = "0";
+      text = "NPC名称";
+      maxLength = "1024";
+   };
+   new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "170 394";
+         Extent = "70 22";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         tooltipWidth = "100";
+         hovertime = "1000";
+         text = "接受";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+   };
+   new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "243 394";
+         Extent = "70 22";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         tooltipWidth = "100";
+         hovertime = "1000";
+         text = "关闭";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+   };
+   new GuiScrollCtrl(GUIDialog4NpcScroll) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      Profile = "GuiCurrencyScrollProfile_4";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "23 50";
+      Extent = "282 335";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      willFirstRespond = "1";
+      hScrollBar = "alwaysOff";
+      vScrollBar = "dynamic";
+      constantThumbHeight = "0";
+      childMargin = "0 0";
+
+      new GuiRichTextCtrl(GUIDialog4Text) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "1 11";
+         Extent = "270 335";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         Profile = "GuiRichTextProfile_Mission";
+      };
+   };
+};
+GameMainWndGui_Layer3.Add(MissionDialogWndGui);
+GameMainWndGui_Layer5.Add(MissionDialog2WndGui);
+GameMainWndGui_Layer3.Add(MissionDialog3WndGui);
+GameMainWndGui_Layer3.Add(MissionDialog4WndGui);
+
+function SetDialogOK(%state)
+{
+	if($SelectChoiceReward == -1)
+	{
+		SetScreenMessage("请选择一个可选奖励", 0xFF0000);
+		return;
+	}
+		
+	if(CheckDialogState(%state) $= "")
+	{
+		SetConversationState(%state);
+		setConversationParam($SelectChoiceReward);
+  	SendConversationReply();
+  	CloseMissionDialog(1);
+ 	}
+}
+
+// 接收到服务端的对话数据
+function OnConversationEventReceived(%npcname)
+{
+	%Conv = GetConversation();
+	if(!isObject(%Conv))
+			return;
+	
+	if(%Conv.GetType() == 4)
+	{
+		CloseNpcDialog();
+		return;
+	}	
+	
+	$SelectChoiceReward = 0;
+	if(%Conv.GetType() != 2)
+	{
+		GameMainWndGui_Layer3.pushToBack(MissionDialogWndGui);
+	 	MissionDialogWndGui.SetVisible(1);
+		$IsDirty++;
+		%text = %Conv.GetText();
+		// 判断文本是否带选择项
+		if(%Conv.GetType() == 0)
+		{
+			%text = %text @ CreateDialogOptionText(%Conv);			
+		}
+		GUIDialogText.SetContent(%text);
+		GUIDialogNpcName.SetText(%npcname);
+	}
+	else
+	{
+		%text = %Conv.GetText();
+		%param = %Conv.getTextParam();
+		if(%param != 0)
+		{	
+		  BindOrUnBindSomeHotButton(0);		
+		 
+			//MissionDialog2WndGui.SetVisible(1);
+			OpenMissionDialog2Wnd();
+			$IsDirty++;
+			MissionDialogWndGui.SetVisible(0);
+			$IsDirty--;
+			
+			GUIDialog2Text.SetContent(%text);
+			GUIDialog2NpcName.SetText( GetItemData(%param,1) );
+			if(%param >= 100000000)
+				GUIDialogDescButton.SetText("打开");
+			else
+				GUIDialogDescButton.SetText("接受");
+			GUIDialogDescButton.Command = "SetDialogOK(" @ %param @ ");";
+		}
+	}	
+}
+
+function createDialogButton(%name, %parent, %x, %y, %cmd,%text)
+{	
+	new GuiRichButtonCtrl(%name) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiDialogOptionButton";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = %x SPC %y;
+            Extent = "270 24";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "1000";
+            groupNum = "-1";
+            buttonType = "PushButton";
+            useMouseEvents = "0";
+            IsStateOn = "0";
+            text = %text;
+            Command = %cmd;
+         };
+}
+
+function CreateDialogOptionText(%Conv)
+{
+	%text = "<b/><b/>";	
+	for(%i = 0; %i < %Conv.GetOptionCount(); %i++)
+	{
+		%name = "GUIOption_" @ %i;
+		%commandtext = %Conv.GetOptionText(%i);
+	  %text = %text @ "<c cid='" @ %name @ "' cmd='\"SetConversationOption(" @ %i @ ");\",\"" @ %commandtext @ "\"' cf='createDialogButton' />";
+	}
+	return %text;
+}
+
+function SetConversationOption(%index)
+{
+   	%Conv = GetConversation();
+		if(!isObject(%Conv))
+			return;
+		%param = %Conv.getOptionParam(%index);
+		if(%param != 0)
+		{	
+		  BindOrUnBindSomeHotButton(0);		
+		  GameMainWndGui_Layer5.pushToBack(MissionDialog2WndGui);
+			//MissionDialog2WndGui.SetVisible(1);
+			OpenMissionDialog2Wnd();
+			$IsDirty++;
+			MissionDialogWndGui.SetVisible(0);
+			$IsDirty--;
+			
+			%text = getTextByID(%Conv.getOptionState(%index));
+			GUIDialog2Text.SetContent(%text);
+			
+			if(%param == 3)
+				GUIDialog2NpcName.SetText( GetItemData(%Conv.getOptionState(%index),1) );
+			else
+				GUIDialog2NpcName.SetText( GetMission_Name(0 , GetSubStr(%Conv.getOptionState(%index),3,5) , 1) );
+				
+			if(%param == 1)
+			{
+				$SelectChoiceReward = 0;
+				GUIDialogDescButton.SetText("接受");
+			}
+			else if(%param == 2)
+			{
+				GUIDialogDescButton.SetText("完成");
+			}
+			else if(%param == 3)
+			{
+				$SelectChoiceReward = 0;
+				GUIDialogDescButton.SetText("打开");
+			}
+				
+			GUIDialogDescButton.Command = "SetDialogOK(" @ %Conv.getOptionState(%index) @ ");";
+		}
+		else
+		{
+    	SetSelectConversationOption(%index);
+    	setConversationParam($SelectChoiceReward);
+    	SendConversationReply();
+    }
+}
+
+// 主动关闭NPC对话窗口
+function CloseMissionDialog(%op)
+{
+	if(%op == 0 || %op == 2)
+	{
+		MissionDialogWndGui.setvisible(0);
+		$IsDirty--;
+	}
+	
+	if(%op == 1 || %op == 3)
+	{
+	  BindOrUnBindSomeHotButton(1);
+		MissionDialog2WndGui.setvisible(0);
+		$IsDirty--;
+	}
+	
+	if(%op == 2 || %op == 3)
+	{
+		if(!MissionDialogWndGui.isvisible() && !MissionDialog2WndGui.isvisible())
+			ExitConversation();
+	}
+}
+
+// 服务端指定客户端关闭NPC对话窗口
+function CloseNpcDialog()
+{
+    if(MissionDialogWndGui.IsVisible())
+    {
+      MissionDialogWndGui.SetVisible(0);
+      $IsDirty--;
+    }
+   if(MissionDialog2WndGui.IsVisible())
+   {
+      BindOrUnBindSomeHotButton(1);
+      MissionDialog2WndGui.setvisible(0);
+      $IsDirty--;
+   }
+}
+
+// 获取可选任务奖励物品控件解析文本
+function GetOptionalMissionItemText()
+{	
+	%text = "";
+	$SelectChoiceReward = -1;
+	%count = 	GetPlayer().getMissionItemSize(0);
+		
+	for(%i = 0; %i < %count; %i++)
+	{
+		%name = "OptionalMissionItem" @ %i;		
+	  %text = %text @ "<c cid='" @ %name @ "' cmd='\"ChooseMissionItem(" @ %i @ ");\",\"" @ %i @ "\"' cf='CreateOptionalItemBtn' />";
+	}
+	return %text;
+}
+
+// 获取固定任务奖励物品控件解析文本
+function GetFixedMissionItemText()
+{	
+	%text = "";	
+	%player = GetPlayer();
+	for(%i = 0; %i < GetPlayer().getMissionItemSize(1); %i++)
+	{
+		%name = "FixedMissionItem" @ %i;		
+	  %text = %text @ "<c cid='" @ %name @ "' cmd='\"" @ %i @ "\"' cf='CreateFixedItemBtn' />";
+	}
+	return %text;
+}
+
+//创建可选任务奖励物品控件
+function CreateOptionalItemBtn(%name, %parent, %x, %y, %cmd, %index)
+{		
+	new GuiControl(%name) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = %x SPC %y;
+         Extent = "40 40";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         
+				new GuiButtonCtrl(%name @ "_btn") {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiCoverImageButtonProfile";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "1 1";
+            Extent = "38 38";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "1000";
+            groupNum = "1";
+            buttonType = "radiobutton";
+            useMouseEvents = "0";
+            IsStateOn = "0";
+            text = "";
+            Command = %cmd;
+         };
+             
+  		new dGuiShortCut(%name @ "_Slot") {
+       canSaveDynamicFields = "0";
+       Enabled = "1";
+       isContainer = "0";
+       HorizSizing = "right";
+       VertSizing = "bottom";
+       position = "3 3";
+       Extent = "32 32";
+       MinExtent = "8 2";
+       canSave = "1";
+       Visible = "1";
+       hovertime = "1000";
+       slotType = "16";
+       slotCol = %index;
+       DisableDrag = "1";
+       boudary = "0 0 32 32";
+       MouseDownCommand= %cmd;
+    };
+  };
+}
+
+// 创建固定任务奖励物品控件
+function CreateFixedItemBtn(%name, %parent, %x, %y, %index)
+{		
+		new GuiControl(%name) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = %x SPC %y;
+         Extent = "40 40";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+             
+  			new dGuiShortCut(%name @ "_Slot") {
+       		canSaveDynamicFields = "0";
+       		Enabled = "1";
+       		isContainer = "0";
+       		HorizSizing = "right";
+       		VertSizing = "bottom";
+       		position = "3 3";
+       		Extent = "32 32";
+       		MinExtent = "8 2";
+       		canSave = "1";
+       		Visible = "1";
+       		hovertime = "1000";
+       		slotType = "23";
+       		slotCol = %index;       		
+       		DisableDrag = "1";
+       		boudary = "0 0 32 32";
+    		};
+  	};
+}
+
+function ChooseMissionItem(%index)
+{
+	if((%index != $SelectChoiceReward) && $SelectChoiceReward != -1)
+	{
+		%name = "OptionalMissionItem" @ $SelectChoiceReward @ "_Slot";
+		if(isobject(%name) && %name.getBeSelected())
+			%name.setBeSelected(0);
+	}
+	$SelectChoiceReward = %index;
+	%name = "OptionalMissionItem" @ %index @ "_Slot";
+	if(isobject(%name))
+		%name.setBeSelected(1);
+	setConversationParam($SelectChoiceReward);
+}
+
+function OpenMissionDialog2Wnd()
+{
+	%obj = GetPlayer().getInteraction();
+	%icon = "";
+	if(isobject(%obj))
+	{
+		%icon = "gameres/data/icon/head/" @ %obj.getobjecticon();		
+	}
+	
+	MissionDialog2Icon.setBitmap(%icon);
+	GameMainWndGui_Layer5.pushToBack(MissionDialog2WndGui);
+	MissionDialog2WndGui.SetVisible(1);
+}
+		

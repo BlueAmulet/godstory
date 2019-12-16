@@ -1,0 +1,115 @@
+//===========================================================================================================
+// 文档说明:显示BUFF界面
+// 创建时间:2009-8-31
+// 创建人: soar
+//=========================================================================================================== 
+
+new GuiControlExt(ShowBuffWnd) {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   Profile = "GuiModelessDialogProfile";
+   HorizSizing = "left";
+   VertSizing = "bottom";
+   position = "350 10";
+   Extent = "232 144";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+   
+   new GuiBuffCtrl() {
+      profile = "GuiBuffProfile";
+      horizSizing = "left";
+      vertSizing = "bottom";
+      position = "0 0";
+      extent = "232 144";
+      minExtent = "8 8";
+      visible = "1";
+      helpTag = "0";
+      useVariable = "0";
+      tile = "0";
+      BuffBoundary = "0 0 24 24";
+      RemainTimeExtext = "24 10";
+      AddendExtext = "12 12";
+      ObjType = "1";
+      HasTime = "1";
+      SpaceNum = "5";
+      FrameName = "gameres/gui/images/GUIbutton03_1_010";
+      BuffFilePath = "gameres/data/icon/";
+      mustPrerender = "1";
+   };
+};
+
+new GuiControlExt(ObjectBuffWnd) {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   Profile = "GuiModelessDialogProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   position = "290 86";
+   Extent = "176 80";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   hovertime = "1000";
+   
+   new GuiBuffCtrl() {
+      profile = "GuiBuffProfile";
+      horizSizing = "left";
+      vertSizing = "bottom";
+      position = "0 0";
+      extent = "176 80";
+      minExtent = "8 8";
+      visible = "1";
+      helpTag = "0";
+      useVariable = "0";
+      tile = "0";
+      BuffBoundary = "0 0 20 20";
+      RemainTimeExtext = "20 10";
+      AddendExtext = "12 12";
+      ObjType = "2";
+      HasTime = "0";
+      SpaceNum = "2";
+      FrameName = "gameres/gui/images/GUIbutton03_1_010";
+      BuffFilePath = "gameres/data/icon/skill/";
+      mustPrerender = "1";
+   };
+};
+
+new GuiControl(BuffHover){
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   Profile = "GuiHoverdefaultProfile";
+   HorizSizing = "left";
+   VertSizing = "bottom";
+   position = "0 0";
+   Extent = "150 70";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+  
+  new GuiRichTextCtrl(BuffHoverInfo) {
+     canSaveDynamicFields = "0";
+     Enabled = "1";
+     isContainer = "0";
+     HorizSizing = "right";
+     VertSizing = "bottom";
+     position = "10 10";
+     Extent = "130 50";
+     MinExtent = "8 2";
+     canSave = "1";
+     Visible = "1";
+     hovertime = "1000";
+     lineSpacing = "2";
+     allowColorChars = "0";
+     maxChars = "-1";
+  };
+};
+
+GameMainWndGui_Layer2.Add(ShowBuffWnd);
+GameMainWndGui_Layer2.Add(ObjectBuffWnd);
+GameMainWndGui_Layer5.Add(BuffHover);

@@ -1,0 +1,523 @@
+//--- OBJECT WRITE BEGIN ---
+
+new GuiChunkedBitmapCtrl(MainMenuGui) {
+   profile = "GuiContentProfile";
+   horizSizing = "width";
+   vertSizing = "height";
+   position = "0 0";
+   extent = "800 600";
+   minExtent = "8 8";
+   visible = "1";
+   helpTag = "0";
+   //bitmap = "~/gui/images/GUIlogin02_1_001";
+   useVariable = "0";
+   tile = "0";
+
+
+	 new GuiMoveBitmapCtrl(BackCloudMainMenu) {
+      profile = "GuiDefaultProfile";
+      horizSizing = "Relative";
+      vertSizing = "Relative";
+      position = "-800 0";                      
+      extent = "1600 600";                    
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";   
+      MoveSpeed = "0.01"; 
+      IsXDirection = "1";
+      IsYDirection = "0";  
+      IsMove = "1";    
+      MoveType = "0";           
+      bitmap = "./images/GUIlogin02_1_000";
+   };
+   
+   new dGuiObjectView(MainMenuObjectView)
+   {
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      //relative
+      position = "0 0";
+      Extent = "800 600";
+   };
+   
+//  new GuiBitmapCtrl() {
+//     profile = "GuiDefaultProfile";
+//     horizSizing = "relative";
+//     vertSizing = "relative";
+//     position = "0 0";                      
+//     extent = "800 600";                     
+//     minExtent = "8 8";                      
+//     visible = "1";                          
+//     helpTag  = "0";                          
+//     bitmap = "./images/GUIlogin02_1_001";
+//  };
+   
+  new GuiBitmapCtrl() {
+     profile = "GuiDefaultProfile";
+     horizSizing = "right";
+     vertSizing = "bottom";
+     position = "0 0";                      
+     extent = "273 190";                     
+     minExtent = "8 8";                      
+     visible = "1";                          
+     helpTag  = "0";                          
+     bitmap = "./images/GUIlogin02_1_002";
+  };
+   
+//   new GuiMoveBitmapCtrl() {
+//      profile = "GuiDefaultProfile";
+//      horizSizing = "Relative";
+//      vertSizing = "Relative";
+//      position = "-1599 0";                      
+//      extent = "3198 768";                     
+//      minExtent = "8 8";                      
+//      visible = "1";                          
+//      helpTag  = "0";   
+//      MoveSpeed = "0.02"; 
+//      IsXDirection = "1";
+//      IsYDirection = "0";    
+//      IsMove = "1";  
+//      MoveType = "0";           
+//      bitmap = "./images/GUIlogin02_1_009";
+//   };
+//   
+//   new GuiMoveBitmapCtrl() {
+//      profile = "GuiModelessDialogProfile";
+//      horizSizing = "Relative";
+//      vertSizing = "Relative";
+//      position = "-1599 0";                      
+//      extent = "3198 768";                     
+//      minExtent = "8 8";                      
+//      visible = "1";                          
+//      helpTag  = "0";   
+//      MoveSpeed = "0.03"; 
+//      IsXDirection = "1";
+//      IsYDirection = "0"; 
+//      IsMove = "1";
+//      MoveType = "0";                
+//      bitmap = "./images/GUIlogin02_1_001";
+//   };
+   
+	 new GuiControl(InputInfoWnd1) {
+      profile = "GuiDefaultProfile";
+      horizSizing = "center";
+      vertSizing = "top";
+      position = "0 220";
+      extent = "500 313";
+      minExtent = "8 8";
+      visible = "0";
+      helpTag = "0";
+      useVariable = "0";
+      tile = "0";
+      
+      new GuiBitmapCtrl(GameLoginBitmap) {
+         profile = "GuiDefaultProfile";
+         horizSizing = "center";
+         vertSizing = "bottom";
+         position = "0 0";                      
+         extent = "500 156";                     
+         minExtent = "8 8";                      
+         visible = "1";                          
+         helpTag  = "0";                          
+         bitmap = "./images/GUIlogin02_1_003";
+      };
+      
+      //输入帐号
+      new GuiTextEditCtrl(PlayerID) {
+         Profile = "AccountPassWordTextEditProfile";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "165 34";//+41 +44
+         Extent = "100 19";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         text   = "";
+         hovertime = "1000";
+         maxLength = 10;
+         KeyEnter =false;         
+      };
+      
+      //输入密码
+      new GuiTextEditCtrl(PlayerPassword) {
+         Profile = "AccountPassWordTextEditProfile";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "165 69";
+         Extent = "100 19";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         //text   = "";
+         hovertime = "1000";
+         maxLength = 10;
+         password   = true;
+         KeyEnter = false;         
+      };
+      
+      new GuiTextCtrl(ShowMessage){
+	    		Profile = "GuiCurrencyShowInfoTextProfile_12";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "133 137";
+         Extent = "200 20";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         text   = "";
+         hovertime = "1000";
+	    };
+      
+      new GuiButtonCtrl(LoginGameBtn) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiGeneralButtonProfile_1";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         Position = "202 93";
+         Extent = "111 30";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         Accelerator = "Enter";
+         Command = "ParseLogin();";
+         hovertime = "1000";
+         text = "进入游戏";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };
+      
+      new GuiButtonCtrl(OpenKeyboardButton) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiOpenKeyboardButtonProfile";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         Position = "337 68";
+         Extent = "34 19";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         Command = "OpenMiniKeyboard();";  
+         //Command = "Canvas.setContent(MiniKeyboardGui);";
+         hovertime = "1000";
+         //text = "小键盘";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+      
+      //是否记住帐号
+      new GuiCheckBoxCtrl() {
+         Profile = "GuiLoginCheckBtnProfile";
+         HorizSizing = "left";
+         VertSizing = "top";
+         position = "343 32";
+         Extent = "23 22";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         //Command = "TerrainEditirAction(1);";
+         text = "";
+         hovertime = "1000";
+         groupNum = "4";
+         buttonType = "ToggleButton";
+         IsStateOn  = "1";
+      };
+      
+      //是否同意服务条款
+      new GuiCheckBoxCtrl() {
+         Profile = "GuiLoginCheckBtnProfile";
+         HorizSizing = "left";
+         VertSizing = "top";
+         position = "90 98";
+         Extent = "23 22";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         //Command = "TerrainEditirAction(1);";
+         text = "";
+         hovertime = "1000";
+         groupNum = "4";
+         buttonType = "ToggleButton";
+         IsStateOn  = "1";
+      };
+      
+      new GuiTextCtrl(){
+	    		Profile = "GuiCurrencyShowInfoTextProfile_5";
+         HorizSizing = "center";
+         VertSizing = "botton";
+         position = "172 374";
+         Extent = "130 20";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "0";
+         text   = "已阅读并同意服务器条款";
+         hovertime = "1000";
+	    };
+      
+      //服务条款打开按钮
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiTransparentProfile";
+         HorizSizing = "left";
+         VertSizing = "top";
+         Position = "159 99";
+         Extent = "37 19";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         //Command = "OpenServerTextWnd();";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+      
+   };
+   
+   
+    new GuiControl(LoginCurrentServerCui) {
+      profile = "GuiDefaultProfile";
+      horizSizing = "center";
+      vertSizing = "top";
+      position = "0 510";
+      extent = "155 20";
+      minExtent = "8 8";
+      visible = "0";
+      helpTag = "0";
+      useVariable = "0";
+      tile = "0";
+      
+      new GuiRichTextCtrl(LoginCurrentServerText){
+	    	 Profile = "GuiCurrencyShowInfoTextProfile_2";
+         HorizSizing = "left";
+         VertSizing = "top";
+         position = "0 0";
+         Extent = "80 20";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         //text   = "当前服务器:";
+         hovertime = "1000";
+	    };
+	    new GuiRichTextCtrl(LoginCurrentServerText_1){
+	    	 Profile = "GuiCurrencyShowInfoTextProfile_2";
+         HorizSizing = "left";
+         VertSizing = "top";
+         position = "80 0";
+         Extent = "75 20";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+        // text   = "姚林仙境";
+         hovertime = "1000";
+	    };
+	 };
+   new GuiButtonCtrl(ChangeSeverBtn) {
+       canSaveDynamicFields = "0";
+       Enabled = "1";
+       isContainer = "0";
+       Profile = "GuiGeneralButtonProfile_1";
+       HorizSizing = "left";
+       VertSizing = "top";
+       Position = "665 505";
+       Extent = "111 30";
+       MinExtent = "8 8";
+       canSave = "1";
+       Visible = "0";
+       Accelerator = "Enter";
+       Command = "OpenServerSelect();";
+       hovertime = "1000";
+       text = "更换服务器";
+       groupNum = "-1";
+       buttonType = "PushButton";
+      };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiDefaultProfile";
+      horizSizing = "center";
+      vertSizing = "top";
+      position = "0 550";                      
+      extent = "703 60";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = "./images/GUIlogin02_1_005";
+     
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiGeneralButtonProfile_1";
+      HorizSizing = "left";
+      VertSizing = "top";
+      Position = "100 15";
+      Extent = "111 30";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "";
+      hovertime = "1000";
+      text = "官方网站";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+   
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiGeneralButtonProfile_1";
+      HorizSizing = "left";
+      VertSizing = "top";
+      Position = "230 15";
+      Extent = "111 30";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "ShowRegisterPage();";
+      hovertime = "1000";
+      text = "注册帐号";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiGeneralButtonProfile_1";
+      HorizSizing = "left";
+      VertSizing = "top";
+      Position = "360 15";
+      Extent = "111 30";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "ShowHomePage();";
+      hovertime = "1000";
+      text = "忘记密码";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+   };
+   
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiGeneralButtonProfile_1";
+      HorizSizing = "left";
+      VertSizing = "top";
+      Position = "490 15";
+      Extent = "111 30";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+     // Command = "quit();";
+      hovertime = "1000";
+      text = "制作人员";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+   };
+  };  
+   
+  //服务器公告    
+  new GuiBitmapCtrl(ServerNoticeWnd) {
+        profile = "GuiDefaultProfile";
+        horizSizing = "center";
+        vertSizing = "center";
+        position = "0 0";                      
+        extent = "433 549";                     
+        minExtent = "8 8";                      
+        visible = "1";                          
+        helpTag  = "0";                          
+        bitmap = "./images/GUIlogin02_1_006";
+        
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiGeneralButtonProfile_1";
+         HorizSizing = "left";
+         VertSizing = "top";
+         Position = "170 487";
+         Extent = "111 30";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         Accelerator = "Enter";
+         Command = "OpenServerSelect();";
+         hovertime = "1000";
+         text = "下一步";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };
+    }; 
+    
+   //服务器选择
+    new GuiBitmapCtrl(ServerSelectFace) {
+        profile = "GuiDefaultProfile";
+        horizSizing = "center";
+        vertSizing = "center";
+        position = "0 0";                      
+        extent = "433 549";                     
+        minExtent = "8 8";                      
+        visible = "0";                          
+        helpTag  = "0";                          
+        bitmap = "./images/GUIlogin02_1_007";
+      
+       new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiGeneralButtonProfile_1";
+         HorizSizing = "left";
+         VertSizing = "top";
+         Position = "170 487";
+         Extent = "111 30";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         Accelerator = "Enter";
+         Command = "ServerSelectedEnd();";
+         hovertime = "1000";
+         text = "选 择";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };
+      
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiGeneralButtonProfile_1";
+         HorizSizing = "left";
+         VertSizing = "top";
+         Position = "210 457";
+         Extent = "111 30";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "0";
+         Accelerator = "Enter";
+         Command = "CancelServerSelect();";
+         hovertime = "1000";
+         text = "取 消";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };
+    };
+};
+//--- OBJECT WRITE END ---
+
+
+LoginCurrentServerText.setContent("<t c='0xffffffff' o='0x4a7977ff'>当前服务器:</t>");
+LoginCurrentServerText_1.setContent("<t c='0xffffffff' o='0x4a7977ff'>姚林仙境</t>");

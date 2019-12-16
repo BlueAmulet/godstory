@@ -1,0 +1,83 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WorldServer", "WorldServer\WorldServer.vcproj", "{98CFD78D-266F-47F9-877D-FF45763BC5A9}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AccountServer", "AccountServer\AccountServer.vcproj", "{EA231460-8B24-4B52-BEDF-75AA22D2E424}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NetGate", "NetGate\NetGate.vcproj", "{DA3EF3D0-625D-4318-82E0-E2C6A9316192}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataAgent", "DataAgent\DataAgent.vcproj", "{DCB4D6CA-7204-47C4-B96A-E64830C57F4E}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServerManager", "ServerManager\ServerManager.vcproj", "{1DED4956-06CD-448F-9CDC-5EE0D595E960}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 6
+		SccLocalPath0 = .
+		CanCheckoutShared = false
+		SolutionUniqueID = {6FA539D2-D556-4FCD-839F-1A9F9DEC48EF}
+		SccProjectUniqueName1 = WorldServer\\WorldServer.vcproj
+		SccProjectName1 = \u0022$/GAME/Project1/SERVERS\u0022,\u0020UELAAAAA
+		SccLocalPath1 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection1 = VisualStudio2003\\WorldServer\\
+		SccProjectUniqueName2 = AccountServer\\AccountServer.vcproj
+		SccProjectName2 = \u0022$/GAME/Project1/SERVERS\u0022,\u0020UELAAAAA
+		SccLocalPath2 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection2 = VisualStudio2003\\AccountServer\\
+		SccProjectUniqueName3 = NetGate\\NetGate.vcproj
+		SccProjectName3 = \u0022$/GAME/Project1/SERVERS\u0022,\u0020UELAAAAA
+		SccLocalPath3 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection3 = VisualStudio2003\\NetGate\\
+		SccProjectUniqueName4 = DataAgent\\DataAgent.vcproj
+		SccProjectName4 = \u0022$/GAME/Project1/SERVERS\u0022,\u0020UELAAAAA
+		SccLocalPath4 = ..
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection4 = VisualStudio2003\\DataAgent\\
+		SccProjectUniqueName5 = ServerManager\\ServerManager.vcproj
+		SccLocalPath5 = .
+		CanCheckoutShared = false
+		SccProjectFilePathRelativizedFromConnection5 = ServerManager\\
+	EndGlobalSection
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{98CFD78D-266F-47F9-877D-FF45763BC5A9}.Debug.ActiveCfg = Debug|Win32
+		{98CFD78D-266F-47F9-877D-FF45763BC5A9}.Debug.Build.0 = Debug|Win32
+		{98CFD78D-266F-47F9-877D-FF45763BC5A9}.Release.ActiveCfg = Release|Win32
+		{98CFD78D-266F-47F9-877D-FF45763BC5A9}.Release.Build.0 = Release|Win32
+		{EA231460-8B24-4B52-BEDF-75AA22D2E424}.Debug.ActiveCfg = Debug|Win32
+		{EA231460-8B24-4B52-BEDF-75AA22D2E424}.Debug.Build.0 = Debug|Win32
+		{EA231460-8B24-4B52-BEDF-75AA22D2E424}.Release.ActiveCfg = Release|Win32
+		{EA231460-8B24-4B52-BEDF-75AA22D2E424}.Release.Build.0 = Release|Win32
+		{DA3EF3D0-625D-4318-82E0-E2C6A9316192}.Debug.ActiveCfg = Debug|Win32
+		{DA3EF3D0-625D-4318-82E0-E2C6A9316192}.Debug.Build.0 = Debug|Win32
+		{DA3EF3D0-625D-4318-82E0-E2C6A9316192}.Release.ActiveCfg = Release|Win32
+		{DA3EF3D0-625D-4318-82E0-E2C6A9316192}.Release.Build.0 = Release|Win32
+		{DCB4D6CA-7204-47C4-B96A-E64830C57F4E}.Debug.ActiveCfg = Debug|Win32
+		{DCB4D6CA-7204-47C4-B96A-E64830C57F4E}.Debug.Build.0 = Debug|Win32
+		{DCB4D6CA-7204-47C4-B96A-E64830C57F4E}.Release.ActiveCfg = Release|Win32
+		{DCB4D6CA-7204-47C4-B96A-E64830C57F4E}.Release.Build.0 = Release|Win32
+		{1DED4956-06CD-448F-9CDC-5EE0D595E960}.Debug.ActiveCfg = Debug|Win32
+		{1DED4956-06CD-448F-9CDC-5EE0D595E960}.Debug.Build.0 = Debug|Win32
+		{1DED4956-06CD-448F-9CDC-5EE0D595E960}.Release.ActiveCfg = Release|Win32
+		{1DED4956-06CD-448F-9CDC-5EE0D595E960}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

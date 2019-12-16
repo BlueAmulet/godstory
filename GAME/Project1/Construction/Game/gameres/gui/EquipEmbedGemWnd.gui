@@ -1,0 +1,1336 @@
+
+
+//===========================================================================================================
+// 文档说明:镶嵌装备界面
+// 修改人: hanfei
+// 修改时间:2010-1-5
+//=========================================================================================================== 
+
+$EquipEmbedGemWnd_SelectCol = -1;
+//--- OBJECT WRITE BEGIN ---
+  new GuiBitmapWindowCtrl(EquipEmbedGemWnd) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      HorizSizing = "Proportion";
+      VertSizing = "Proportion";
+      position = "0 120";
+      Extent = "365 402";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "0";
+      mustPrerender = "0";
+      hovertime = "1000";
+      alpha = "0";
+      useFadeout = "1";
+      wrap = "0";
+      MoveHotspot = "0 0 1024 768";
+      
+    new GuiControl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         Profile = "GuiShopControlProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "0 11";
+         Extent = "70 390";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+
+         new GuiButtonCtrl() {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiBagButtonProfile_1";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "1 1";
+            Extent = "68 24";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            text = " 相关商品";
+            groupNum = "-1";
+            buttonType = "RadioButton";
+            useMouseEvents = "0";
+            IsStateOn = "1";
+         };
+         new GuiButtonCtrl() {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiBagButtonProfile_1";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "1 365";
+            Extent = "68 24";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            text = " 更多商品";
+            groupNum = "-1";
+            buttonType = "RadioButton";
+            useMouseEvents = "0";
+            IsStateOn = "0";
+         };
+         new GuiBitmapCtrl() {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "2 26";
+            Extent = "66 55";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            alpha = "255";
+            useFadeout = "1";
+            bitmap = "gameres/gui/images/GUIWindow99_1_019.png";
+            wrap = "0";
+
+            new dGuiShortCut() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "17 2";
+               Extent = "32 32";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               slotType = "0";
+               slotCol = "0";
+               boudary = "0 0 32 32";
+               disabledrag = "0";
+            };
+            new GuiTextCtrl() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               Profile = "GuiCurrencyShowInfoTextProfile_1";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "3 38";
+               Extent = "61 16";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               Margin = "0 0 0 0";
+               Padding = "0 0 0 0";
+               AnchorTop = "1";
+               AnchorBottom = "0";
+               AnchorLeft = "1";
+               AnchorRight = "0";
+               text = "9999";
+               maxLength = "1024";
+            };
+         };
+         new GuiBitmapCtrl() {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "2 83";
+            Extent = "66 55";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            alpha = "255";
+            useFadeout = "1";
+            bitmap = "gameres/gui/images/GUIWindow99_1_019.png";
+            wrap = "0";
+
+            new dGuiShortCut() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "17 2";
+               Extent = "32 32";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               slotType = "0";
+               slotCol = "0";
+               boudary = "0 0 32 32";
+               disabledrag = "0";
+            };
+            new GuiTextCtrl() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               Profile = "GuiCurrencyShowInfoTextProfile_1";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "3 38";
+               Extent = "61 16";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               Margin = "0 0 0 0";
+               Padding = "0 0 0 0";
+               AnchorTop = "1";
+               AnchorBottom = "0";
+               AnchorLeft = "1";
+               AnchorRight = "0";
+               text = "9999";
+               maxLength = "1024";
+            };
+         };
+         new GuiBitmapCtrl() {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "2 140";
+            Extent = "66 55";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            alpha = "255";
+            useFadeout = "1";
+            bitmap = "gameres/gui/images/GUIWindow99_1_019.png";
+            wrap = "0";
+
+            new dGuiShortCut() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "17 2";
+               Extent = "32 32";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               slotType = "0";
+               slotCol = "0";
+               boudary = "0 0 32 32";
+               disabledrag = "0";
+            };
+            new GuiTextCtrl() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               Profile = "GuiCurrencyShowInfoTextProfile_1";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "3 38";
+               Extent = "61 16";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               Margin = "0 0 0 0";
+               Padding = "0 0 0 0";
+               AnchorTop = "1";
+               AnchorBottom = "0";
+               AnchorLeft = "1";
+               AnchorRight = "0";
+               text = "9999";
+               maxLength = "1024";
+            };
+         };
+         new GuiBitmapCtrl() {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "2 197";
+            Extent = "66 55";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            alpha = "255";
+            useFadeout = "1";
+            bitmap = "gameres/gui/images/GUIWindow99_1_019.png";
+            wrap = "0";
+
+            new dGuiShortCut() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "17 2";
+               Extent = "32 32";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               slotType = "0";
+               slotCol = "0";
+               boudary = "0 0 32 32";
+               disabledrag = "0";
+            };
+            new GuiTextCtrl() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               Profile = "GuiCurrencyShowInfoTextProfile_1";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "3 38";
+               Extent = "61 16";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               Margin = "0 0 0 0";
+               Padding = "0 0 0 0";
+               AnchorTop = "1";
+               AnchorBottom = "0";
+               AnchorLeft = "1";
+               AnchorRight = "0";
+               text = "9999";
+               maxLength = "1024";
+            };
+         };
+         new GuiBitmapCtrl() {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "2 254";
+            Extent = "66 55";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            alpha = "255";
+            useFadeout = "1";
+            bitmap = "gameres/gui/images/GUIWindow99_1_019.png";
+            wrap = "0";
+
+            new dGuiShortCut() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "17 2";
+               Extent = "32 32";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               slotType = "0";
+               slotCol = "0";
+               boudary = "0 0 32 32";
+               disabledrag = "0";
+            };
+            new GuiTextCtrl() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               Profile = "GuiCurrencyShowInfoTextProfile_1";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "3 38";
+               Extent = "61 16";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               Margin = "0 0 0 0";
+               Padding = "0 0 0 0";
+               AnchorTop = "1";
+               AnchorBottom = "0";
+               AnchorLeft = "1";
+               AnchorRight = "0";
+               text = "9999";
+               maxLength = "1024";
+            };
+         };
+         new GuiBitmapCtrl() {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "2 311";
+            Extent = "66 55";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            alpha = "255";
+            useFadeout = "1";
+            bitmap = "gameres/gui/images/GUIWindow99_1_019.png";
+            wrap = "0";
+
+            new dGuiShortCut() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "17 2";
+               Extent = "32 32";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               slotType = "0";
+               slotCol = "0";
+               boudary = "0 0 32 32";
+               disabledrag = "0";
+            };
+            new GuiTextCtrl() {
+               canSaveDynamicFields = "0";
+               Enabled = "1";
+               isContainer = "0";
+               Profile = "GuiCurrencyShowInfoTextProfile_1";
+               HorizSizing = "right";
+               VertSizing = "bottom";
+               position = "3 38";
+               Extent = "61 16";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               mustPrerender = "0";
+               hovertime = "1000";
+               Margin = "0 0 0 0";
+               Padding = "0 0 0 0";
+               AnchorTop = "1";
+               AnchorBottom = "0";
+               AnchorLeft = "1";
+               AnchorRight = "0";
+               text = "9999";
+               maxLength = "1024";
+            };
+         };
+     };  
+    new GuiBitmapCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      Profile = "GuiModelessDialogProfile";
+      HorizSizing = "Proportion";
+      VertSizing = "Proportion";
+      position = "69 0";
+      Extent = "295 402";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      alpha = "0";
+      useFadeout = "1";
+      bitmap = "gameres/gui/images/GUIWindow50_1_001.png";
+      wrap = "0";
+
+      new GuiTextCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_8";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "90 22";
+         Extent = "125 23";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "0";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "装备镶嵌";
+         maxLength = "1024";
+      };
+      new GuiRichTextCtrl(EquipEmbedGem_txtHead) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "78 61";
+         Extent = "149 23";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         LineHeight = "0";
+      };
+      new GuiBitmapCtrl(EquipEmbedGem_bmpSlot1) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "46 272";
+         Extent = "49 60";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipEmbedGem_bmpSlot2) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "126 273";
+         Extent = "49 60";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipEmbedGem_bmpSlot3) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "209 272";
+         Extent = "49 60";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         wrap = "0";
+      };
+      new GuiRichTextCtrl(EquipEmbedGemTxt_Desc) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_4";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "55 238";
+         Extent = "195 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         LineHeight = "15";
+      };
+      new GuiButtonCtrl(EquipEmbedGem_btnHelp) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiHelpButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "247 1";
+         Extent = "21 21";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+         Command = "playFlash($Flash::Help::FlashEquipEmbedGemWnd, 0);";
+      };
+      new GuiButtonCtrl(EquipEmbedGem_btnClose) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCloseButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "268 6";
+         Extent = "25 25";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipEmbedGemWnd_CloseWnd();";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiButtonCtrl(EquipEmbedGem_btnUnmount) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "22 360";
+         Extent = "70 22";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipEmbedGemWnd_DoUnmount();";
+         hovertime = "1000";
+         text = "摘取宝石";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiButtonCtrl(EquipEmbedGem_btnMount) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "205 360";
+         Extent = "70 22";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipEmbedGemWnd_DoMount();";
+         hovertime = "1000";
+         text = "镶嵌宝石";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiBitmapCtrl(EquipEmbedGem_bmpGemBackground1) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "26 145";
+         Extent = "248 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipEmbedGem_bmpGem1) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "31 151";
+         Extent = "12 12";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipEmbedGem_bmpGemBackground2) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "26 174";
+         Extent = "248 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipEmbedGem_bmpGem2) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "31 180";
+         Extent = "12 12";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipEmbedGem_bmpGemBackground3) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "26 203";
+         Extent = "248 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipEmbedGem_bmpGem3) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "31 209";
+         Extent = "12 12";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         wrap = "0";
+      };
+      new GuiRichTextCtrl(EquipEmbedGem_txtInfo11) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "47 147";
+         Extent = "111 20";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         LineHeight = "0";
+      };
+      new GuiRichTextCtrl(EquipEmbedGem_txtInfo12) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "164 147";
+         Extent = "111 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         LineHeight = "0";
+      };
+      new GuiRichTextCtrl(EquipEmbedGem_txtInfo21) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "47 176";
+         Extent = "111 20";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         LineHeight = "0";
+      };
+      new GuiRichTextCtrl(EquipEmbedGem_txtInfo22) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "164 176";
+         Extent = "111 21";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         LineHeight = "0";
+      };
+      new GuiRichTextCtrl(EquipEmbedGem_txtInfo31) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "47 205";
+         Extent = "111 20";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         LineHeight = "0";
+      };
+      new GuiRichTextCtrl(EquipEmbedGem_txtInfo32) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "164 205";
+         Extent = "111 21";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         LineHeight = "0";
+      };
+      new dGuiShortCut(EquipEmbedGem_ItemEquip) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "135 93";
+         Extent = "32 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         slotType = "14";
+         slotCol = "0";
+         boudary = "0 0 32 32";
+         disabledrag = "0";
+      };
+      new dGuiShortCut(EquipEmbedGem_ItemGem1) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "55 280";
+         Extent = "32 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         slotType = "14";
+         slotCol = "1";
+         boudary = "0 0 32 32";
+         disabledrag = "0";
+         MouseDownCommand = "EquipEmbedGemWnd_SetSelectCol(1);";
+      };
+      new dGuiShortCut(EquipEmbedGem_ItemGem2) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "136 280";
+         Extent = "32 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         slotType = "14";
+         slotCol = "2";
+         boudary = "0 0 32 32";
+         disabledrag = "0";
+         MouseDownCommand = "EquipEmbedGemWnd_SetSelectCol(2);";
+      };
+      new dGuiShortCut(EquipEmbedGem_ItemGem3) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "217 280";
+         Extent = "32 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         slotType = "14";
+         slotCol = "3";
+         boudary = "0 0 32 32";
+         disabledrag = "0";
+         MouseDownCommand = "EquipEmbedGemWnd_SetSelectCol(3);";
+      };
+      new GuiBitmapCtrl(EquipEmbedGem_bmpEffect1) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiModelessDialogProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "46 272";
+         Extent = "50 50";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipEmbedGem_bmpEffect2) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiModelessDialogProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "126 272";
+         Extent = "50 50";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipEmbedGem_bmpEffect3) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiModelessDialogProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "209 272";
+         Extent = "50 50";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         wrap = "0";
+      };
+      new GuiMoveBitmapCtrl(EquipEmbedGem_bmpAnimation1) {
+	     profile = "GuiModelessDialogProfile";
+	     horizSizing = "center";
+	     vertSizing = "bottom";
+	     position = "55 280";
+	     extent = "32 32";
+	     minExtent = "8 8";
+	     visible = "0";
+	     helpTag  = "0";
+	     IsMove = "1";
+	     MoveType = "1";
+	     UpdateTime = "30";
+	     useFadeout = "0";
+	     bitmap = "./images/GUIEffects03_1_003.png";
+    	};
+    	new GuiMoveBitmapCtrl(EquipEmbedGem_bmpAnimation2) {
+	     profile = "GuiModelessDialogProfile";
+	     horizSizing = "center";
+	     vertSizing = "bottom";
+	     position = "136 280";
+	     extent = "32 32";
+	     minExtent = "8 8";
+	     visible = "0";    
+	     helpTag  = "0";
+	     IsMove = "1";
+	     MoveType = "1";
+	     UpdateTime = "30"; 
+	     useFadeout = "0";     
+	     bitmap = "./images/GUIEffects03_1_003.png";
+    	};
+    	new GuiMoveBitmapCtrl(EquipEmbedGem_bmpAnimation3) {
+	     profile = "GuiModelessDialogProfile";
+	     horizSizing = "center";
+	     vertSizing = "bottom";
+	     position = "217 280";
+	     extent = "32 32";
+	     minExtent = "8 8";   
+	     visible = "0";    
+	     helpTag  = "0";
+	     IsMove = "1";
+	     MoveType = "1";
+	     UpdateTime = "30";
+	     useFadeout = "0";   
+	     bitmap = "./images/GUIEffects03_1_003.png";
+    	};
+   };
+};
+function EquipEmbedGemWnd_OnRefreshPart(%part)
+{
+	//////////////////////////////////////////////
+	// %part:  表示镶嵌槽的位置(slot1, slot2, slot3)
+	// %color: 表示镶嵌槽的颜色
+	// %type:  表示镶嵌槽的状态
+	//  -1: 错误
+	//	0:	不允许打孔
+	//	1:  未打孔
+	//	2:  可镶嵌（打孔但未镶嵌），槽中没有宝石
+	//  3:  可镶嵌（打孔但未镶嵌）,槽中有未镶嵌的宝石
+	//	4:	已镶嵌（打孔并镶嵌），不属于替换操作
+	//	5:	已镶嵌（打孔并镶嵌），属于替换操作
+	%color = MountGem_GetSlotGemColor(%part);
+	%type = MountGem_GetSlotType(%part);
+	//////////////////////////////////////////////
+	
+	%GemBackground_bitmap = "";
+	%Gem_bitmap = "";
+	%Effect_bitmap = "";
+	%Slot_bitmap = "";
+	%txtInfo1 = "";
+	%txtInfo2 = "";
+	
+	%Is_Gem_bitmapEnable = true;
+	%Is_Effect_bitmapEnable = true;
+	%Is_Slot_bitmapEnable = true;
+	
+	echo ("%part: " @ %part);
+	echo ("%type: " @ %type);
+	echo ("%color: " @ %color);
+	
+	if (%type == 2 || %type == 3)
+		%Effect_bitmap = "gameres/gui/images/GUIWindow50_1_013.png";
+	else if (%type == 4 || %type == 5)
+		%Effect_bitmap = "gameres/gui/images/GUIWindow50_1_014.png";
+	else
+		%Effect_bitmap = "";
+
+	if (%color == 0)     //无色	///（不允许打孔，或未打孔）///
+	{
+		if(%type == 1)
+		{
+			%GemBackground_bitmap = "gameres/gui/images/GUIWindow50_1_006.png";
+			%Gem_bitmap = "";
+			%Slot_bitmap = "";
+			%txtInfo1 = "<t v='1' c='0xffffffff'>未知插槽</t><b/>";
+			%txtInfo2 = "<t h='1' v='1' c='0xffffffff'>未打孔</t><b/>";
+		}
+		else
+		{
+			%GemBackground_bitmap = "";
+			%Gem_bitmap = "";
+			%Slot_bitmap = "";
+			%txtInfo1 = "";
+			%txtInfo2 = "";
+		}
+	}
+	else if (%color == 1)	//红色
+	{
+		%GemBackground_bitmap = "gameres/gui/images/GUIWindow50_1_003.png";
+		%Slot_bitmap = "gameres/gui/images/GUIWindow50_1_010.png";
+		if (%type <= 1)
+		{
+			$Gem_bitmap = "";			
+		}
+		else if (%type > 2)
+		{
+			%Gem_bitmap = "gameres/gui/images/GUIWindow50_1_007.png";	
+		}
+		//获得镶嵌的宝石描述
+		%txtInfo1 = MountGem_GetSlotGemDesc(%part);
+		%txtInfo2 = MountGem_GetSlotGemName(%part);
+		if (%txtInfo1 $= "" || %txtInfo2 $= "")
+		{
+			%txtInfo1 = "<t v='1' c='0xffffffff'>红色插槽</t><b/>";
+			%txtInfo2 = "<t h='1' v='1' c='0xffffffff'>可镶嵌</t><b/>";
+		}
+	}
+	else if (%color == 2)	//绿色
+	{
+		%GemBackground_bitmap = "gameres/gui/images/GUIWindow50_1_005.png";
+		%Slot_bitmap = "gameres/gui/images/GUIWindow50_1_012.png";
+		if (%type <= 1)
+		{
+			$Gem_bitmap = "";
+		}
+		else if (%type > 2)
+		{
+			%Gem_bitmap = "gameres/gui/images/GUIWindow50_1_009.png";				
+		}
+		//获得镶嵌的宝石描述
+		%txtInfo1 = MountGem_GetSlotGemDesc(%part);
+		%txtInfo2 = MountGem_GetSlotGemName(%part);
+		if (%txtInfo1 $= "" || %txtInfo2 $= "")
+		{
+			%txtInfo1 = "<t v='1' c='0xffffffff'>绿色插槽</t><b/>";
+			%txtInfo2 = "<t h='1' v='1' c='0xffffffff'>可镶嵌</t><b/>";
+			echo("1: " @ %txtInfo1);
+		}
+		
+		echo(%Gem_bitmap);
+		echo(%GemBackground_bitmap);
+	}
+	else if (%color == 3) //蓝色
+	{
+		%GemBackground_bitmap = "gameres/gui/images/GUIWindow50_1_004.png";
+		%Slot_bitmap = "gameres/gui/images/GUIWindow50_1_011.png";
+		if (%type <= 1)
+		{
+			$Gem_bitmap = "";			
+		}
+		else if (%type > 2)
+		{
+			%Gem_bitmap = "gameres/gui/images/GUIWindow50_1_008.png";	
+		}
+		//获得镶嵌的宝石描述
+		%txtInfo1 = MountGem_GetSlotGemDesc(%part);
+		%txtInfo2 = MountGem_GetSlotGemName(%part);
+		if (%txtInfo1 $= "" || %txtInfo2 $= "")
+		{
+			%txtInfo1 = "<t v='1' c='0xffffffff'>蓝色插槽</t><b/>";
+			%txtInfo2 = "<t h='1' v='1' c='0xffffffff'>可镶嵌</t><b/>";
+		}
+	}
+	
+	if (%Slot_bitmap $= "")
+	{
+		%Is_Slot_bitmapEnable = false;
+	}
+	else
+	{
+		%Is_Slot_bitmapEnable = true;
+	}
+	if (%Gem_bitmap $= "")
+	{
+		%Is_Gem_bitmapEnable = false;
+	}
+	else
+	{
+		%Is_Gem_bitmapEnable = true;
+	}	
+	if (%Effect_bitmap $= "")
+	{
+		%Is_Effect_bitmapEnable = false;
+	}
+	else
+	{
+		%Is_Effect_bitmapEnable = true;
+	}
+		
+	if (%part == 1)		// 第一个插槽
+	{
+		echo("2: " @ %txtInfo1);
+		EquipEmbedGem_bmpGemBackground1.setVisible(%txtInfo1 !$= "");
+		EquipEmbedGem_bmpGemBackground1.bitmap = %GemBackground_bitmap;
+		EquipEmbedGem_bmpGem1.bitmap = %Gem_bitmap;
+		EquipEmbedGem_bmpGem1.setvisible(%Is_Gem_bitmapEnable);
+		EquipEmbedGem_bmpEffect1.bitmap = %Effect_bitmap;
+		EquipEmbedGem_bmpEffect1.setvisible(%Is_Effect_bitmapEnable);
+		EquipEmbedGem_bmpSlot1.bitmap = %Slot_bitmap;
+		EquipEmbedGem_bmpSlot1.setvisible(%Is_Slot_bitmapEnable);
+		EquipEmbedGem_txtInfo11.setContent(%txtInfo1);
+		EquipEmbedGem_txtInfo12.setContent(%txtInfo2);
+		EquipEmbedGem_ItemGem1.setvisible( %Is_Slot_bitmapEnable );
+	}
+	if (%part == 2)		// 第二个插槽
+	{
+		EquipEmbedGem_bmpGemBackground2.setVisible(%txtInfo1 !$= "");
+		EquipEmbedGem_bmpGemBackground2.bitmap = %GemBackground_bitmap;
+		EquipEmbedGem_bmpGem2.bitmap = %Gem_bitmap;
+		EquipEmbedGem_bmpGem2.setvisible(%Is_Gem_bitmapEnable);
+		EquipEmbedGem_bmpEffect2.bitmap = %Effect_bitmap;
+		EquipEmbedGem_bmpEffect2.setvisible(%Is_Effect_bitmapEnable);
+		EquipEmbedGem_bmpSlot2.bitmap = %Slot_bitmap;
+		EquipEmbedGem_bmpSlot2.setvisible(%Is_Slot_bitmapEnable);
+		EquipEmbedGem_txtInfo21.setContent(%txtInfo1);
+		EquipEmbedGem_txtInfo22.setContent(%txtInfo2);
+		EquipEmbedGem_ItemGem2.setvisible( %Is_Slot_bitmapEnable );
+	}
+	if (%part == 3)		// 第三个插槽
+	{
+		EquipEmbedGem_bmpGemBackground3.setVisible(%txtInfo1 !$= "");
+		EquipEmbedGem_bmpGemBackground3.bitmap = %GemBackground_bitmap;
+		EquipEmbedGem_bmpGem3.bitmap = %Gem_bitmap;
+		EquipEmbedGem_bmpGem3.setvisible(%Is_Gem_bitmapEnable);
+		EquipEmbedGem_bmpEffect3.bitmap = %Effect_bitmap;
+		EquipEmbedGem_bmpEffect3.setvisible(%Is_Effect_bitmapEnable);
+		EquipEmbedGem_bmpSlot3.bitmap = %Slot_bitmap;
+		EquipEmbedGem_bmpSlot3.setvisible(%Is_Slot_bitmapEnable);
+		EquipEmbedGem_txtInfo31.setContent(%txtInfo1);
+		EquipEmbedGem_txtInfo32.setContent(%txtInfo2);
+		EquipEmbedGem_ItemGem3.setvisible( %Is_Slot_bitmapEnable );
+	}
+}
+
+function EquipEmbedGemWnd_OnRefreshWnd()
+{
+	%equipName = MountGem_GetEquipName();
+	EquipEmbedGem_txtHead.setContent(%equipName);
+
+	for (%i = 1; %i <= 3; %i++)
+	{
+		EquipEmbedGemWnd_OnRefreshPart(%i);
+	}
+}
+
+function EquipEmbedGemWnd_OpenWnd()
+{
+	$IsDirty++;
+	EquipEmbedGemWnd_SetSelectCol(-1);
+	EquipEmbedGemWnd_OnRefreshWnd();
+	EquipEmbedGemWnd.setvisible(1);
+	EquipEmbedGemTxt_Desc.setContent("您可以在对应的插槽内镶嵌对应颜色宝石，以提升装备属性");
+}
+
+function EquipEmbedGemWnd_CloseWnd()
+{
+	$IsDirty--;
+	EquipEmbedGemWnd.setvisible(0);
+	EquipEmbedGemWnd_SetSelectCol(-1);
+	EquipEmbedGem_Close();
+}
+
+function EquipEmbedGemWnd_DoMount()
+{
+	MountGem_DoMount($EquipEmbedGemWnd_SelectCol);
+}
+
+function EquipEmbedGemWnd_DoUnmount()
+{
+	MountGem_DoUnmount($EquipEmbedGemWnd_SelectCol);
+}
+
+function EquipEmbedGemWnd_RefreshButtons()
+{
+	%type = MountGem_GetSlotType($EquipEmbedGemWnd_SelectCol);
+	//  -1: 错误
+	//	0:	不允许打孔
+	//	1:  未打孔
+	//	2:  可镶嵌（打孔但未镶嵌），槽中没有宝石
+	//  3:  可镶嵌（打孔但未镶嵌）,槽中有未镶嵌的宝石
+	//	4:	已镶嵌（打孔并镶嵌），不属于替换操作
+	//	5:	已镶嵌（打孔并镶嵌），属于替换操作
+	
+	if (%type == -1 || %type == 0 || %type == 1 || %type == 2)
+	{
+		EquipEmbedGem_btnMount.setActive(0);
+		EquipEmbedGem_btnUnmount.setActive(0);
+	}
+	else if (%type == 3 || %type == 5)
+	{
+		EquipEmbedGem_btnMount.setActive(1);
+		EquipEmbedGem_btnUnmount.setActive(0);
+	}
+	else if (%type == 4)
+	{
+		EquipEmbedGem_btnMount.setActive(0);
+		EquipEmbedGem_btnUnmount.setActive(1);
+	}
+}
+
+function EquipEmbedGemWnd_SetSelectCol(%col)
+{
+	$EquipEmbedGemWnd_SelectCol = %col;
+	
+	EquipEmbedGem_bmpAnimation1.setVisible(0);
+	EquipEmbedGem_bmpAnimation2.setVisible(0);
+	EquipEmbedGem_bmpAnimation3.setVisible(0);
+	
+	if (%col >= 1 && %col <= 3)
+	{
+		(EquipEmbedGem_bmpAnimation @ %col ).setVisible(1);
+	}
+	
+	EquipEmbedGemWnd_RefreshButtons();
+}
+///////////////////////////////////////////////////////////////
+
+function EquipEmbedGemWnd_MountCheck(%nDestSlotIndex)
+{
+	%text = "镶嵌宝石到已镶嵌的槽会丢失原有的宝石.你确定要继续吗？";
+	%cmd = "MountGem_ConfirmMount(" @ %nDestSlotIndex @ ");";
+	Dialog_OK_Cancel.SetContent(%text);
+	Dialog_OK_Cancel.SetOK("确定", %cmd);
+	Dialog_OK_Cancel.SetCancel("取消", "MountGem_CancelMount();");
+	Dialog_OK_Cancel.setVisible(1);
+}
+
+function EquipEmbedGemWnd_UnmountCheck(%nDestSlotIndex, %MaterialId, %MaterialNum)
+{
+	%text = "摘取宝石将消耗【" @ %MaterialId @ "】x" @ %MaterialNum @ ".你确定要摘取吗？";
+	%cmd = "MountGem_ConfirmUnmount(" @ %nDestSlotIndex @ ");";
+	Dialog_OK_Cancel.SetContent(%text);
+	Dialog_OK_Cancel.SetOK("确定", %cmd);
+	Dialog_OK_Cancel.SetCancel("取消", "MountGem_CancelUnmount();");
+	Dialog_OK_Cancel.setVisible(1);
+}
+
+function EquipEmbedGemWnd_OnMountSuccess(%nHoleIndex)
+{
+	EquipEmbedGemWnd_SetSelectCol(-1);
+}
+
+function EquipEmbedGemWnd_OnUnmountSuccess(%nHoleIndex)
+{
+	EquipEmbedGemWnd_SetSelectCol(-1);
+}
+
+GameMainWndGui_Layer3.Add(EquipEmbedGemWnd);
+//--- OBJECT WRITE END ---

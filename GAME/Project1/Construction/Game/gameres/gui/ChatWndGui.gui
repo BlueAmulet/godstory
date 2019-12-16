@@ -1,0 +1,551 @@
+//===========================================================================================================
+// 文档说明:聊天窗口
+// 创建时间:2009-4-1
+// 创建人: soar
+//=========================================================================================================== 
+
+new GuiControl(ChatWndGuiAll) {
+   profile = "GuiModelessDialogProfile";
+   horizSizing = "right";
+   vertSizing = "top";
+   position = "0 0";
+   extent = "800 600";
+   minExtent = "8 8";
+   visible = "1";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+   
+   new GuiControlExt(ChatWndGui) {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "0 302";
+      extent = "330 478";
+      minExtent = "8 8";
+      visible = "1";
+      helpTag = "0";
+      useVariable = "0";
+      tile = "0";
+      
+      new GuiControl(ChatWndGui_Wnd1) {
+         profile = "GuiChatBackGroundProfile";
+         horizSizing = "right";
+         vertSizing = "top";
+         position = "0 0";
+         extent = "325 74";
+         minExtent = "8 8";
+         visible = "1";
+         helpTag = "0";
+         useVariable = "0";
+         tile = "0";
+         
+         new guiMessageList(ChatWnd_ShowMessage1)    
+         {
+         	 profile = "GuiCurrencyShowInfoTextProfile_4";
+         	 horizSizing = "right";
+            vertSizing = "top";
+            position = "20 0";
+            extent = "295 74";
+            minExtent = "8 8";
+            ContentSize = "315 73";
+            EntrySize = "300 20"; 
+            TextOffset	= "1";
+            MaxStorageLine = 50;
+            visible = "1";
+            
+            Colors[0] = "255 0 0 255";      //系统
+            Colors[1] = "255 255 0 255";    //跑马
+            Colors[2] = "255 255 0 255";    //跨服
+            Colors[3] = "255 255 0 255";    //全服
+            Colors[4] = "0 0 255 255";      //门宗
+            Colors[5] = "255 0 255 255";    //帮会
+            Colors[6] = "0 128 0 255";      //团队
+            Colors[7] = "0 255 0 255";      //队伍
+            Colors[8] = "255 255 255 255";  //群消息
+            Colors[9] = "0 255 255 255";    //同城  
+            Colors[10] = "255 102 153 255"; //私聊
+            Colors[11] = "255 255 255 255"; //GM 
+            
+            TypeText[0] = "";
+            TypeText[1] = "";
+            TypeText[2] = "[跨服]";
+            TypeText[3] = "[全服]";
+            TypeText[4] = "[门宗]";
+            TypeText[5] = "[帮会]";
+            TypeText[6] = "[团队]";
+            TypeText[7] = "[队伍]";
+            TypeText[8] = "";
+            TypeText[9] = "[同城]";
+            TypeText[10] = "[私聊]";
+            TypeText[11] = "[GM消息]";
+            
+         };    
+         
+         new GuiButtonCtrl(UpPageButton1) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiChatWndUpPageButtonProfile";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "2 5";
+            Extent = "16 15";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            Command = "ChatPageUp1();";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "PushButton";
+         };
+         
+         new GuiButtonCtrl(DownPageButton1) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiChatWndDownPageButtonProfile";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "2 22";
+            Extent = "16 15";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            Command = "ChatPageDown1();";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "PushButton";
+         };
+         
+         new GuiButtonCtrl(FinallyDownPageButton1) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiChatWndFinallyDownPageButtonProfile";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "2 39";
+            Extent = "16 15";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            Command = "ChatPageAllDown1();";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "PushButton";
+         };
+      };
+      
+      new GuiBitmapCtrl(CleftLineBitmap) {
+         profile = "GuiModelessDialogProfile";
+         horizSizing = "width";
+         vertSizing = "top";
+         position = "0 73";                      
+         extent = "326 2";                     
+         minExtent = "1 3";                      
+         visible = "1";                          
+         helpTag  = "0";                          
+         bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_022";
+      };
+      
+      new GuiControl(ChatWndGui_Wnd2) {
+         profile = "GuiChatBackGroundProfile";
+         horizSizing = "right";
+         vertSizing = "top";
+         position = "0 74";
+         extent = "325 112";
+         minExtent = "8 8";
+         visible = "1";
+         helpTag = "0";
+         useVariable = "0";
+         tile = "0";
+              	           
+         new guiMessageList(ChatWnd_ShowMessage2)    
+         {
+         	 profile = "GuiCurrencyShowInfoTextProfile_4";
+         	 horizSizing = "right";
+            vertSizing = "top";
+            position = "20 0";
+            extent = "295 112";
+            minExtent = "8 8";
+            ContentSize = "315 112";
+            EntrySize = "300 20";
+            TextOffset	= "1";
+            MaxStorageLine = 50;
+            visible = "1";
+            
+            Colors[0] = "255 0 0 255";      //系统
+            Colors[1] = "255 255 0 255";    //跑马
+            Colors[2] = "255 255 0 255";    //跨服
+            Colors[3] = "255 255 0 255";    //全服
+            Colors[4] = "0 0 255 255";      //门宗
+            Colors[5] = "255 0 255 255";    //帮会
+            Colors[6] = "0 128 0 255";      //团队
+            Colors[7] = "0 255 0 255";      //队伍
+            Colors[8] = "255 255 255 255";  //群消息
+            Colors[9] = "0 255 255 255";    //同城  
+            Colors[10] = "255 102 153 255"; //私聊
+            Colors[11] = "255 255 255 255"; //GM 
+            
+            TypeText[0] = "";
+            TypeText[1] = "";
+            TypeText[2] = "[跨服]";
+            TypeText[3] = "[全服]";
+            TypeText[4] = "[门宗]";
+            TypeText[5] = "[帮会]";
+            TypeText[6] = "[团队]";
+            TypeText[7] = "[队伍]";
+            TypeText[8] = "";
+            TypeText[9] = "[同城]";
+            TypeText[10] = "[私聊]";
+            TypeText[11] = "[GM消息]";
+         };        
+              
+         new GuiButtonCtrl(UpPageButton2) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiChatWndUpPageButtonProfile";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "2 32";
+            Extent = "16 15";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            Command = "ChatPageUp2();";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "PushButton";
+         };
+         
+         new GuiButtonCtrl(DownPageButton2) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiChatWndDownPageButtonProfile";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "2 49";
+            Extent = "16 15";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            Command = "ChatPageDown2();";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "PushButton";
+         };
+         
+         new GuiButtonCtrl(FinallyDownPageButton2) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiChatWndFinallyDownPageButtonProfile";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "2 66";
+            Extent = "16 15";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            Command = "ChatPageAllDown2();";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "PushButton";
+         };
+      };
+      
+      new GuiControl(ChatWndGui_Button) {
+         profile = "GuiDefaultProfile";
+         horizSizing = "right";
+         vertSizing = "top";
+         position = "0 184";
+         extent = "330 19";
+         minExtent = "8 8";
+         visible = "1";
+         helpTag = "0";
+         useVariable = "0";
+         tile = "0";
+         
+         new GuiButtonCtrl(SelectChannelButton1) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiSelectChannelButtonProfile_1";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "0 0";
+            Extent = "36 21";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            Command = "";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "RadioButton";
+            IsStateOn = "1";
+         };
+         
+         new GuiButtonCtrl(SelectChannelButton2) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiSelectChannelButtonProfile_2";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "35 0";
+            Extent = "36 21";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            Command = "SelectChatInputChunnel(4);";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "RadioButton";
+         };
+         
+         new GuiButtonCtrl(SelectChannelButton3) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiSelectChannelButtonProfile_4";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "70 0";
+            Extent = "36 21";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            Command = "SelectChatInputChunnel(1);";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "RadioButton";
+         };
+         
+         new GuiButtonCtrl(SelectChannelButton4) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiSelectChannelButtonProfile_5";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "105 0";
+            Extent = "36 21";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            Command = "SelectChatInputChunnel(3);";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "RadioButton";
+         };
+         
+         new GuiButtonCtrl(SelectChannelButton5) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiSelectChannelButtonProfile_3";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "140 0";
+            Extent = "36 21";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            Command = "SelectChatInputChunnel(2);";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "RadioButton";
+         };
+         
+         new GuiButtonCtrl(UpMaqnifyButton) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiChatWndUpMaqnifyButtonProfile";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "174 0";
+            Extent = "21 21";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            Command = "UpMaqnifyChatWnd(0);";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "PushButton";
+         };
+         
+         new GuiButtonCtrl(DownDwindleButton) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiChatWndDownDwindleButtonProfile";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "192 0";
+            Extent = "21 21";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            Command = "UpMaqnifyChatWnd(1);";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "PushButton";
+         };
+         
+         new GuiButtonCtrl(RightMaqnifyButton) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiChatWndRightMaqnifyButtonProfile";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "211 0";
+            Extent = "21 21";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            Command = "UpMaqnifyChatWnd(2);";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "PushButton";
+         };
+         
+         new GuiButtonCtrl(RightDwindleButton) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiChatWndRightDwindleButtonProfile";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "230 0";
+            Extent = "21 21";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            Command = "UpMaqnifyChatWnd(3);";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "PushButton";
+         };
+         
+         new GuiButtonCtrl(ChatWndSettingButton) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiChatWndSettingButtonProfile";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "249 0";
+            Extent = "21 21";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            //Command = "ParseLogin();";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "PushButton";
+         };
+         
+         new GuiButtonCtrl(ChatWndNewButton) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiChatWndNewButtonProfile";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "268 0";
+            Extent = "21 21";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            //Command = "ParseLogin();";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "PushButton";
+         };
+         
+         new GuiButtonCtrl(ChatWndSaveButton) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiChatWndSaveButtonProfile";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "287 0";
+            Extent = "21 21";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            //Command = "ParseLogin();";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "PushButton";
+         };
+         
+         new GuiButtonCtrl(ChatWndUnLockButton) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiChatWndUnLockButtonProfile";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "306 0";
+            Extent = "21 21";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "1";
+            Command = "ChatWndLock();";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "PushButton";
+         };
+         
+         new GuiButtonCtrl(ChatWndLockButton) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiChatWndLockButtonProfile";
+            HorizSizing = "right";
+            VertSizing = "top";
+            Position = "306 0";
+            Extent = "21 21";
+            MinExtent = "8 8";
+            canSave = "1";
+            Visible = "0";
+            Command = "ChatWndUnLock();";
+            hovertime = "1000";
+            text = "";
+            groupNum = "-1";
+            buttonType = "PushButton";
+         };
+      };
+   };  
+};
+
+GameMainWndGui_Layer2.Add(ChatWndGuiAll);
+
+
+

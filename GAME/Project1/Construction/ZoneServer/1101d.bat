@@ -1,0 +1,1 @@
+start ZoneServer_08d.exe -mission gameres/data/missions/1101.mis

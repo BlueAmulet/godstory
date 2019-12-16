@@ -1,0 +1,189 @@
+//===========================================================================================================
+// PowerEngine 
+// Copyright (C) FireRain.com, Inc.
+
+// 文档说明:物品分解
+// 创建时间:2010-01-18
+// 创建人: thinking
+//===========================================================================================================
+new GuiBitmapWindowCtrl(itemSplitGui) {
+	Profile = "GuiDefaultProfile";
+  HorizSizing = "Proportion";
+  VertSizing = "Proportion";
+  position = "0 132";
+  Extent = "295 318";
+  Visible = "0";
+  useFadeout = "1";
+  bitmap = $GUI::GUISkinDirectory @ "GUIWindow57_1_005.png";
+  MoveHotspot = "0 0 1024 768"; 
+  
+  //帮助按钮
+  new GuiButtonCtrl() {
+    Profile = "GuiHelpButtonProfile";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "247 0";
+    Extent = "21 21";
+    Visible = "1";
+    Command = "playFlash($Flash::Help::FlashitemSplitGui, 0);";
+    buttonType = "PushButton";
+  };
+  //关闭按钮
+  new GuiButtonCtrl() {
+    Profile = "GuiCloseButtonProfile";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "266 6";
+    Extent = "25 25";
+    Visible = "1";
+    command = "closeItemSplitGui();";
+    buttonType = "PushButton";
+  };
+  //待分解物品
+  new dGuiShortCut(ShortCut_itemSplit0) {
+  	Profile = "GuiDefaultProfile";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "133 131";
+    Extent = "32 32";
+    Visible = "1";
+    slotType = "41";
+    slotCol = "0";
+    boudary = "0 0 32 32";
+    disabledrag = "0";
+  };    
+  //8个分解材料产物
+  new dGuiShortCut(ShortCut_itemSplit1) {
+  	Profile = "GuiDefaultProfile";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "133 67";
+    Extent = "32 32";
+    Visible = "1";
+    slotType = "41";
+    slotCol = "1";
+    boudary = "0 0 32 32";
+    disabledrag = "0";
+  };    
+  new dGuiShortCut(ShortCut_itemSplit2) {
+  	Profile = "GuiDefaultProfile";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "184 80";
+    Extent = "32 32";
+    Visible = "1";
+    slotType = "41";
+    slotCol = "2";
+    boudary = "0 0 32 32";
+    disabledrag = "0";
+  };    
+  new dGuiShortCut(ShortCut_itemSplit3) {
+  	Profile = "GuiDefaultProfile";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "197 131";
+    Extent = "32 32";
+    Visible = "1";
+    slotType = "41";
+    slotCol = "3";
+    boudary = "0 0 32 32";
+    disabledrag = "0";
+  };    
+  new dGuiShortCut(ShortCut_itemSplit4) {
+  	Profile = "GuiDefaultProfile";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "182 179";
+    Extent = "32 32";
+    Visible = "1";
+    slotType = "41";
+    slotCol = "4";
+    boudary = "0 0 32 32";
+    disabledrag = "0";
+  };    
+  new dGuiShortCut(ShortCut_itemSplit5) {
+  	Profile = "GuiDefaultProfile";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "133 195";
+    Extent = "32 32";
+    Visible = "1";
+    slotType = "41";
+    slotCol = "5";
+    boudary = "0 0 32 32";
+    disabledrag = "0";
+  };    
+  new dGuiShortCut(ShortCut_itemSplit6) {
+  	Profile = "GuiDefaultProfile";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "84 179";
+    Extent = "32 32";
+    Visible = "1";
+    slotType = "41";
+    slotCol = "6";
+    boudary = "0 0 32 32";
+    disabledrag = "0";
+  };    
+  new dGuiShortCut(ShortCut_itemSplit7) {
+  	Profile = "GuiDefaultProfile";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "69 131";
+    Extent = "32 32";
+    Visible = "1";
+    slotType = "41";
+    slotCol = "7";
+    boudary = "0 0 32 32";
+    disabledrag = "0";
+  };    
+  new dGuiShortCut(ShortCut_itemSplit8) {
+  	Profile = "GuiDefaultProfile";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "83 80";
+    Extent = "32 32";
+    Visible = "1";
+    slotType = "41";
+    slotCol = "8";
+    boudary = "0 0 32 32";
+    disabledrag = "0";
+  };    
+  new GuiMLTextCtrl(itemSplit_MLText) {
+    Profile = "GuiCurrencyShowInfoTextProfile_1";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "32 246";
+    Extent = "264 24";
+    Visible = "1";
+    lineSpacing = "1";
+    text = "(可直接将待分解物品从包裹栏拖进分解槽中)";
+  };
+  
+  //分解按钮
+  new GuiButtonCtrl(itemSplit_BntCtrl) {
+    Profile = "GuiUpgradeButtonProfile_1";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "112 278";
+    Extent = "70 22";
+    Visible = "1";
+    Text = "分  解";
+    command = "uiItemSplitStart();";
+    buttonType = "PushButton";
+  };
+  //全部拾取按钮
+  new GuiButtonCtrl(itemSplit_PickupAll_Bnt) {
+    Profile = "GuiXianZhuanNoteButtonProfile_1";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "203 45";
+    Extent = "80 22";
+    Visible = "1";
+    Text = "全部放入包裹";
+    command = "uiItemSplitPickupAll();";
+    buttonType = "PushButton";
+  };
+};
+
+GameMainWndGui_Layer3.Add(itemSplitGui);

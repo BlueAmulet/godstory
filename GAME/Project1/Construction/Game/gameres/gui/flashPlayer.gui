@@ -1,0 +1,160 @@
+//=============================================================================================================
+//文件名：flashPlayer.gui
+//描述：创建flash文件播放控件
+//创建者：王庆国
+//创建日期：2010年1月29日
+//历史：
+//=============================================================================================================
+/*
+new GuiControl(flashPlayerCtrl) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         Profile = "GuiModelessDialogProfile";
+         HorizSizing = "Proportion";
+         VertSizing = "Proportion";
+         position = "150 150";
+         Extent = "1024 768";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "0";
+         mustPrerender = "0";
+         hovertime = "1000";
+   new GuiFlashCtrl(flashPlayer) {      
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "0 0";
+      Extent = "800 600";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      flashName = "gameres/help.swf";
+      
+   };
+};
+*/
+new GuiWindowCtrl(flashPlayerCtrl) {
+   canSaveDynamicFields = "0";
+   Profile = "GuiGeneralDialogProfile_1";
+   HorizSizing = "center";
+   VertSizing = "center";
+   Position = "320 280";
+   Extent = "820 650";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+   text = "";
+   maxLength = "255";
+   resizeWidth = "0";
+   resizeHeight = "0";
+   canMove = "1";
+   canClose = "1";
+   canHelp  = "1";
+   canMinimize = "0";
+   canMaximize = "0";
+   minSize = "50 50";
+   TitleHeight = 40;
+   closeCommand = "flashPlayerCtrl.SetVisible(false);";
+      
+		  new GuiFlashCtrl(flashPlayer) {      
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "10 35";
+      Extent = "800 600";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      flashName = "gameres/1.swf";
+   };
+};
+//函数
+//%flashFilename:要播放的flash文件的名字
+//%isBlendBk:是否混合背景
+function playFlash(%flashFilename, %isBlendBk)
+{
+    echo("===================================playFlash================================================");
+    flashPlayer.flashName = %flashFilename;
+    flashPlayer.blendBk = %isBlendBk;
+    flashPlayerCtrl.SetVisible(true);
+    GameMainWndGui_Layer3.SetVisible(true);
+    echo("===================================playFlash end============================================");
+}
+
+
+GameMainWndGui_Layer3.Add(flashPlayerCtrl);
+
+
+
+//帮助flash的文件变量
+//命名规则：Flash::功能::Flash对象名
+//使用示例：Command = "playFlash($Flash::Help::FlashSoulGeniusWndGui, 0);";
+
+//BagWndGui.gui
+$Flash::Help::FlashAllBagWndGui_HelpButton = "gameres/help.swf";
+$Flash::Help::FlashSingleBagWndGui_HelpButton = "gameres/help.swf";
+//BankWndGui.gui
+$Flash::Help::FlashBankWnd = "gameres/help.swf";
+//BusinessCityWndGui.gui
+$Flash::Help::FlashBusinessCityWndGui = "gameres/help.swf";
+$Flash::Help::FlashShoppingBasketWndGui = "gameres/help.swf";
+//DestroySplitItemGui.gui
+$Flash::Help::FlashItemAppraiseWndGui = "gameres/help.swf";
+$Flash::Help::FlashDurabilityStrengthenWndGui = "gameres/help.swf";
+$Flash::Help::FlashFlashItemRepairWndGui = "gameres/help.swf";
+//EquipEmbedGemWnd.gui
+$Flash::Help::FlashEquipEmbedGemWnd = "gameres/help.swf";
+//EquipPunchHole.gui
+$Flash::Help::FlashEquipPunchHoleWnd = "gameres/help.swf";
+//EquipStrengthenWndGui.gui
+$Flash::Help::FlashEquipStrengthenWnd = "gameres/help.swf";
+//itemCompose.gui
+$Flash::Help::FlashitemComposeGui = "gameres/help.swf";
+//itemSplit.gui
+$Flash::Help::FlashitemSplitGui = "gameres/help.swf";
+//LivingSkillWndGui.gui
+$Flash::Help::FlashLivingSkillStudyGui = "gameres/help.swf";
+$Flash::Help::FlashLivingPrescriptionGui = "gameres/help.swf";
+//MailWndGui.gui
+$Flash::Help::FlashMailWnd = "gameres/help.swf";
+//MissionWndGui.gui
+$Flash::Help::FlashMissionWndGui_EntireWnd = "gameres/help.swf";
+//NewTeamWndGui.gui
+$Flash::Help::FlashNewTeamWndGui = "gameres/help.swf";
+//PetBackToYoungWndGui.gui
+$Flash::Help::FlashPetBackToYoungWnd = "gameres/help.swf";
+//PetCheckupWndGui.gui
+$Flash::Help::FlashPetCheckupWnd = "gameres/help.swf";
+//PetDecompoundWndGui.gui
+$Flash::Help::FlashPetDecompoundWnd = "gameres/help.swf";
+//PetInfoGui.gui
+$Flash::Help::FlashPetInfoGui = "gameres/help.swf";
+//PetStrengthenWndGui.gui
+$Flash::Help::FlashPetStrengthenWnd = "gameres/help.swf";
+//PlayerInfoGui.gui
+$Flash::Help::FlashPlayerInfoGui = "gameres/help.swf";
+//TargetInfoGui.gui
+$Flash::Help::FlashTargetInfoGui = "gameres/help.swf";
+//RankWndGui.gui
+$Flash::Help::FlashRankWndGui = "gameres/help.swf";
+//RelationWndGui.gui
+$Flash::Help::FlashRelationWndGui = "gameres/help.swf";
+//ShopWndGui.gui
+$Flash::Help::FlashShopWndGui = "gameres/help.swf";
+//SkillWndGui.gui
+$Flash::Help::FlashSkillWndGui = "gameres/help.swf";
+$Flash::Help::FlashSkillSelectWndGui = "gameres/help.swf";
+$Flash::Help::FlashSkillStudyWndGui = "gameres/help.swf";
+//SoulGeniusWndGui.gui
+$Flash::Help::FlashSoulGeniusWndGui = "gameres/help.swf";
+//SystemSettingGui.gui
+$Flash::Help::FlashSystemSettingWndGui = "gameres/help.swf";
+//StallWndGui.gui
+$Flash::Help::FlashStallWndGui = "gameres/help.swf";
+$Flash::Help::FlashStallSeeWndGui = "gameres/help.swf";
+//XianZhuanWndGui.gui
+$Flash::Help::FlashXianZhuanWndGui = "gameres/help.swf";
+
+

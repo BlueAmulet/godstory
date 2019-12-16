@@ -1,0 +1,136 @@
+Max file E:\我的工作资料\地图\祝祭大泽\模型\c1105_001_08.max exported to e:\daohaodewenjian\zjdz\c1105_001_08.mod
+Exported on Fri Oct 16 16:56:40 2009
+
+
+Config file not found.
+First pass: collect useful nodes...
+
+Processing Node Particle View 01 with parent Scene Root
+Found subtree starting at Node "Particle View 01"
+Processing Node Particle View 01d with parent Scene Root
+Found subtree starting at Node "Particle View 01d"
+Processing Node Particle View 01d with parent Scene Root
+Found subtree starting at Node "Particle View 01d"
+Processing Node bounds with parent Scene Root
+Bounding box found
+Processing Node base01 with parent Scene Root
+Found subtree starting at Node "base01"
+Processing Node start01 with parent base01
+Processing Node col-1 with parent start01
+Processing Node box100 with parent start01
+Processing Node collision-1 with parent base01
+Processing Node detail100 with parent base01
+
+Second pass:  put shape structure together...
+
+Adding detail named "collision-1" of size -1 to subtree "base01".
+Adding detail named "detail100" of size 100 to subtree "base01".
+Adding node "base01" with parent "base01" to subtree rooted on max-node "base01".
+Adding node "start01" with parent "base01" to subtree rooted on max-node "base01".
+Adding node "box100" with parent "start01" to subtree rooted on max-node "base01".
+Attaching object to node.
+Adding object named "box".
+Adding mesh of size 100 to object "box".
+Object offset transform:
+    scale:            x=1.00000, y=1.00000, z=1.00000
+    stretch rotation: x=-0.00000, y=-0.00000, z=-0.00000, w=1.00000
+    translation:      x=-0.00000, y=0.00000, z=0.00000
+    actual rotation:  x=-0.00000, y=-0.00000, z=-0.00000, w=1.00000
+Adding node "col-1" with parent "start01" to subtree rooted on max-node "base01".
+Attaching object to node.
+Adding object named "col".
+Adding mesh of size -1 to object "col".
+Object offset transform:
+    scale:            x=1.00000, y=1.00000, z=1.00000
+    stretch rotation: x=-0.00000, y=-0.00000, z=-0.00000, w=1.00000
+    translation:      x=0.00000, y=0.00000, z=-1.25431
+    actual rotation:  x=-0.00000, y=-0.00000, z=-0.00000, w=1.00000
+
+Third pass:  Collapsing unneeded nodes...
+
+
+Add default object states...
+
+Adding object state to 1 detail level(s) of mesh "box".
+Adding frame.
+Object is visible.
+objectOffset[1,0,0]
+objectOffset[0,1,0]
+objectOffset[0,0,1]
+231 faces, 693 verts, 693 tverts before cropping textures and joining verts
+---------------------------------
+Adding object state to 1 detail level(s) of mesh "col".
+Adding frame.
+Object is visible.
+objectOffset[1,0,0]
+objectOffset[0,1,0]
+objectOffset[0,0,1]
+32 faces, 96 verts, 96 tverts before cropping textures and joining verts
+---------------------------------
+
+Add default node states...
+
+Adding node rotation at time 0 for node "base01".
+  rotation:     x=-0.70708, y=0.00000, z=0.00000, w=0.70708
+---------------------------------
+Adding node translation at time 0 for node "base01".
+  translation:     x=0.00000, y=0.00000, z=0.00000
+---------------------------------
+Adding node rotation at time 0 for node "start01".
+  rotation:     x=0.00000, y=0.00000, z=0.00000, w=1.00000
+---------------------------------
+Adding node translation at time 0 for node "start01".
+  translation:     x=0.00000, y=0.00000, z=0.00000
+---------------------------------
+Adding node rotation at time 0 for node "box100".
+  rotation:     x=0.70708, y=0.00000, z=0.00000, w=0.70708
+---------------------------------
+Adding node translation at time 0 for node "box100".
+  translation:     x=-0.00045, y=1.22717, z=-0.00126
+---------------------------------
+Adding node rotation at time 0 for node "col-1".
+  rotation:     x=0.70708, y=0.00000, z=0.00000, w=0.70708
+---------------------------------
+Adding node translation at time 0 for node "col-1".
+  translation:     x=-0.00561, y=1.25596, z=-0.01560
+---------------------------------
+
+Adding 0 sequences...
+
+
+Optimizing meshes...
+
+Optimizing mesh "box" detail level 100.
+693 verts before joining verts
+290 verts after joining verts
+231 faces before stripping
+Using quick and dirty stripping method.
+84 strips with average length 4.93 (range 3 to 24) and 15 reversals
+Results in 305 cache misses
+
+Optimizing mesh "col" detail level -1.
+96 verts before joining verts
+34 verts after joining verts
+32 faces before stripping
+Using quick and dirty stripping method.
+3 strips with average length 16.67 (range 16 to 18) and 12 reversals
+Results in 34 cache misses
+
+Shape Hierarchy:
+
+   Details:
+      detail100, Subtree 0, objectDetail 0, size 100
+      collision-1, Subtree 0, objectDetail 1, size -1
+
+   Subtrees:
+      Subtree 0
+         base01
+            start01
+               box100 --> Object box with following details:  100
+               col-1 --> Object col with following details:  -1
+
+   Sequences:
+
+Checking for duplicate nodes...
+
+Checking for duplicate objects...

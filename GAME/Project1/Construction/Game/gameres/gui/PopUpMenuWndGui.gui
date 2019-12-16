@@ -1,0 +1,59 @@
+//===========================================================================================================
+// 文档说明:右键弹出菜单界面
+// 创建时间:2009-11-12
+// 创建人: soar
+//=========================================================================================================== 
+
+
+new GuiPlayerIconPopUpMenu(PopUpMenuWndCtrl) {
+	 profile = "GuiDefaultProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   position = "0 0";
+   Extent = "1024 768";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";  
+   
+   new GuiControl(PopUpMenuWnd) {         
+   profile = "GuiRightDownProfile";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   position = "0 0";
+   Extent = "90 26";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";    
+   };
+};
+
+
+
+
+//////////////////////////////////////////////////
+for(%i=0; %i<14; %i++)
+{
+   new GuiButtonCtrl("MenuBtn"@(%i)) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiPopUpButtonProfile";  
+         position = 9 SPC (%i*20 + 7);          
+         Extent = "72 18";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         Accelerator = "";
+         Command = "";
+         hovertime = "1000";
+         text = "菜单按钮";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };  
+      PopUpMenuWnd.add("MenuBtn" @(%i)); 
+}
+
+
+//GameMainWndGui_Layer5.Add(PopUpMenuWnd);

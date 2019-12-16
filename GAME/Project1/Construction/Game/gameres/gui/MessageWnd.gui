@@ -1,0 +1,101 @@
+			new GuiScreenMessage(ScreenMessage){
+	    		Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "200 150";
+         Extent = "400 100";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "0";
+         hovertime = "1000";
+	    };	    
+
+     	new GuiBitmapCtrl(RollMessageCtrl) {
+        	canSaveDynamicFields = "0";
+        	Enabled = "1";
+        	isContainer = "0";
+        	Profile = "GuiDefaultProfile";
+        	HorizSizing = "right";
+        	VertSizing = "bottom";
+        	position = "300 80";
+        	Extent = "475 44";
+        	MinExtent = "8 2";
+        	canSave = "1";
+        	Visible = "0";
+        	hovertime = "1000";
+        	bitmap = "gameres/gui/images/rollmsg.png";
+        	wrap = "0";
+        	
+	    	 new GuiRollMessage(RollMessage){
+	    			Profile = "GuiCurrencyShowInfoTextProfile_1";
+         		HorizSizing = "center";
+         		VertSizing = "bottom";
+         		position = "55 13";
+         		Extent = "365 20";
+         		MinExtent = "8 2";
+         		canSave = "1";
+         		Visible = "1";
+         		hovertime = "1000";
+	    	 };
+	    };
+	    
+	    new GuiBitmapButtonCtrl(AnimateButton) {
+      Profile = "GuiButtonProfile";
+      horizSizing = "center";
+      vertSizing = "center";
+      Position = "280 120";
+      Extent = "64 64";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "0";
+      hovertime = "1000";
+      command = "";
+      text = "";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      bitmap = $GUI::GUISkinDirectory @ "radioButton";
+      helpTag = "0";
+   };
+   
+   new GuiBitmapButtonCtrl(SysMessageBox) {
+      Profile = "GuiButtonProfile";
+      horizSizing = "left";
+      vertSizing = "top";
+      Position = "711 507";
+      Extent = "32 32";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "0";
+      hovertime = "1000";
+      command = "OpenSysMsgBox();";
+      text = "";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      bitmap = $GUI::GUISkinDirectory @ "sysaskfor";
+      helpTag = "0";
+   };
+   
+   new GuiBitmapButtonCtrl(PlayerMessageBox) {
+      Profile = "GuiButtonProfile";
+      horizSizing = "left";
+      vertSizing = "top";
+      Position = "676 507";
+      Extent = "32 32";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "0";
+      hovertime = "1000";
+      command = "OpenIndividualMsgBox();";
+      text = "";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      bitmap = $GUI::GUISkinDirectory @ "playeraskfor";
+      helpTag = "0";
+   };
+ 
+GameMainWndGui_Layer5.Add(ScreenMessage);
+GameMainWndGui_Layer5.Add(RollMessageCtrl);
+GameMainWndGui_Layer5.Add(AnimateButton);
+GameMainWndGui_Layer5.Add(SysMessageBox);
+GameMainWndGui_Layer5.Add(PlayerMessageBox);
+

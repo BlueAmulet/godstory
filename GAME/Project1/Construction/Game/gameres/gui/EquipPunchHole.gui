@@ -1,0 +1,798 @@
+
+//===========================================================================================================
+// 文档说明:装备打孔界面
+// 修改人: hanfei
+// 修改时间:2010-1-5
+//=========================================================================================================== 
+
+//--- OBJECT WRITE BEGIN ---
+
+new GuiBitmapWindowCtrl(EquipPunchHoleWnd) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      HorizSizing = "Proportion";
+      VertSizing = "Proportion";
+      position = "0 120";
+      Extent = "295 402";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "0";
+      mustPrerender = "0";
+      hovertime = "1000";
+      alpha = "0";
+      useFadeout = "1";
+      bitmap = "gameres/gui/images/GUIWindow52_1_001.png";
+      wrap = "0";
+      MoveHotspot = "0 0 1024 768";
+
+      new GuiTextCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_8";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "102 21";
+         Extent = "104 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "0";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "装备打孔";
+         maxLength = "1024";
+      };
+      new GuiButtonCtrl(EquipPunchHole_btnHelp) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiHelpButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "247 0";
+         Extent = "21 21";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+         Command = "playFlash($Flash::Help::FlashEquipPunchHoleWnd, 0);";
+      };
+      new GuiButtonCtrl(EquipPunchHole_btnClose) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCloseButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "267 5";
+         Extent = "25 25";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipPunchHoleWnd_Close();";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiBitmapCtrl(EquipPunchHole_bmpRect) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "121 142";
+         Extent = "60 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "0";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "0";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow52_1_002.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipPunchHole_bmpHole) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "125 94";
+         Extent = "53 63";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "0";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "0";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow50_1_010.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipPunchHole_bmpEffect) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "126 93";
+         Extent = "50 50";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "0";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "0";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow50_1_013.png";
+         wrap = "0";
+      };
+      new dGuiShortCut() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "133 208";
+         Extent = "32 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         slotType = "18";
+         slotCol = "0";
+         boudary = "0 0 32 32";
+         disabledrag = "0";
+      };
+      new GuiTextCtrl(EquipPunchHole_txtHoleNum) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "22 206";
+         Extent = "105 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "允许打孔剩余:";
+         maxLength = "1024";
+      };
+      new GuiRichTextCtrl(EquipPunchHole_txtNote) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_4";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "33 250";
+         Extent = "230 46";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         lineSpacing = "2";
+         allowColorChars = "0";
+         maxChars = "1024";
+      };
+      new GuiBitmapCtrl(EquipPunchHoleNeedMoneyBmp_Gold) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "174 297";
+         Extent = "16 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow31_1_020.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipPunchHoleNeedMoneyBmp_Silver) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "210 297";
+         Extent = "16 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow31_1_021.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipPunchHoleNeedMoneyBmp_Copper) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "248 297";
+         Extent = "16 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow31_1_022.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipPunchHoleHavaMoneyBmp_Gold) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "174 340";
+         Extent = "16 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow31_1_024.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipPunchHoleHavaMoneyBmp_Silver) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "210 340";
+         Extent = "16 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow31_1_025.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipPunchHoleHavaMoneyBmp_Copper) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "248 340";
+         Extent = "16 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow31_1_026.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipPunchHole_BindGoldBmp) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "174 319";
+         Extent = "16 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow31_1_020.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipPunchHole_BindSilverBmp) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "210 319";
+         Extent = "16 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow31_1_021.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(EquipPunchHole_BindCopperBmp) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "248 319";
+         Extent = "16 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         alpha = "255";
+         useFadeout = "1";
+         bitmap = "gameres/gui/images/GUIWindow31_1_022.png";
+         wrap = "0";
+      };
+      new GuiTextCtrl(EquipPunchHole_txt11) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiTextProfile5";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "135 298";
+         Extent = "38 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "999999";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(EquipPunchHole_txt12) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "189 298";
+         Extent = "25 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "99";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(EquipPunchHole_txt13) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "225 298";
+         Extent = "28 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "99";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(EquipPunchHole_txt21) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiTextProfile5";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "135 320";
+         Extent = "39 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "999999";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(EquipPunchHole_txt22) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "189 320";
+         Extent = "25 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "99";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(EquipPunchHole_txt23) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "225 320";
+         Extent = "28 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "99";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(EquipPunchHole_txt31) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiTextProfile5";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "137 340";
+         Extent = "36 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "999999";
+         maxLength = "1024";
+      };
+      new GuiTextCtrl(EquipPunchHole_txt32) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "188 340";
+         Extent = "25 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "99";
+         maxLength = "1024";
+      };
+      new GuiButtonCtrl(EquipPunchHole_btnPunchHole) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "196 368";
+         Extent = "70 22";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipPunchHoleWnd_DoPunchHole();";
+         hovertime = "1000";
+         text = "打孔";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiTextCtrl(EquipPunchHole_txt33) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "225 340";
+         Extent = "28 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "99";
+         maxLength = "1024";
+      };
+   };
+
+//客户端得到服务端打孔槽的更新时，进行刷新界面
+//function EquipPunchHoleWnd_RefreshDialog()
+function PunchHole_RefreshDialog()
+{
+	EquipPunchHole_txtNote.setContent("右键点击包裹内装备，或直接将装备拖进打孔栏。");
+	%bHaveEquipItem = EquipPunchHole_HaveEquipItem();
+	%player = GetPlayer();
+	if (%bHaveEquipItem)
+	{
+		%canPunch = EquipPunchHole_CanPunchHole();
+		EquipPunchHole_btnPunchHole.setActive(%canPunch);
+		
+		%numHolesLeft = EquipPunchHole_GetLeftNum();
+		EquipPunchHole_txtHoleNum.text = "允许打孔剩余:" @ %numHolesLeft;
+	
+		//花费金钱
+		if (%numHolesLeft > 0)
+		{
+			%money = EquipPunchHole_GetCostMoney();
+				if(%money >= 10000)
+     		{
+     		 %gold = mfloor(%money / 10000);
+     	   %silver	=mfloor((%money - (%gold * 10000)) / 100);
+     	   %copper	= (%money - (%gold * 10000 + (%silver * 100)));
+     		
+     		 EquipPunchHole_txt11.text = %gold;
+     		 EquipPunchHole_txt12.text = %silver;
+     		 EquipPunchHole_txt13.text = %copper;
+     		 
+     		 EquipPunchHoleNeedMoneyBmp_Gold.setVisible(1);
+		     EquipPunchHoleNeedMoneyBmp_Silver.setVisible(1);
+     		}
+     		else if(%money < 100)
+     		{
+     		  %copper = %money;
+     		  EquipPunchHole_txt11.text = "";
+     		  EquipPunchHole_txt12.text = "";
+     		  EquipPunchHole_txt13.text = %copper;
+     		  
+     		  EquipPunchHoleNeedMoneyBmp_Gold.setVisible(0);
+		      EquipPunchHoleNeedMoneyBmp_Silver.setVisible(0);
+     	  }
+     		else
+     		{
+     		   %silver = mfloor(%money / 100);
+     		   %copper = (%money - (%silver * 100));
+     		   
+     		   EquipPunchHole_txt11.text = "";
+     		   EquipPunchHole_txt12.text = %silver;
+     		   EquipPunchHole_txt13.text = %copper;
+     		   
+     		   EquipPunchHoleNeedMoneyBmp_Gold.setVisible(0);
+		       EquipPunchHoleNeedMoneyBmp_Silver.setVisible(1);
+     		}
+		}		
+	}
+	else
+	{
+		EquipPunchHole_bmpHole.setvisible(0);
+		EquipPunchHole_bmpEffect.setvisible(0);
+		
+		EquipPunchHole_txtHoleNum.text = "允许打孔剩余:0";
+		EquipPunchHole_txt11.text = "";
+		EquipPunchHole_txt12.text = "";
+		EquipPunchHole_txt13.text = "0";
+		
+		EquipPunchHoleNeedMoneyBmp_Gold.setVisible(0);
+		EquipPunchHoleNeedMoneyBmp_Silver.setVisible(0);
+		
+		EquipPunchHole_btnPunchHole.setActive(0);
+	}	
+}
+
+function RefreshPlayerEquipPunchHoleMoney(%gold,%silver,%copper)
+{
+ 	if(%gold == 0 && %silver == 0)
+	{
+		%gold = "";
+		%silver = "";
+		EquipPunchHoleHavaMoneyBmp_Gold.setVisible(0);
+		EquipPunchHoleHavaMoneyBmp_Silver.setVisible(0);
+	}
+	else if(%gold == 0 && %silver != 0)
+	{
+		%gold = "";
+		EquipPunchHoleHavaMoneyBmp_Gold.setVisible(0);
+		EquipPunchHoleHavaMoneyBmp_Silver.setVisible(1);
+	}
+	else
+	{
+	  EquipPunchHoleHavaMoneyBmp_Gold.setVisible(1);
+		EquipPunchHoleHavaMoneyBmp_Silver.setVisible(1);
+  }
+  EquipPunchHole_txt31.setText(%gold);
+	EquipPunchHole_txt32.setText(%silver);
+	EquipPunchHole_txt33.setText(%copper);
+}
+
+function RefreshPlayerEquipPunchHoleBindMoney(%gold,%silver,%copper)
+{
+ 	if(%gold == 0 && %silver == 0)
+	{
+		%gold = "";
+		%silver = "";
+		EquipPunchHole_BindGoldBmp.setVisible(0);
+		EquipPunchHole_BindSilverBmp.setVisible(0);
+	}
+	else if(%gold == 0 && %silver != 0)
+	{
+		%gold = "";
+		EquipPunchHole_BindGoldBmp.setVisible(0);
+		EquipPunchHole_BindSilverBmp.setVisible(1);
+	}
+	else
+	{
+	  EquipPunchHole_BindGoldBmp.setVisible(1);
+		EquipPunchHole_BindSilverBmp.setVisible(1);
+  }
+  EquipPunchHole_txt21.setText(%gold);
+	EquipPunchHole_txt22.settext(%silver);
+	EquipPunchHole_txt23.settext(%copper);
+}
+
+
+function OnClient_OpenEquipPunchHoleDlg()
+{
+	$IsDirty++;
+	ForceOpenBag();
+	PunchHole_RefreshDialog();
+	EquipPunchHoleWnd.setvisible(1);
+}
+
+function OnClient_CloseEquipPunchHoleDlg()
+{
+	EquipPunchHoleWnd.setvisible(0);
+}
+
+function EquipPunchHoleWnd_Close()
+{
+	$IsDirty--;
+	//调用程序中的脚本函数发送消息到服务端
+	EquipPunchHole_SendCloseMsg();
+}
+
+function EquipPunchHoleWnd_DoPunchHole()
+{
+	//EquipPunchHole_btnPunchHole.setActive(0);
+	EquipPunchHole_SendDoPunchHoleMsg();
+}
+
+function EquipPunchHoleWnd_UpdateBmpHole(%nHoleIndex)
+{
+	%colorType = EquipPunchHole_GetColorType(%nHoleIndex);
+	
+	if (%colorType <= 0 || %colorType > 3)
+		return 0;
+	
+	switch(%colorType)
+	{
+	case 1:		
+		EquipPunchHole_bmpHole.bitmap = "gameres/gui/images/GUIWindow50_1_010.png";
+		%colorName = "红色";
+	case 2:		
+		EquipPunchHole_bmpHole.bitmap = "gameres/gui/images/GUIWindow50_1_012.png";
+		%colorName = "绿色";
+	case 3:		
+		EquipPunchHole_bmpHole.bitmap = "gameres/gui/images/GUIWindow50_1_011.png";
+		%colorName = "蓝色";
+	}
+	
+	EquipPunchHole_txtNote.setContent("成功打造出一" @ %colorName @ "插槽，按SHIFT+右键单击包裹内装备对其进行镶嵌");
+	return 1;
+}
+
+function EquipPunchHoleWnd_OnPunchHoleSuccess(%nHoleIndex)
+{	
+	if (EquipPunchHoleWnd_UpdateBmpHole(%nHoleIndex) > 0)
+	{
+		EquipPunchHole_bmpRect.setVisible(1);
+		EquipPunchHole_bmpEffect.setVisible(1);
+		EquipPunchHole_bmpHole.setVisible(1);
+		
+		//播放打孔成功时的动画
+		//schedule();
+		%canPunch = EquipPunchHole_CanPunchHole();
+		EquipPunchHole_btnPunchHole.setActive(%canPunch);	
+	}
+	else
+	{
+		%canPunch = EquipPunchHole_CanPunchHole();
+		EquipPunchHole_btnPunchHole.setActive(%canPunch);
+	}
+}
+
+function EquipPunchHoleWnd_OnPunchHoleFailure(%nHoleIndex)
+{
+	%canPunch = EquipPunchHole_CanPunchHole();
+	EquipPunchHole_btnPunchHole.setActive(%canPunch);
+}
+
+GameMainWndGui_Layer3.Add(EquipPunchHoleWnd);
+//--- OBJECT WRITE END ---

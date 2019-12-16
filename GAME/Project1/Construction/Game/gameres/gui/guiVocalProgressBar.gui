@@ -1,0 +1,91 @@
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiControl(guiVocalProgressBar) {
+   Profile = "GuiModelessDialogProfile";
+   Enabled = "1";
+   isContainer = "1";
+   HorizSizing = "relative";
+   VertSizing = "relative";
+   position = "350 442";
+   Extent = "215 80";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+
+   new GuiProgressCtrlEx(VocalProgressBarCtrl) {
+      Profile = "GuiProgressCtrlExProfile";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "0 0";
+      Extent = "215 80";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text = "进度条";
+      maxLength = "32";
+      Progress = "0";
+      ProgressType = "1";
+      ProgressBackRect = "0 0 215 80";
+      ProgressTopRect = "0 0 215 80";
+      ProgressRect = "24 53 167 16";
+      ProgressLightRect = "0 0 1 1";
+      ProgressEffectRect = "0 0 215 80";
+      ProgressBackImageFile  = $GUI::GUISkinDirectory @ "GUIWindow32_1_009.png";
+      ProgressTopImageFile   = $GUI::GUISkinDirectory @ "GUIWindow32_1_008.png";
+      ProgressImageFileName  = $GUI::GUISkinDirectory @ "GUIWindow32_1_015.png";
+      ProgressImageFileName2 = $GUI::GUISkinDirectory @ "GUIWindow32_1_016.png";
+      ProgressLightImageFile = "";
+      ProgressEffectImageFile = $GUI::GUISkinDirectory @ "GUIWindow32_1_006.png";
+      UpdateInterval = "10";
+      Style = "0";
+      IntervalTime = "1000";
+      FadeOutTime  = "0";
+   };
+};
+
+%guiContent1 = new GuiControl(guiVocalProgressBar1) {
+   Profile = "GuiModelessDialogProfile";
+   Enabled = "1";
+   isContainer = "1";
+   HorizSizing = "relative";
+   VertSizing = "relative";
+   position = "390 500";
+   Extent = "190 28";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+
+   new GuiProgressCtrlEx(VocalProgressBarCtrl1) {
+      Profile = "GuiProgressCtrlExProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "0 0";
+      Extent = "190 28";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text = "进度条";
+      maxLength = "32";
+      Progress = "0";
+      ProgressType = "1";
+      ProgressBackRect = "0 0 190 28";
+      ProgressTopRect = "0 0 190 28";
+      ProgressRect = "3 0 181 28";
+      ProgressLightRect = "0 -7 41 41";
+      ProgressEffectRect = "0 0 190 28";
+      ProgressBackImageFile  = $GUI::GUISkinDirectory @ "GUIWindow32_1_081.png";
+      ProgressTopImageFile   = $GUI::GUISkinDirectory @ "GUIWindow32_1_082.png";
+      ProgressImageFileName  = $GUI::GUISkinDirectory @ "GUIWindow32_1_083.png";
+      ProgressImageFileName2 = $GUI::GUISkinDirectory @ "GUIWindow32_1_085.png";
+      ProgressLightImageFile = $GUI::GUISkinDirectory @ "GUIWindow32_1_086.png";
+      ProgressEffectImageFile = $GUI::GUISkinDirectory @ "GUIWindow32_1_084.png";
+      UpdateInterval = "10";
+      Style = "0";
+      IntervalTime = "1000";
+      FadeOutTime  = "0";
+   };
+};
+GameMainWndGui_Layer5.add(guiVocalProgressBar);
+GameMainWndGui_Layer5.add(guiVocalProgressBar1);
+//--- OBJECT WRITE END ---

@@ -1,0 +1,703 @@
+//===========================================================================================================
+// 文档说明:对话框界面
+// 创建时间:2009-3-16
+// 创建人: soar
+//=========================================================================================================== 
+
+new GuiControl(DialogWnd_1) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "bottom";
+   position = "0 0";
+   extent = "800 600";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+
+   //new GuiWindowCtrl() {
+   //   canSaveDynamicFields = "0";
+   //   Profile = "GuiGeneralDialogProfile_1";
+   //   HorizSizing = "center";
+   //   VertSizing = "center";
+   //   Position = "250 155";
+   //   Extent = "300 200";
+   //   MinExtent = "8 2";
+   //   canSave = "1";
+   //   Visible = "1";
+   //   hovertime = "1000";
+   //   text = "";
+   //   maxLength = "255";
+   //   resizeWidth = "0";
+   //   resizeHeight = "0";
+   //   canMove = "0";
+   //   canClose = "0";
+   //   canHelp  = "0";
+   //   canMinimize = "0";
+   //   canMaximize = "0";
+   //   minSize = "50 50";
+   //   TitleHeight = 40;
+   //   //closeCommand = "revertAVOptionChanges(); Canvas.popDialog(OptionsDlg);";
+   //   //command = "revertAVOptionChanges(); Canvas.popDialog(OptionsDlg);";
+   //   //accelerator = "escape";  
+   //   
+   //   new GuiTextCtrl(DialogShowMessage_1){
+	 //   	 Profile = "GuiTextProfile";
+   //      HorizSizing = "left";
+   //      VertSizing = "bottom";
+   //      position = "90 90";
+   //      Extent = "150 20";
+   //      MinExtent = "8 2";
+   //      canSave = "1";
+   //      Visible = "1";
+   //      text   = "";
+   //      hovertime = "1000";
+	 //   };
+   //   
+   //};
+};
+
+new GuiChunkedBitmapCtrl(DialogWnd_2) {      
+   profile = "GuiContentProfile";           
+   horizSizing = "width";                   
+   vertSizing = "height";                   
+   position = "0 0";                        
+   extent = "1024 768";                      
+   minExtent = "8 8";                       
+   visible = "0";                           
+   bitmap = "~/gui/images/GUIlogin10_1_001";
+   useVariable = "0";                       
+   tile = "0";                              
+   helpTag = "0";                        
+   qLineCount = "0";      
+      
+};
+
+// ==========================================================
+// 有模式对话框1(确定或取消)
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiControl(Dialog_OK_Cancel) {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   Profile = "GuiDefaultProfile";
+   HorizSizing = "relative";
+   VertSizing = "relative";
+   position = "0 0";
+   Extent = "800 600";
+   MinExtent = "8 8";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+
+   new GuiBitmapCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      position = "0 0";
+      Extent = "800 600";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      bitmap = "gameres/gui/images/GUIWindow99_1_4.png";
+      wrap = "0";
+   };
+   new GuiControl(Dialog_OK_Cancel_CenterWnd) {           
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      Profile = "GuiDialogControlProfile";
+      HorizSizing = "center";
+      VertSizing = "center";
+      position = "0 0";
+      Extent = "270 130";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";   
+      
+//      new GuiBitmapCtrl() {
+//         canSaveDynamicFields = "0";
+//         Enabled = "1";
+//         isContainer = "0";
+//         Profile = "GuiDefaultProfile";
+//         HorizSizing = "center";
+//         VertSizing = "center";
+//         position = "0 0";
+//         Extent = "300 165";
+//         MinExtent = "8 8";
+//         canSave = "1";
+//         Visible = "1";
+//         hovertime = "1000";
+//         bitmap = "gameres/gui/images/GUIWindow99_1_003.png";
+//         wrap = "0";
+//      };
+      
+      new GuiButtonCtrl(Dialog_OK_Cancel_OKBTN) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "30 90";
+         Extent = "70 23";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "确  定";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiButtonCtrl(Dialog_OK_Cancel_CANCBTN) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "180 90";
+         Extent = "70 23";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "取  消";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiRichTextCtrl(Dialog_OK_Cancel_Content) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiRichTextProfile";
+         HorizSizing = "center";
+         VertSizing = "center";
+         position = "40 25";
+         Extent = "210 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         lineSpacing = "2";
+         allowColorChars = "0";                       
+         maxChars = "-1";                       
+         text = "您确定继续当前操作吗?";                       
+        };      
+   };
+   
+   
+};
+//--- OBJECT WRITE END ---
+
+
+// ==========================================================
+// 有模式小型对话框1(确定或取消) 
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiControl(Dialog_Small_OK_Cancel) {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   Profile = "GuiDefaultProfile";
+   HorizSizing = "relative";
+   VertSizing = "relative";
+   position = "0 0";
+   Extent = "800 600";
+   MinExtent = "8 8";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+
+   new GuiBitmapCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      position = "0 0";
+      Extent = "800 600";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      bitmap = "gameres/gui/images/GUIWindow99_1_4.png";
+      wrap = "0";
+   };
+   new GuiControl(Dialog_Small_OK_Cancel_CenterWnd) {           
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      Profile = "GuiDialogControlProfile";
+      HorizSizing = "center";
+      VertSizing = "center";
+      position = "0 0";
+      Extent = "200 100";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";   
+      
+      
+      new GuiButtonCtrl(Dialog_Small_OK_Cancel_OKBTN) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "30 67";
+         Extent = "60 22";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "确 定";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiButtonCtrl(Dialog_Small_OK_Cancel_CANCBTN) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "110 67";
+         Extent = "60 22";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "取 消";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiRichTextCtrl(Dialog_Small_OK_Cancel_Content) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiRichTextProfile";
+         HorizSizing = "center";
+         VertSizing = "center";
+         position = "40 25";
+         Extent = "160 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         lineSpacing = "2";
+         allowColorChars = "0";                       
+         maxChars = "-1";                       
+         text = "您确定继续当前操作吗?";                       
+        };      
+   };
+   
+   
+};
+//--- OBJECT WRITE END ---
+
+// ==========================================================
+// 有模式对话框2(确定)
+//--- OBJECT WRITE BEGIN ---
+ new GuiControl(Dialog_OnlyOK) {           
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      Profile = "GuiDialogControlProfile";
+      HorizSizing = "center";
+      VertSizing = "center";
+      position = "0 0";
+      Extent = "300 165";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "0";
+      hovertime = "1000";   
+      
+//      new GuiBitmapCtrl() {
+//         canSaveDynamicFields = "0";
+//         Enabled = "1";
+//         isContainer = "0";
+//         Profile = "GuiDefaultProfile";
+//         HorizSizing = "center";
+//         VertSizing = "center";
+//         position = "0 0";
+//         Extent = "300 165";
+//         MinExtent = "8 8";
+//         canSave = "1";
+//         Visible = "1";
+//         hovertime = "1000";
+//         bitmap = "gameres/gui/images/GUIWindow99_1_003.png";
+//         wrap = "0";
+//      };
+      new GuiButtonCtrl(Dialog_OK_OKBTN) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "186 100";
+         Extent = "70 23";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "确  定";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+         Command = "Dialog_OnlyOK.setVisible(0);";
+      };
+      new GuiRichTextCtrl(Dialog_OK_Content) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiRichTextProfile";
+         HorizSizing = "center";
+         VertSizing = "center";
+         position = "40 40";
+         Extent = "210 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         lineSpacing = "2";
+         allowColorChars = "0";
+         maxChars = "-1";
+         text = "您确定继续当前操作吗?";
+       };      
+};   
+
+
+// ==========================================================
+// 有模式对话框3(接授拒绝取消)
+//--- OBJECT WRITE BEGIN ---
+ new GuiControl(Dialog3_Accept_Cancel) {           
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      Profile = "GuiDialogControlProfile";
+      HorizSizing = "center";
+      VertSizing = "center";
+      position = "0 0";
+      Extent = "300 165";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "0";
+      hovertime = "1000";   
+      
+//      new GuiBitmapCtrl() {
+//         canSaveDynamicFields = "0";
+//         Enabled = "1";
+//         isContainer = "0";
+//         Profile = "GuiDefaultProfile";
+//         HorizSizing = "center";
+//         VertSizing = "center";
+//         position = "0 0";
+//         Extent = "300 165";
+//         MinExtent = "8 8";
+//         canSave = "1";
+//         Visible = "1";
+//         hovertime = "1000";
+//         bitmap = "gameres/gui/images/GUIWindow99_1_003.png";
+//         wrap = "0";
+//      };
+      
+        new GuiButtonCtrl(Dialog3_Accept_BTN) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "30 100";
+         Extent = "70 23";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "接 受";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+         Command = "";
+      };
+      new GuiButtonCtrl(Dialog3_Refuse_BTN) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "105 100";
+         Extent = "70 23";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "拒 绝";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+         Command = "";
+      };
+      new GuiButtonCtrl(Dialog3_Ok_BTN) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "186 100";
+         Extent = "70 23";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "确  定";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+         Command = "Dialog_OnlyOK.setVisible(0);";
+      };
+      new GuiRichTextCtrl(Dialog3_Text_Content) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiRichTextProfile";
+         HorizSizing = "center";
+         VertSizing = "center";
+         position = "40 40";
+         Extent = "210 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         lineSpacing = "2";
+         allowColorChars = "0";
+         maxChars = "-1";
+         text = "您确定继续当前操作吗?";
+       };      
+};   
+
+
+// ==========================================================
+// 有模式对话框4(确定取消带勾选)
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiControl(Dialog_OK_CancelByCheck) {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   Profile = "GuiDefaultProfile";
+   HorizSizing = "relative";
+   VertSizing = "relative";
+   position = "0 0";
+   Extent = "800 600";
+   MinExtent = "8 8";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+
+   new GuiBitmapCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      position = "0 0";
+      Extent = "800 600";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      bitmap = "gameres/gui/images/GUIWindow99_1_4.png";
+      wrap = "0";
+   };
+   new GuiControl(Dialog_Check_CenterWnd) {           
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      Profile = "GuiDialogControlProfile";
+      HorizSizing = "center";
+      VertSizing = "center";
+      position = "0 0";
+      Extent = "270 130";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";   
+            
+      new GuiButtonCtrl(Dialog_Check_OKBTN) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "30 90";
+         Extent = "70 23";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "确  定";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiButtonCtrl(Dialog_Check_CancelBTN) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "180 90";
+         Extent = "70 23";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "取  消";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiCheckBoxCtrl(Dialog_Check_Box) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiSystemSettingCheckBtnProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         Position = "30 72";
+         Extent = "18 18";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         text = "Button";
+         groupNum = "-1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+         useInactiveState = "0";
+         Command = "";
+      };
+      
+      new GuiTextCtrl(Dialog_Check_Text) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "50 74";
+         Extent = "160 14";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "(默认下次打开的什么操作)";
+         maxLength = "1024";
+      };
+      new GuiRichTextCtrl(Dialog_Check_Content) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiRichTextProfile";
+         HorizSizing = "center";
+         VertSizing = "center";
+         position = "40 25";
+         Extent = "210 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         lineSpacing = "2";
+         allowColorChars = "0";                       
+         maxChars = "-1";                       
+         text = "您确定继续当前操作吗?";                       
+        };      
+   };
+   
+   
+};
+//--- OBJECT WRITE END ---
+
+MainMenuGui.Add(DialogWnd_1);   
+MainMenuGui.Add(DialogWnd_2); 
+GameMainWndGui_Layer5.Add(Dialog_OK_Cancel);
+GameMainWndGui_Layer5.Add(Dialog_Small_OK_Cancel);
+GameMainWndGui_Layer5.add(Dialog_OnlyOK);
+GameMainWndGui_Layer5.Add(Dialog3_Accept_Cancel);
+GameMainWndGui_Layer5.Add(Dialog_OK_CancelByCheck);
+
+
+////////////////////////// 宠物界面相关确认函数 /////////////////////////////
+function LianHuaPet_Check(%nSlot, %petName)
+{
+	%cmd = "LianHuaPet_Confirm(" @ %nSlot @ ");";
+	%content = "您确定要炼化宠物【" @ %petName @ "】吗？";
+	Dialog_OK_Cancel.SetContent(%content);
+	Dialog_OK_Cancel.SetOK("确定", %cmd);
+	Dialog_OK_Cancel.SetCancel("取消", "Dialog_OK_Cancel.setVisible(0);");
+	Dialog_OK_Cancel.setVisible(1);
+}
+
+function ReleasePet_Check(%nSlot, %petName)
+{
+	%cmd = "ReleasePet_Confirm(" @ %nSlot @ ");";
+	%content = "您确定要放生宠物【" @ %petName @ "】吗？";
+	Dialog_OK_Cancel.SetContent(%content);
+	Dialog_OK_Cancel.SetOK("确定", %cmd);
+	Dialog_OK_Cancel.SetCancel("取消", "Dialog_OK_Cancel.setVisible(0);");
+	Dialog_OK_Cancel.setVisible(1);
+}
+
+function PetHuanTong_Check(%nSlot, %petName)
+{
+	%cmd = "PetHuanTong_Confirm(" @ %nSlot @ ");";
+	%content = "您确定要把宠物【" @ %petName @ "】还童吗？";
+	Dialog_OK_Cancel.SetContent(%content);
+	Dialog_OK_Cancel.SetOK("确定", %cmd);
+	Dialog_OK_Cancel.SetCancel("取消", "Dialog_OK_Cancel.setVisible(0); PetInfoWnd_RefreshBtn();");
+	Dialog_OK_Cancel.setVisible(1);
+}
+
+function ReleaseMountPet_Check(%nSlot, %petName)
+{
+	%cmd = "ReleaseMountPet_Confirm(" @ %nSlot @ ");";
+	%content = "您确定要放生骑宠【" @ %petName @ "】吗？";
+	Dialog_OK_Cancel.SetContent(%content);
+	Dialog_OK_Cancel.SetOK("确定", %cmd);
+	Dialog_OK_Cancel.SetCancel("取消", "Dialog_OK_Cancel.setVisible(0); PetInfoWnd_RefreshMountWnd();");
+	Dialog_OK_Cancel.setVisible(1);
+}

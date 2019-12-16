@@ -1,0 +1,286 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiChunkedBitmapCtrl(startMissionGui) {
+   profile = "GuiContentProfile";
+   horizSizing = "width";
+   vertSizing = "height";
+   position = "0 0";
+   extent = "800 600";
+   minExtent = "8 8";
+   visible = "1";
+   helpTag = "0";
+   bitmap = "./background.jpg";
+   useVariable = "0";
+   tile = "0";
+
+//   new GuiControl() {
+//      profile = "GuiDefaultProfile";
+//      horizSizing = "center";
+//      vertSizing = "center";
+//      position = "60 74";
+//      extent = "455 308";
+//      minExtent = "8 8";
+//      visible = "1";
+//      helpTag = "0";
+   new GuiWindowCtrl(FileSelectWindow_Ctrl) {
+   	  canSaveDynamicFields = "0";
+      isContainer = "1";
+      Profile = "GuiWindowProfile";
+      HorizSizing = "center";
+      VertSizing =  "center";
+      position = "92 86";
+      Extent = "455 308";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      text = "选择场景";
+      maxLength = "1024";
+      resizeWidth = "0";
+      resizeHeight = "0";
+      canMove = "0";
+      canClose = "0";
+      canMinimize = "0";
+      canMaximize = "0";
+      minSize = "50 50";
+      closeCommand = "";
+//      new GuiTextCtrl() {
+//         profile = "GuiTextProfile";
+//         horizSizing = "right";
+//         vertSizing = "bottom";
+//         position = "12 36";
+//         extent = "90 20";
+//         minExtent = "8 8";
+//         visible = "1";
+//         helpTag = "0";
+//         text = "Select Mission:";
+//         maxLength = "255";
+//      };
+//      new GuiCheckBoxCtrl(ML_isMultiplayer) {
+//         profile = "GuiCheckBoxProfile";
+//         horizSizing = "right";
+//         vertSizing = "bottom";
+//         position = "155 272";
+//         extent = "147 23";
+//         minExtent = "8 8";
+//         visible = "1";
+//         variable = "pref::HostMultiPlayer";
+//         helpTag = "0";
+//         text = "Multiplayer Mission";
+//         maxLength = "255";
+//      };
+      new GuiFrameSetCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "3 23";
+         Extent = "448 280";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         columns = "0";
+         rows = "0";
+         borderWidth = "4";
+         borderColor = "205 205 205 205";
+         borderEnable = "dynamic";
+         borderMovable = "dynamic";
+         autoBalance = "0";
+         fudgeFactor = "0";
+      }; 
+      new GuiButtonCtrl(MissionDlg_ButtonCtl2) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "315 267";
+         extent = "127 23";
+         minExtent = "8 8";
+         visible = "1";
+         command = "Load_StartMission();";
+         helpTag = "0";
+         text = "载入场景...";
+      };
+      new GuiScrollCtrl() {
+         profile = "GuiScrollProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "10 28";
+         extent = "432 230";
+         minExtent = "8 8";
+         visible = "1";
+         helpTag = "0";
+         willFirstRespond = "1";
+         hScrollBar = "dynamic";
+         vScrollBar = "alwaysOn";
+         constantThumbHeight = "0";
+         defaultLineHeight = "15";
+         childMargin = "0 0";
+      
+         new GuiTextListCtrl(SM_missionList) {
+            profile = "GuiTextArrayProfile";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            position = "0 0";
+            extent = "394 54";
+            minExtent = "8 8";
+            visible = "1";
+            helpTag = "0";
+            enumerate = "0";
+            resizeCell = "1";
+            columns = "0";
+            altCommand = "dblclickLoad_StartMission();";
+            fitParentWidth = "1";
+            clipColumnText = "0";
+            noDuplicates = "false";
+         };
+      };
+//      new GuiTextEditCtrl() {
+//         profile = "GuiTextEditProfile";
+//         horizSizing = "right";
+//         vertSizing = "bottom";
+//         position = "98 15";
+//         extent = "134 16";
+//         minExtent = "8 8";
+//         visible = "1";
+//         variable = "pref::Player::Name";
+//         helpTag = "0";
+//         maxLength = "255";
+//         historySize = "0";
+//         password = "0";
+//         tabComplete = "0";
+//      };
+//      new GuiTextCtrl() {
+//         profile = "GuiTextProfile";
+//         horizSizing = "right";
+//         vertSizing = "bottom";
+//         position = "12 11";
+//         extent = "79 20";
+//         minExtent = "8 8";
+//         visible = "1";
+//         helpTag = "0";
+//         text = "Player Name:";
+//         maxLength = "255";
+//      };
+      new GuiButtonCtrl(MissionDlg_ButtonCtl1) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "10 267";
+         extent = "127 23";
+         minExtent = "8 8";
+         visible = "1";
+         command = "Canvas.setContent(mainMenuGui);";
+         helpTag = "0";
+         text = "<< 后退";
+      };
+   };
+};
+//--- OBJECT WRITE END ---
+
+
+//----------------------------------------
+function SM_StartMission()
+{
+   %id = SM_missionList.getSelectedId();
+   %mission = getField(SM_missionList.getRowTextById(%id), 1);
+
+   if ($pref::HostMultiPlayer)
+      %serverType = "MultiPlayer";
+   else
+      %serverType = "SinglePlayer";
+
+   createServer(%serverType, %mission);
+   %conn = new GameConnection(ServerConnection);
+   RootGroup.add(ServerConnection);
+   %conn.setConnectArgs($pref::Player::Name);
+   %conn.setJoinPassword($Client::Password);
+   %conn.connectLocal();
+}
+
+
+//----------------------------------------
+function startMissionGui::onWake()
+{
+   SM_missionList.clear();
+   %i = 0;
+   for(%file = findFirstFile($Server::MissionFileSpec);
+         %file !$= ""; %file = findNextFile($Server::MissionFileSpec))  
+      if (strStr(%file, "common/") == -1)
+         SM_missionList.addRow(%i++, fileBase(%file) @ "\t" @ %file  );
+         //SM_missionList.addRow(%i++, getMissionDisplayName(%file) @ "\t" @ %file );
+   SM_missionList.sort(0);
+   SM_missionList.setSelectedRow(0);
+   SM_missionList.scrollVisible(0);
+}   
+
+
+//----------------------------------------
+function getMissionDisplayName( %missionFile ) 
+{
+   %file = new FileObject();
+   
+   %MissionInfoObject = "";
+   
+   if ( %file.openForRead( %missionFile ) ) {
+		%inInfoBlock = false;
+		
+		while ( !%file.isEOF() ) {
+			%line = %file.readLine();
+			%line = trim( %line );
+			
+			if( %line $= "new ScriptObject(MissionInfo) {" )
+				%inInfoBlock = true;
+			else if( %inInfoBlock && %line $= "};" ) {
+				%inInfoBlock = false;
+				%MissionInfoObject = %MissionInfoObject @ %line; 
+				break;
+			}
+			
+			if( %inInfoBlock )
+			   %MissionInfoObject = %MissionInfoObject @ %line @ " "; 	
+		}
+		
+		%file.close();
+	}
+	%MissionInfoObject = "%MissionInfoObject = " @ %MissionInfoObject;
+	eval( %MissionInfoObject );
+	
+   %file.delete();
+
+   if( %MissionInfoObject.name !$= "" )
+      return %MissionInfoObject.name;
+   else
+      return fileBase(%missionFile); 
+}
+//dblclickMissionFile == 1加载Load_StartMission方法
+//dblclickMissionFile == 0加载openMissionFile方法
+$dblclickMissionFile = 1;
+//是否加载场景
+$CheckStartMission = false;
+//加载场景
+function Load_StartMission()
+{
+	if($CheckStartMission == false)
+		{
+			SM_StartMission();
+			$CheckStartMission = true;
+		}
+		
+}
+//双击加载场景
+function dblclickLoad_StartMission()
+{
+	if($dblclickMissionFile ==1)
+		Load_StartMission();
+	else if($dblclickMissionFile ==0)
+		openMissionFile();
+	else
+		return;
+}

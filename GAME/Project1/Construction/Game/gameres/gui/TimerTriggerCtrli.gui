@@ -1,0 +1,1550 @@
+//--- OBJECT WRITE BEGIN ---
+
+%guiContent = new GuiBitmapWindowCtrl(TimerTriggerCtrlWnd_1)
+{
+	 canSaveDynamicFields = "0";
+	 profile = "GuiDefaultProfile";
+   Enabled = "1";
+   isContainer = "1";
+   HorizSizing = "Proportion";
+   VertSizing = "Proportion";
+   position = "396 449";
+   Extent = "244 103";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+   wrap = "0";
+   MoveHotspot = "0 0 1024 768";
+   
+	 new GuiControlExt(TimerTriggerCtrl_1) {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   position = "0 0";
+   Extent = "244 103";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   mustPrerender = "0";
+   hovertime = "1000";
+   profile = "GuiTimerTriggerProfile_1";
+
+   new GuiButtonCtrl(GuiTimerButton_downSize1) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiTimerButtonProfile_downSize";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "200 6";
+      Extent = "23 23";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "DownSizeTimerCtrl(1);";
+   };
+   new GuiRichTextCtrl(TimerTrigger_Desc_1) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "25 12";
+      Extent = "150 26";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      profile = "GuiTimerRichTextCtrlProfile";
+      lineHeight = "20";
+   };
+   new GuiRichTextCtrl(TimerTrigger_LeftTime_1) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "25 34";
+      Extent = "150 26";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      profile = "GuiTimerRichTextCtrlProfile";
+      lineHeight = "20";
+   };
+   new GuiBitmapCtrl(TimerTrigger_img1_1)
+   {
+   			 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "23 58";
+         Extent = "32 32";
+         boudary = "0 0 32 32";
+         canSave = "1";
+         Visible = "1";
+         bitmap = "./images/GUIWindow31_1_006.png";
+   };
+   new GuiBitmapCtrl(TimerTrigger_img2_1)
+   {
+   			 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "60 58";
+         Extent = "32 32";
+         boudary = "0 0 32 32";
+         canSave = "1";
+         Visible = "1";
+         bitmap = "./images/GUIWindow31_1_006.png";
+   };
+   new GuiBitmapCtrl(TimerTrigger_img3_1)
+   {
+   			 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "97 58";
+         Extent = "32 32";
+         boudary = "0 0 32 32";
+         canSave = "1";
+         Visible = "1";
+         bitmap = "./images/GUIWindow31_1_006.png";
+   };
+   new GuiBitmapCtrl(TimerTrigger_img4_1)
+   {
+   			 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "134 58";
+         Extent = "32 32";
+         boudary = "0 0 32 32";
+         canSave = "1";
+         Visible = "1";
+         bitmap = "./images/GUIWindow31_1_006.png";
+   };
+   new dGuiObjectIcon(TimerTrigger_icon1_1) {
+      	 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "28 63";
+         Extent = "24 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         ObjectType = "0";
+         ObjectID = "0";
+         boudary = "0 0 24 24";
+         disabledrag = "0";
+   };
+   new dGuiObjectIcon(TimerTrigger_icon2_1) {
+      	 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "65 63";
+         Extent = "24 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         ObjectType = "0";
+         ObjectID = "0";
+         boudary = "0 0 24 24";
+         disabledrag = "0";
+   };
+   new dGuiObjectIcon(TimerTrigger_icon3_1) {
+      	 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "102 63";
+         Extent = "24 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         ObjectType = "0";
+         ObjectID = "0";
+         boudary = "0 0 24 24";
+         disabledrag = "0";
+   };
+   new dGuiObjectIcon(TimerTrigger_icon4_1) {
+      	 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "139 63";
+         Extent = "24 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         ObjectType = "0";
+         ObjectID = "0";
+         boudary = "0 0 24 24";
+         disabledrag = "0";
+   };
+   
+   new GuiButtonCtrl(TimerTrigger_Cancel_1) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "179 64";
+      Extent = "45 24";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      text = "取消";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      profile = "GuiBigViewMapButtonProfile";
+      command = "SendCancelTimerControl(1);";
+   };
+	};
+};
+GameMainWndGui_Layer4.Add(TimerTriggerCtrlWnd_1);
+
+
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiBitmapWindowCtrl(TimerTriggerCtrlWnd_2)
+{
+	 canSaveDynamicFields = "0";
+	 profile = "GuiDefaultProfile";
+   Enabled = "1";
+   isContainer = "1";
+   HorizSizing = "Proportion";
+   VertSizing = "Proportion";
+   position = "396 559";
+   Extent = "244 103";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+   wrap = "0";
+   MoveHotspot = "0 0 1024 768";
+   
+	 new GuiControlExt(TimerTriggerCtrl_2) {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   position = "0 0";
+   Extent = "244 103";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   mustPrerender = "0";
+   hovertime = "1000";
+   profile = "GuiTimerTriggerProfile_1";
+   MoveHotspot = "0 0 1024 768";
+
+    new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiTimerButtonProfile_downSize";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "200 6";
+      Extent = "23 23";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "DownSizeTimerCtrl(2);";
+   };
+   
+   new GuiRichTextCtrl(TimerTrigger_Desc_2) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "25 12";
+      Extent = "150 26";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      profile = "GuiTimerRichTextCtrlProfile";
+      lineHeight = "20";
+   };
+   new GuiRichTextCtrl(TimerTrigger_LeftTime_2) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "25 34";
+      Extent = "150 26";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      profile = "GuiTimerRichTextCtrlProfile";
+      lineHeight = "20";
+   };
+   new GuiBitmapCtrl(TimerTrigger_img1_2)
+   {
+   			 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "23 58";
+         Extent = "32 32";
+         boudary = "0 0 32 32";
+         canSave = "1";
+         Visible = "1";
+         bitmap = "./images/GUIWindow31_1_006.png";
+   };
+   new GuiBitmapCtrl(TimerTrigger_img2_2)
+   {
+   			 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "60 58";
+         Extent = "32 32";
+         boudary = "0 0 32 32";
+         canSave = "1";
+         Visible = "1";
+         bitmap = "./images/GUIWindow31_1_006.png";
+   };
+   new GuiBitmapCtrl(TimerTrigger_img3_2)
+   {
+   			 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "97 58";
+         Extent = "32 32";
+         boudary = "0 0 32 32";
+         canSave = "1";
+         Visible = "1";
+         bitmap = "./images/GUIWindow31_1_006.png";
+   };
+   new GuiBitmapCtrl(TimerTrigger_img4_2)
+   {
+   			 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "134 58";
+         Extent = "32 32";
+         boudary = "0 0 32 32";
+         canSave = "1";
+         Visible = "1";
+         bitmap = "./images/GUIWindow31_1_006.png";
+   };
+   new dGuiObjectIcon(TimerTrigger_icon1_2) {
+      	 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "28 63";
+         Extent = "24 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         ObjectType = "0";
+         ObjectID = "0";
+         boudary = "0 0 24 24";
+         disabledrag = "0";
+   };
+   new dGuiObjectIcon(TimerTrigger_icon2_2) {
+      	 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "65 63";
+         Extent = "24 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         ObjectType = "0";
+         ObjectID = "0";
+         boudary = "0 0 24 24";
+         disabledrag = "0";
+   };
+   new dGuiObjectIcon(TimerTrigger_icon3_2) {
+      	 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "102 63";
+         Extent = "24 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         ObjectType = "0";
+         ObjectID = "0";
+         boudary = "0 0 24 24";
+         disabledrag = "0";
+   };
+   new dGuiObjectIcon(TimerTrigger_icon4_2) {
+      	 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "139 63";
+         Extent = "24 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         ObjectType = "0";
+         ObjectID = "0";
+         boudary = "0 0 24 24";
+         disabledrag = "0";
+   };
+   
+   new GuiButtonCtrl(TimerTrigger_Cancel_2) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "179 64";
+      Extent = "45 24";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      text = "取消";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      profile = "GuiBigViewMapButtonProfile";
+      command = "SendCancelTimerControl(2);";
+   };
+   };
+};
+GameMainWndGui_Layer4.Add(TimerTriggerCtrlWnd_2);
+//--- OBJECT WRITE END ---
+
+//--- OBJECT WRITE BEGIN ---
+%guiContent = new GuiBitmapWindowCtrl(TimerTriggerCtrlWnd_3)
+{
+	 canSaveDynamicFields = "0";
+	 profile = "GuiDefaultProfile";
+   Enabled = "1";
+   isContainer = "1";
+   HorizSizing = "Proportion";
+   VertSizing = "Proportion";
+   position = "396 502";
+   Extent = "244 103";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+   wrap = "0";
+   MoveHotspot = "0 0 1024 768";
+   
+   new GuiControlExt(TimerTriggerCtrl_3) {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   position = "0 0";
+   Extent = "244 103";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   mustPrerender = "0";
+   hovertime = "1000";
+   profile = "GuiTimerTriggerProfile_1";
+   MoveHotspot = "0 0 1024 768";
+
+    new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiTimerButtonProfile_downSize";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "200 6";
+      Extent = "23 23";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "DownSizeTimerCtrl(3);";
+   };
+   new GuiRichTextCtrl(TimerTrigger_Desc_3) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "25 12";
+      Extent = "150 26";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      profile = "GuiTimerRichTextCtrlProfile";
+      lineHeight = "20";
+   };
+   new GuiRichTextCtrl(TimerTrigger_LeftTime_3) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "25 34";
+      Extent = "150 26";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      profile = "GuiTimerRichTextCtrlProfile";
+      lineHeight = "20";
+   };
+   new GuiBitmapCtrl(TimerTrigger_img1_3)
+   {
+   			 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "23 58";
+         Extent = "32 32";
+         boudary = "0 0 32 32";
+         canSave = "1";
+         Visible = "1";
+         bitmap = "./images/GUIWindow31_1_006.png";
+   };
+   new GuiBitmapCtrl(TimerTrigger_img2_3)
+   {
+   			 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "60 58";
+         Extent = "32 32";
+         boudary = "0 0 32 32";
+         canSave = "1";
+         Visible = "1";
+         bitmap = "./images/GUIWindow31_1_006.png";
+   };
+   new GuiBitmapCtrl(TimerTrigger_img3_3)
+   {
+   			 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "97 58";
+         Extent = "32 32";
+         boudary = "0 0 32 32";
+         canSave = "1";
+         Visible = "1";
+         bitmap = "./images/GUIWindow31_1_006.png";
+   };
+   new GuiBitmapCtrl(TimerTrigger_img4_3)
+   {
+   			 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "134 58";
+         Extent = "32 32";
+         boudary = "0 0 32 32";
+         canSave = "1";
+         Visible = "1";
+         bitmap = "./images/GUIWindow31_1_006.png";
+   };
+   new dGuiObjectIcon(TimerTrigger_icon1_3) {
+      	 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "28 63";
+         Extent = "24 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         ObjectType = "0";
+         ObjectID = "0";
+         boudary = "0 0 24 24";
+         disabledrag = "0";
+   };
+   new dGuiObjectIcon(TimerTrigger_icon2_3) {
+      	 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "65 63";
+         Extent = "24 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         ObjectType = "0";
+         ObjectID = "0";
+         boudary = "0 0 24 24";
+         disabledrag = "0";
+   };
+   new dGuiObjectIcon(TimerTrigger_icon3_3) {
+      	 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "102 63";
+         Extent = "24 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         ObjectType = "0";
+         ObjectID = "0";
+         boudary = "0 0 24 24";
+         disabledrag = "0";
+   };
+   new dGuiObjectIcon(TimerTrigger_icon4_3) {
+      	 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "139 63";
+         Extent = "24 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         ObjectType = "0";
+         ObjectID = "0";
+         boudary = "0 0 24 24";
+         disabledrag = "0";
+   };
+   
+   new GuiButtonCtrl(TimerTrigger_Cancel_3) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "179 64";
+      Extent = "45 24";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      text = "取消";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      profile = "GuiBigViewMapButtonProfile";
+      command = "SendCancelTimerControl(3);";
+   };
+   };
+};
+GameMainWndGui_Layer4.Add(TimerTriggerCtrlWnd_3);
+
+//--- OBJECT WRITE BEGIN ---
+
+new GuiBitmapWindowCtrl(TimerTriggerCtrlWnd_4)
+{
+	 canSaveDynamicFields = "0";
+	 profile = "GuiDefaultProfile";
+   Enabled = "1";
+   isContainer = "1";
+   HorizSizing = "Proportion";
+   VertSizing = "Proportion";
+   position = "396 449";
+   Extent = "244 103";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+   wrap = "0";
+   MoveHotspot = "0 0 1024 768";
+   
+  new GuiControlExt(TimerTriggerCtrl_4) {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   HorizSizing = "right";
+   VertSizing = "bottom";
+   position = "0 0";
+   Extent = "244 103";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "1";
+   mustPrerender = "0";
+   hovertime = "1000";
+   profile = "GuiTimerTriggerProfile_1";
+   MoveHotspot = "0 0 1024 768";
+
+    new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiTimerButtonProfile_downSize";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "200 6";
+      Extent = "23 23";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "DownSizeTimerCtrl(4);";
+   };
+   
+   new GuiRichTextCtrl(TimerTrigger_Desc_4) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "25 12";
+      Extent = "150 26";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      profile = "GuiTimerRichTextCtrlProfile";
+      lineHeight = "20";
+   };
+   new GuiRichTextCtrl(TimerTrigger_LeftTime_4) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "25 34";
+      Extent = "150 26";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      profile = "GuiTimerRichTextCtrlProfile";
+      lineHeight = "20";
+   };
+   new GuiBitmapCtrl(TimerTrigger_img1_4)
+   {
+   			 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "23 58";
+         Extent = "32 32";
+         boudary = "0 0 32 32";
+         canSave = "1";
+         Visible = "1";
+         bitmap = "./images/GUIWindow31_1_006.png";
+   };
+   new GuiBitmapCtrl(TimerTrigger_img2_4)
+   {
+   			 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "60 58";
+         Extent = "32 32";
+         boudary = "0 0 32 32";
+         canSave = "1";
+         Visible = "1";
+         bitmap = "./images/GUIWindow31_1_006.png";
+   };
+   new GuiBitmapCtrl(TimerTrigger_img3_4)
+   {
+   			 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "97 58";
+         Extent = "32 32";
+         boudary = "0 0 32 32";
+         canSave = "1";
+         Visible = "1";
+         bitmap = "./images/GUIWindow31_1_006.png";
+   };
+   new GuiBitmapCtrl(TimerTrigger_img4_4)
+   {
+   			 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "134 58";
+         Extent = "32 32";
+         boudary = "0 0 32 32";
+         canSave = "1";
+         Visible = "1";
+         bitmap = "./images/GUIWindow31_1_006.png";
+   };
+   new dGuiObjectIcon(TimerTrigger_icon1_4) {
+      	 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "28 63";
+         Extent = "24 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         ObjectType = "0";
+         ObjectID = "0";
+         boudary = "0 0 24 24";
+         disabledrag = "0";
+   };
+   new dGuiObjectIcon(TimerTrigger_icon2_4) {
+      	 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "65 63";
+         Extent = "24 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         ObjectType = "0";
+         ObjectID = "0";
+         boudary = "0 0 24 24";
+         disabledrag = "0";
+   };
+   new dGuiObjectIcon(TimerTrigger_icon3_4) {
+      	 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "102 63";
+         Extent = "24 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         ObjectType = "0";
+         ObjectID = "0";
+         boudary = "0 0 24 24";
+         disabledrag = "0";
+   };
+   new dGuiObjectIcon(TimerTrigger_icon4_4) {
+      	 canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "relative";
+         VertSizing = "relative";
+         position = "139 63";
+         Extent = "24 24";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         ObjectType = "0";
+         ObjectID = "0";
+         boudary = "0 0 24 24";
+         disabledrag = "0";
+   };
+   
+   new GuiButtonCtrl(TimerTrigger_Cancel_4) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "179 64";
+      Extent = "45 24";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      text = "取消";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      profile = "GuiBigViewMapButtonProfile";
+      command = "SendCancelTimerControl(4);";
+    };
+   };
+};
+GameMainWndGui_Layer4.Add(TimerTriggerCtrlWnd_4);
+
+
+
+
+%guiContent = new GuiBitmapWindowCtrl(TimerTriggerDownSizeCtrlWnd_1)
+{
+	 canSaveDynamicFields = "0";
+	 profile = "GuiDefaultProfile";
+   Enabled = "1";
+   isContainer = "1";
+   HorizSizing = "Proportion";
+   VertSizing = "Proportion";
+   position = "330 515";
+   Extent = "185 45";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+   wrap = "0";
+   MoveHotspot = "0 0 1024 768";
+   
+   new GuiControlExt(TimerTriggerDownSizeCtrl_1) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "0 0";
+      Extent = "185 45";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      profile = "GuiTimerTriggerProfile_1";
+      MoveHotspot = "0 0 1024 768";
+    
+   new GuiRichTextCtrl(TimerTriggerDownSize_LeftTime_1) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "20 15";
+      Extent = "180 20";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      profile = "GuiTimerRichTextCtrlProfile";
+   };
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiTimerButtonProfile_MaxSize";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "147 10";
+      Extent = "23 23";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "MaxTimerTriggerCtrl(1);";
+   };    
+  };
+};
+
+
+GameMainWndGui_Layer4.Add(TimerTriggerDownSizeCtrlWnd_1);
+
+
+%guiContent = new GuiBitmapWindowCtrl(TimerTriggerDownSizeCtrlWnd_2)
+{
+	 canSaveDynamicFields = "0";
+	 profile = "GuiDefaultProfile";
+   Enabled = "1";
+   isContainer = "1";
+   HorizSizing = "Proportion";
+   VertSizing = "Proportion";
+   position = "330 490";
+   Extent = "185 45";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+   wrap = "0";
+   MoveHotspot = "0 0 1024 768";
+   
+   new GuiControlExt(TimerTriggerDownSizeCtrl_2) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "0 0";
+      Extent = "185 45";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      profile = "GuiTimerTriggerProfile_1";
+      MoveHotspot = "0 0 1024 768";
+    
+   new GuiRichTextCtrl(TimerTriggerDownSize_LeftTime_2) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "20 15";
+      Extent = "180 20";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      profile = "GuiTimerRichTextCtrlProfile";
+   };
+      new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiTimerButtonProfile_MaxSize";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "147 10";
+      Extent = "23 23";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "MaxTimerTriggerCtrl(2);";
+   };      
+  };
+};
+
+GameMainWndGui_Layer4.Add(TimerTriggerDownSizeCtrlWnd_2);
+
+
+
+%guiContent = new GuiBitmapWindowCtrl(TimerTriggerDownSizeCtrlWnd_3)
+{
+	 canSaveDynamicFields = "0";
+	 profile = "GuiDefaultProfile";
+   Enabled = "1";
+   isContainer = "1";
+   HorizSizing = "Proportion";
+   VertSizing = "Proportion";
+   position = "330 465";
+   Extent = "185 45";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+   wrap = "0";
+   MoveHotspot = "0 0 1024 768";
+   
+   new GuiControlExt(TimerTriggerDownSizeCtrl_3) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "0 0";
+      Extent = "185 45";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      profile = "GuiTimerTriggerProfile_1";
+      MoveHotspot = "0 0 1024 768";
+    
+   new GuiRichTextCtrl(TimerTriggerDownSize_LeftTime_3) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "20 15";
+      Extent = "160 20";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      profile = "GuiTimerRichTextCtrlProfile";
+      MouseRightDown = "MaxTimerTriggerCtrl(3);";
+   };
+    new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiTimerButtonProfile_MaxSize";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "147 10";
+      Extent = "23 23";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "MaxTimerTriggerCtrl(3);";
+   };      
+  };
+};
+
+GameMainWndGui_Layer4.Add(TimerTriggerDownSizeCtrlWnd_3);
+
+
+%guiContent = new GuiBitmapWindowCtrl(TimerTriggerDownSizeCtrlWnd_4)
+{
+	 canSaveDynamicFields = "0";
+	 profile = "GuiDefaultProfile";
+   Enabled = "1";
+   isContainer = "1";
+   HorizSizing = "Proportion";
+   VertSizing = "Proportion";
+   position = "330 440";
+   Extent = "185 42";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+   wrap = "0";
+   MoveHotspot = "0 0 1024 768";
+   
+   new GuiControlExt(TimerTriggerDownSizeCtrl_4) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "0 0";
+      Extent = "185 42";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      profile = "GuiTimerTriggerProfile_1";
+      MoveHotspot = "0 0 1024 768";      
+    
+   new GuiRichTextCtrl(TimerTriggerDownSize_LeftTime_4) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "20 15";
+      Extent = "180 20";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      profile = "GuiTimerRichTextCtrlProfile";
+   };
+      new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiTimerButtonProfile_MaxSize";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "147 10";
+      Extent = "23 23";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "MaxTimerTriggerCtrl(4);";
+   };  
+       
+  };
+};
+
+GameMainWndGui_Layer4.Add(TimerTriggerDownSizeCtrlWnd_4);
+
+
+new GuiBitmapWindowCtrl(TimerTriggerWelcomeCtrl)
+{
+	 canSaveDynamicFields = "0";
+	 profile = "GuiDefaultProfile";
+   Enabled = "1";
+   isContainer = "1";
+   HorizSizing = "Proportion";
+   VertSizing = "Proportion";
+   position = "402 366";
+   Extent = "300 103";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+   wrap = "0";
+   MoveHotspot = "0 0 1024 768";
+   
+   new GuiControl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "0 0";
+      Extent = "300 103";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      mustPrerender = "0";
+      hovertime = "1000";
+      profile = "GuiTimerTriggerProfile_1";
+      MoveHotspot = "0 0 1024 768";      
+    
+   new GuiRichTextCtrl(TimerTriggerWelcomeCtrl_Content) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "22 19";
+      Extent = "250 60";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      profile = "GuiTimerRichTextCtrlProfile";
+   };
+      new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiTimerButtonProfile_Close";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "265 12";
+      Extent = "23 23";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "TimerTriggerWelcomeCtrl.setVisible(0);";
+   };         
+  };
+};
+
+GameMainWndGui_Layer4.add(TimerTriggerWelcomeCtrl);
+
+
+$TimerTriggerStates[0] = 1;
+$TimerTriggerStates[1] = 1;
+$TimerTriggerStates[2] = 1;
+$TimerTriggerStates[3] = 1;
+
+function ShowTimerTriggerWelcomeWnd(%content)
+{
+	TimerTriggerWelcomeCtrl_Content.setContent(%content);
+	TimerTriggerWelcomeCtrl.setPosition(402, 366);
+	echo("TimerTriggerWelcomeCtrl.setVisible 1111");
+	TimerTriggerWelcomeCtrl.setVisible(1);
+	//schedule(30000,0,"CloseTimerTriggerWelcomeWnd");
+}
+
+function CloseTimerTriggerWelcomeWnd()
+{
+ if(TimerTriggerWelcomeCtrl.IsVisible())
+ {
+ 		echo("TimerTriggerWelcomeCtrl.setVisible 0000");
+    TimerTriggerWelcomeCtrl.setVisible(0);
+ }
+}
+
+function SetTimerCtrlDesc(%index, %content)
+{
+   %obj = "TimerTrigger_Desc_" @ %index;
+   %obj.setContent(%content);
+   %newExtent = %obj.getExtent();
+	 %newHeight = GetWord(%newExtent, 1);
+	 UpdateTimerCtrlControlsPosition(%index, %newHeight - 26);
+}
+
+function UpdateTimerCtrlLeftTime(%index, %leftTime)
+{
+  %obj = "TimerTriggerCtrl_" @ %index;
+  %obj.setDirty();
+  
+  %obj = "TimerTriggerDownSizeCtrl_" @ %index;
+  %obj.setDirty();
+  
+	%obj = "TimerTrigger_LeftTime_" @ %index;
+	%DownSizeobj = "TimerTriggerDownSize_LeftTime_" @ %index;
+	%seconds = mRound(%leftTime / 1000);
+
+	//小时、分、秒
+	%hours = mFloor(%seconds / 3600);
+	%seconds = %seconds - (%hours * 3600);
+
+	%minutes = mFloor(%seconds / 60);
+	%seconds = %seconds - (%minutes * 60);
+	
+	%content = "请再等待: ";
+	if (%hours != 0) 
+		%content = %content @ %hours @ "时";
+	%content = %content @ %minutes @ "分" @ %seconds @ "秒";
+	
+	%obj.setContent(%content);
+	%DownSizeobj.setContent(%content);
+}
+
+function DownSizeTimerCtrl(%index)
+{
+  %objdownsize = "TimerTriggerDownSizeCtrlWnd_" @ %index;
+  %obj = "TimerTriggerCtrlWnd_" @ %index;
+  $TimerTriggerStates[%index-1] =2;
+  %obj.setVisible(0);
+  %pos = %obj.getPosition();
+  %extent = %obj.getExtent();
+  %extent1 = %objdownsize.getExtent();
+  %objdownsize.setposition((getWord(%pos,0)+getWord(%extent,0)-getWord(%extent1,0)),getWord(%pos,1));
+  %objdownsize.setVisible(1); 
+  //schedule(200,0,"showTimerCtrl", %objdownsize);	
+}
+
+function MaxTimerTriggerCtrl(%index)
+{
+  %objdownsize = "TimerTriggerDownSizeCtrlWnd_" @ %index;
+  %obj = "TimerTriggerCtrlWnd_" @ %index;
+  $TimerTriggerStates[%index-1] =1;
+  %pos = %objdownsize.getPosition();
+  %extent = %obj.getExtent();
+  %extent1 = %objdownsize.getExtent();
+  %obj.setposition((getWord(%pos,0)+getWord(%extent1,0)-getWord(%extent,0)),getWord(%pos,1));
+  //schedule(200,0,"showTimerCtrl", %obj );	
+  %obj.setVisible(1);
+  %objdownsize.setVisible(0); 
+}
+
+
+function SetTimerCtrlIcon(%nCtrlIndex, %nIconIndex, %nType, %nId)
+{
+	%obj = "TimerTrigger_icon" @ %nIconIndex @ "_" @ %nCtrlIndex;
+	if (%nType > 0)
+	{
+		%obj.setObject(%nType, %nId);
+		%obj.setVisible(1);
+		%obj = "TimerTrigger_img" @ %nIconIndex @ "_" @ %nCtrlIndex;
+		%obj.setVisible(1);
+	}
+	else
+	{
+		%obj.setVisible(0);
+		%obj = "TimerTrigger_img" @ %nIconIndex @ "_" @ %nCtrlIndex;
+		%obj.setVisible(0);
+	}
+}
+
+function SetTimerCtrlCancel(%index, %bCanCancel)
+{
+	%obj = "TimerTrigger_Cancel_" @ %index;
+	%obj.setVisible(%bCanCancel);
+}
+
+function SetTimerCtrlVisible(%index, %bVisible)
+{
+	if(%bVisible ==0)
+	{
+	 %obj = "TimerTriggerDownSizeCtrlWnd_" @ %index;
+	 %obj.setVisible(%bVisible);
+	 %obj = "TimerTriggerCtrlWnd_" @ %index;
+	 %obj.setVisible(%bVisible);
+	}
+	else
+	{
+		if($TimerTriggerStates[%index-1] == 1)
+		{
+			%obj = "TimerTriggerCtrlWnd_" @ %index;
+	    %obj.setVisible(%bVisible);
+		}
+		else
+		{
+			%obj = "TimerTriggerDownSizeCtrlWnd_" @ %index;
+	    %obj.setVisible(%bVisible);
+		}
+	}
+}
+
+function UpdateTimerCtrlControlsPosition(%index, %height)
+{
+	%obj = "TimerTriggerCtrlWnd_" @ %index;
+	if (%index == 1)
+		%obj.setPosition(396, 607 - %height);
+	else if (%index == 2)
+		%obj.setPosition(396, 559 - %height);
+	else if (%index == 3)
+		%obj.setPosition(396, 502 - %height);
+	else if (%index == 4)
+		%obj.setPosition(396, 449 - %height);
+		
+	%obj.setExtent(244, 103 + %height);
+		
+	%obj = "TimerTriggerCtrl_" @ %index;
+	%obj.setExtent(244, 103 + %height);
+	
+	%obj = "TimerTrigger_LeftTime_" @ %index;		// 计时控件
+	%obj.setPosition(25, 34 + %height);
+	
+	%obj = "TimerTrigger_img1" @ "_" @ %index;	// Imag1控件
+	%obj.setPosition(23, 58 + %height);
+	%obj.setExtent(34, 34);
+	
+	%obj = "TimerTrigger_img2" @ "_" @ %index;	// Imag2控件
+	%obj.setPosition(60, 58 + %height);
+	%obj.setExtent(34, 34);
+	
+	%obj = "TimerTrigger_img3" @ "_" @ %index;	// Imag3控件
+	%obj.setPosition(97, 58 + %height);
+	%obj.setExtent(34, 34);
+	
+	%obj = "TimerTrigger_img4" @ "_" @ %index;	// Imag4控件
+	%obj.setPosition(134, 58 + %height);
+	%obj.setExtent(34, 34);
+	
+	%obj = "TimerTrigger_icon1" @ "_" @ %index;	// Icon1控件
+	%obj.setPosition(28, 63 + %height);
+	
+	%obj = "TimerTrigger_icon2" @ "_" @ %index;	// Icon2控件
+	%obj.setPosition(65, 63 + %height);
+	
+	%obj = "TimerTrigger_icon3" @ "_" @ %index;	// Icon3控件
+	%obj.setPosition(102, 63 + %height);
+	
+	%obj = "TimerTrigger_icon4" @ "_" @ %index;	// Icon4控件
+	%obj.setPosition(139, 63 + %height);
+	
+	%obj = "TimerTrigger_Cancel_" @ %index;			// 取消按钮
+	%obj.setPosition(179, 64 + %height);
+}
+
+function GetTimerInfo(%index, %type)
+{
+	switch(%type)
+	{
+		case 1:
+			switch(%index)
+      {                
+				case 1: return "您将获得第一份惊喜礼品";
+				case 2: return "您将获得第二份惊喜礼品";
+				case 3: return "您将获得第三份惊喜礼品";
+				case 4: return "您将获得第四份惊喜礼品";
+      }                
+			return "您将获得一份惊喜礼品";
+
+		case 2:
+			switch(%index)
+			{
+				case 1: return "您已经获得了一份惊喜礼品 1";
+				case 2: return "您已经获得了一份惊喜礼品 2";
+				case 3: return "您已经获得了一份惊喜礼品 3";
+				case 4: return "您已经获得了一份惊喜礼品 4";
+			}
+			return "您已经获得了一份惊喜礼品";
+	}
+}

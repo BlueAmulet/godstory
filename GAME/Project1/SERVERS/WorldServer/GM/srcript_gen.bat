@@ -1,0 +1,1 @@
+start tolua++.exe -o GMGenerate.cpp GMExport.pkg

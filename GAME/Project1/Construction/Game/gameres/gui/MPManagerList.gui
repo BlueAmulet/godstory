@@ -1,0 +1,208 @@
+//===========================================================================================================
+// 文档说明:师徒界面
+// 创建时间:2010-02-02
+// 创建人: thinking
+//===========================================================================================================
+//徒弟列表
+new GuiBitmapWindowCtrl(guiPrenticeList) {
+  Profile = "GuiDefaultProfile";
+  HorizSizing = "Proportion";
+  VertSizing = "Proportion";
+  position = "0 132";
+  Extent = "470 307";
+  Visible = "0";
+  useFadeout = "1";
+  bitmap = $GUI::GUISkinDirectory @ "GUIWindow57_1_009.png";
+  MoveHotspot = "0 0 1024 768";  
+  
+  new guiTextCtrl(mpm_MasterName){
+    Profile = "GuiCurrencyShowInfoTextProfile_4";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "75 36";
+    Extent = "185 14";
+    Text = "";
+    Visible = "1";
+  };
+  
+  new guiTextCtrl(mpm_Master_PrenNum){
+    Profile = "GuiCurrencyShowInfoTextProfile_4";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "102 55";
+    Extent = "68 14";
+    Text = "";
+    Visible = "1";
+  };
+  
+  new GuiTextListCtrl(mpm_Prentice_ListCtl) {
+    Profile = "GuiTextListProfile";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "19 108";
+    Extent = "265 138";
+    Visible = "1";
+    CellSize = "265 22";
+    command = "";
+    resizeCell = "1";
+    columns = "9 122 166 218";
+    fitParentWidth = "1";
+    clipColumnText = "1";
+    TextListSelectImageFile = $GUI::GUISkinDirectory @ "GUIWindow99_1_017.png";
+    TextListMouseOnImageFile = $GUI::GUISkinDirectory @ "GUIWindow99_1_016.png";
+  };
+  
+  new GuiButtonCtrl(mpm_Close_Bnt) {
+    Profile = "GuiCloseButtonProfile1";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "441 9";
+    Extent = "21 21";
+    Visible = "1";
+    command = "closePrenticeListWnd();";
+    buttonType = "PushButton";
+  };  
+
+  new GuiButtonCtrl(mpm_ChangeText_bnt) {
+    Profile = "GuiXianZhuanNoteButtonProfile_1";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "400 33";
+    Extent = "56 21";
+    Visible = "1";
+    Text = "修 改";
+    command = "mpm_ChangeText_bnt.ChangeText();";
+    buttonType = "PushButton";
+  };  
+
+  new GuiMLTextEditCtrl(mpm_Callboard) {
+    Profile = "GuiGeneralTextEditProfile_3";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "299 56";
+    Extent = "156 94";
+    Visible = "1";
+    Text = "";
+    lineSpacing = "2";
+    maxChars = "100";
+    maxLineNum = 6;
+  };
+
+  new GuiBitmapCtrl(mpm_Disconnection_Bitmap) {
+    Profile = "GuiModelessDialogProfile";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "296 155";
+    Extent = "160 115";
+    Visible = "0";
+    bitmap = $GUI::GUISkinDirectory @ "GUIWindow57_1_011.png";
+    
+    new guiTextCtrl(mpm_PrenticeName1){
+      Profile = "GuiTextProfile1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "7 7";
+      Extent = "146 15";
+      Text = "";
+      Visible = "1";
+    };
+    
+    new guiTextCtrl(mpm_OutTime){
+      Profile = "GuiCurrencyShowInfoTextProfile_4";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "7 83";
+      Extent = "146 18";
+      Text = "";
+      Visible = "1";
+    };
+  };
+  
+  new GuiBitmapCtrl(mpm_Connection_Bitmap) {
+    Profile = "GuiModelessDialogProfile";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "296 155";
+    Extent = "160 115";
+    Visible = "1";
+    bitmap = $GUI::GUISkinDirectory @ "GUIWindow57_1_010.png";
+    
+    new guiTextCtrl(mpm_PrenticeName2){
+      Profile = "GuiTextProfile1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "7 7";
+      Extent = "146 15";
+      Text = "";
+      Visible = "1";
+    };
+    
+    new guiTextCtrl(mpm_Level){
+      Profile = "GuiCurrencyShowInfoTextProfile_4";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "67 35";
+      Extent = "60 14";
+      Text = "";
+      Visible = "1";
+    };
+    
+    new guiTextCtrl(mpm_FriendValue){
+      Profile = "GuiCurrencyShowInfoTextProfile_4";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "56 58";
+      Extent = "96 14";
+      Text = "";
+      Visible = "1";
+    };
+    
+    new guiTextCtrl(mpm_WeekDayActivity){
+      Profile = "GuiCurrencyShowInfoTextProfile_4";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "94 84";
+      Extent = "56 14";
+      Text = "";
+      Visible = "1";
+    };
+  };
+      
+  new GuiButtonCtrl(mpm_Accept_bnt) {
+    Profile = "GuiUpgradeButtonProfile_1";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "401 276";
+    Extent = "56 21";
+    Visible = "1";
+    Text = "收  徒";
+    command = "";
+    buttonType = "PushButton";
+  };  
+  
+  new GuiButtonCtrl(mpm_KickOut_bnt) {
+    Profile = "GuiUpgradeButtonProfile_1";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "341 276";
+    Extent = "56 21";
+    Visible = "1";
+    Text = "开  除";
+    command = "";
+    buttonType = "PushButton";
+  };  
+  
+  new GuiButtonCtrl(mpm_Result_bnt) {
+    Profile = "GuiUpgradeButtonProfile_1";
+    HorizSizing = "right";
+    VertSizing = "bottom";
+    position = "281 276";
+    Extent = "56 21";
+    Visible = "1";
+    Text = "成  就";
+    command = "";
+    buttonType = "PushButton";
+  };  
+};
+
+GameMainWndGui_Layer3.Add(guiPrenticeList);

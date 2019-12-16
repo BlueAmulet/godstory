@@ -1,0 +1,116 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiChunkedBitmapCtrl(MainMenuGui) {
+   profile = "GuiContentProfile";
+   horizSizing = "width";
+   vertSizing = "height";
+   position = "0 0";
+   extent = "640 480";
+   minExtent = "8 8";
+   visible = "1";
+   helpTag = "0";
+   bitmap = "./background";
+   useVariable = "0";
+   tile = "0";
+
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiButtonProfile";
+      HorizSizing = "Relative";
+      VertSizing = "Relative";
+      Position = "429 408";
+      Extent = "69 32";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "quit();";
+      hovertime = "1000";
+      text = "ÍË ³ö";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+   };
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiButtonProfile";
+      HorizSizing = "Relative";
+      VertSizing = "Relative";
+      Position = "151 408";
+      Extent = "69 32";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "Canvas.setContent(startMissionGui);";
+      hovertime = "1000";
+      text = "³¡¾°±à¼­Æ÷";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+   };
+   
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiButtonProfile";
+      HorizSizing = "Relative";
+      VertSizing = "Relative";
+      Position = "246 408";
+      Extent = "69 32";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "GuiEdit();";
+      hovertime = "1000";
+      text = "½çÃæ±à¼­Æ÷";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+   };
+   
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiButtonProfile";
+      HorizSizing = "Relative";
+      VertSizing = "Relative";
+      Position = "335 408";
+      Extent = "69 32";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "Canvas.setContent(guiObjectViewer);";
+      hovertime = "1000";
+      text = "Ä£ÐÍä¯ÀÀÆ÷";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+   };
+//   new GuiButtonCtrl() {
+//      canSaveDynamicFields = "0";
+//      Enabled = "1";
+//      isContainer = "0";
+//      Profile = "GuiButtonProfile";
+//      HorizSizing = "right";
+//      VertSizing = "top";
+//      Position = "36 291";
+//      Extent = "110 20";
+//      MinExtent = "8 8";
+//      canSave = "1";
+//      Visible = "1";
+//      Command = "Canvas.pushDialog(optionsDlg);";
+//      hovertime = "1000";
+//      text = "Options...";
+//      groupNum = "-1";
+//      buttonType = "PushButton";
+//      useMouseEvents = "0";
+//   };
+};
+//--- OBJECT WRITE END ---
+
+
+

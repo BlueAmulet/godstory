@@ -1,0 +1,140 @@
+//===========================================================================================================
+// 文档说明:聊天输入框
+// 创建时间:2009-4-1
+// 创建人: soar
+//=========================================================================================================== 
+
+new GuiControlExt(ChatInputWndGui) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "top";
+   position = "0 505";
+   extent = "336 23";
+   minExtent = "8 8";
+   visible = "1";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiDefaultProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "0 0";                      
+      extent = "336 23";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_015";
+   };
+   
+   new GuiRichButtonCtrl(InputChunnelButton) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiKeyboardButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      Position = "2 2";
+      Extent = "47 19";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "OpenChangeInputChunnelWnd();Canvas.setTempWnd(ChangeChatInputChunnelGui);";
+      hovertime = "1000";
+      text = "<t c=\'0xffffffff\' b=\'1\'>附近</t>";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+//   new GuiTextCtrl(InputChunnelName) {
+//      canSaveDynamicFields = "0";
+//      Enabled = "1";
+//      isContainer = "0";
+//      Profile = "GuiCurrencyShowInfoTextProfile_1";
+//      HorizSizing = "right";
+//      VertSizing = "bottom";
+//      position = "21 3";
+//      Extent = "30 19";
+//      MinExtent = "8 2";
+//      canSave = "1";
+//      Visible = "1";
+//      hovertime = "1000";
+//      Margin = "0 0 0 0";
+//      Padding = "0 0 0 0";
+//      AnchorTop = "1";
+//      AnchorBottom = "0";
+//      AnchorLeft = "1";
+//      AnchorRight = "0";
+//      text = "附近";
+//      maxLength = "1024";
+//   };
+   
+   new GuiButtonCtrl(FaceButton) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiChatInputWndFaceButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      Position = "306 1";
+      Extent = "21 21";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      //Command = "ChangeInputChunnel(0);";
+      hovertime = "1000";
+      text = "";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+   new GuiButtonCtrl(InputButton) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiChatInputWndInputButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      Position = "288 1";
+      Extent = "21 21";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "InputInfo();";
+      hovertime = "1000";
+      text = "";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+};
+
+new GuiControl(ChatInputGui) {
+   profile = "GuiModelessDialogProfile";
+   horizSizing = "right";
+   vertSizing = "top";
+   position = "0 503";
+   extent = "350 29";
+   minExtent = "8 8";
+   visible = "1";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+   
+   new GuiTextEditCtrl(InputWnd) {
+      Profile = "GuiGeneralTextEditProfile_3";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "47 5";
+      Extent = "230 20";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "";
+      hovertime = "1000";
+      maxLength = 100;
+   };
+};
+GameMainWndGui_Layer2.Add(ChatInputWndGui);
+GameMainWndGui_Layer2.Add(ChatInputGui);

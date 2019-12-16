@@ -1,0 +1,185 @@
+//===========================================================================================================
+// 文档说明:输入对话频道改变
+// 创建时间:2009-4-10
+// 创建人: soar
+//=========================================================================================================== 
+
+new GuiControl(ChangeChatInputChunnelGui) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "top";
+   position = "7 336";
+   extent = "38 170";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+  
+   new GuiBitmapCtrl() {
+      profile = "GuiDefaultProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "0 0";                      
+      extent = "38 170";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "hudfill";
+   };
+   
+   new GuiRichButtonCtrl(ChangeChunnelButton1) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiKeyboardButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      Position = "1 1";
+      Extent = "36 19";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "SelectChatInputChunnel(0);ChangeChunnel(10);";
+      hovertime = "1000";
+      text = "<t c=\'0xffffffff\' b=\'1\'>附近</t>";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+   new GuiRichButtonCtrl(ChangeChunnelButton2) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiKeyboardButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      Position = "1 22";
+      Extent = "36 19";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "SelectChatInputChunnel(1);ChangeChunnel(7);";
+      hovertime = "1000";
+      text = "<t c=\'0xffffffff\' b=\'1\'>队伍</t>";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+   new GuiRichButtonCtrl(ChangeChunnelButton3) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiKeyboardButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      Position = "1 43";
+      Extent = "36 19";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "SelectChatInputChunnel(2);";
+      hovertime = "1000";
+      text = "<t c=\'0xffffffff\' b=\'1\'>帮会</t>";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+   new GuiRichButtonCtrl(ChangeChunnelButton4) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiKeyboardButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      Position = "1 64";
+      Extent = "36 19";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "SelectChatInputChunnel(3);";
+      hovertime = "1000";
+      text = "<t c=\'0xffffffff\' b=\'1\'>门宗</t>";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+   new GuiRichButtonCtrl(ChangeChunnelButton5) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiKeyboardButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      Position = "1 85";
+      Extent = "36 19";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "SelectChatInputChunnel(4);ChangeChunnel(9);";
+      hovertime = "1000";
+      text = "<t c=\'0xffffffff\' b=\'1\'>同城</t>";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+   new GuiRichButtonCtrl(ChangeChunnelButton6) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiKeyboardButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      Position = "1 106";
+      Extent = "36 19";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "SelectChatInputChunnel(5);";
+      hovertime = "1000";
+      text = "<t c=\'0xffffffff\' b=\'1\'>全服</t>";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+   new GuiRichButtonCtrl(ChangeChunnelButton7) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiKeyboardButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      Position = "1 127";
+      Extent = "36 19";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "SelectChatInputChunnel(6);";
+      hovertime = "1000";
+      text = "<t c=\'0xffffffff\' b=\'1\'>跨服</t>";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+   new GuiRichButtonCtrl(ChangeChunnelButton8) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiKeyboardButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      Position = "1 148";
+      Extent = "36 19";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "SelectChatInputChunnel(7);";
+      hovertime = "1000";
+      text = "<t c=\'0xffffffff\' b=\'1\'>跑马</t>";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+};
+
+GameMainWndGui_Layer4.Add(ChangeChatInputChunnelGui);

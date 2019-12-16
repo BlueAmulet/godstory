@@ -1,0 +1,1521 @@
+//===========================================================================================================
+// 文档说明:频道屏蔽
+// 创建时间:2009-4-13
+// 创建人: soar
+//=========================================================================================================== 
+
+new GuiControl(CloseChunnel_Synthesize) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "top";
+   position = "0 386";
+   extent = "64 106";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+  
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "0 0";                      
+      extent = "65 106";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "hudfill";
+   };
+   
+   new GuiCheckBoxCtrl(SynthesizeClose_1) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 3";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      Command = "SptChangeChatChannelType(9);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 3";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 4";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "事件";
+      hovertime = "1000";
+	 };
+
+	 new GuiCheckBoxCtrl(SynthesizeClose_2) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 20";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 20";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 21";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "附近";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(SynthesizeClose_3) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 37";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 37";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 38";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "队伍";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(SynthesizeClose_4) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 54";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 54";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 55";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "帮会";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(SynthesizeClose_5) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 71";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 71";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 72";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "门宗";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(SynthesizeClose_6) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 88";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 88";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 89";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "帮助";
+      hovertime = "1000";
+	 };
+	 
+};
+
+new GuiControl(CloseChunnel_SamenessCity) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "top";
+   position = "29 420";
+   extent = "64 72";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+  
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "0 0";                      
+      extent = "65 72";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "hudfill";
+   };
+   
+   new GuiCheckBoxCtrl(SamenessCityClose_1) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 3";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 3";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 4";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "事件";
+      hovertime = "1000";
+	 };
+
+	 new GuiCheckBoxCtrl(SamenessCityClose_2) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 20";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 20";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 21";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "附近";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(SamenessCityClose_3) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 37";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 37";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 38";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "同城";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(SamenessCityClose_4) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 54";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 54";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 55";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "帮助";
+      hovertime = "1000";
+	 };
+    
+};
+
+new GuiControl(CloseChunnel_Team) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "top";
+   position = "58 420";
+   extent = "64 72";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+  
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "0 0";                      
+      extent = "65 72";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "hudfill";
+   };
+   
+   new GuiCheckBoxCtrl(TeamClose_1) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 3";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 3";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 4";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "事件";
+      hovertime = "1000";
+	 };
+
+	 new GuiCheckBoxCtrl(TeamClose_2) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 20";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 20";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 21";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "附近";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(TeamClose_3) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 37";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 37";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 38";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "队伍";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(TeamClose_4) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 54";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 54";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 55";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "帮助";
+      hovertime = "1000";
+	 };
+    
+};
+
+new GuiControl(CloseChunnel_School) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "top";
+   position = "87 420";
+   extent = "64 72";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+  
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "0 0";                      
+      extent = "65 72";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "hudfill";
+   };
+   
+   new GuiCheckBoxCtrl(SchoolClose_1) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 3";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 3";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 4";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "事件";
+      hovertime = "1000";
+	 };
+
+	 new GuiCheckBoxCtrl(SchoolClose_2) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 20";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 20";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 21";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "附近";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(SchoolClose_3) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 37";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 37";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 38";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "门宗";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(SchoolClose_4) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 54";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 54";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 55";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "帮助";
+      hovertime = "1000";
+	 };
+    
+};
+
+new GuiControl(CloseChunnel_Faction) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "top";
+   position = "116 420";
+   extent = "64 72";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+  
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "0 0";                      
+      extent = "65 72";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "hudfill";
+   };
+   
+   new GuiCheckBoxCtrl(FactionClose_1) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 3";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 3";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 4";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "事件";
+      hovertime = "1000";
+	 };
+
+	 new GuiCheckBoxCtrl(FactionClose_2) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 20";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 20";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 21";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "附近";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(FactionClose_3) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 37";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 37";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 38";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "帮会";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(FactionClose_4) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 54";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 54";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 55";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "帮助";
+      hovertime = "1000";
+	 };
+    
+};
+
+new GuiControl(CloseChunnel_UserDefined) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "top";
+   position = "145 302";
+   extent = "64 190";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+  
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "0 0";                      
+      extent = "65 190";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "hudfill";
+   };
+   
+   new GuiCheckBoxCtrl(UserDefinedClose_1) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 3";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 3";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 4";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "事件";
+      hovertime = "1000";
+	 };
+
+	 new GuiCheckBoxCtrl(UserDefinedClose_2) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 20";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 20";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 21";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "附近";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(UserDefinedClose_3) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 37";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 37";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 38";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "队伍";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(UserDefinedClose_4) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 54";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 54";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 55";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "帮会";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(UserDefinedClose_5) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 71";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 71";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 72";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "门宗";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(UserDefinedClose_6) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 88";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 88";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 89";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "战斗";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(UserDefinedClose_7) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 105";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 105";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 106";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "获益";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(UserDefinedClose_8) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 122";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 122";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 123";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "同城";
+      hovertime = "1000";
+	 };
+   
+   new GuiCheckBoxCtrl(UserDefinedClose_9) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 139";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 139";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 140";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "全服";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(UserDefinedClose_10) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 156";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 156";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 157";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "跨服";
+      hovertime = "1000";
+	 };
+	 
+	 new GuiCheckBoxCtrl(UserDefinedClose_11) {
+      Profile = "GuiCloseChunnelCheckBoxProfile";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "3 173";
+      Extent = "15 16";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      //Command = "TerrainEditirAction(1);";
+      hovertime = "1000";
+      groupNum = "4";
+      buttonType = "ToggleButton";
+      IsStateOn  = "1";
+   };
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "23 173";                      
+      extent = "34 15";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      bitmap = $GUI::GUISkinDirectory @ "GUIWindow15_1_019";
+   };
+   
+   new GuiTextCtrl(){
+	 		Profile = "GuiCurrencyShowInfoTextProfile_1";
+      HorizSizing = "right";
+      VertSizing = "top";
+      position = "23 174";
+      Extent = "34 15";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      text   = "帮助";
+      hovertime = "1000";
+	 };
+   
+};
+
+GameMainWndGui_Layer4.Add(CloseChunnel_Synthesize);
+GameMainWndGui_Layer4.Add(CloseChunnel_SamenessCity);
+GameMainWndGui_Layer4.Add(CloseChunnel_Team);
+GameMainWndGui_Layer4.Add(CloseChunnel_School);
+GameMainWndGui_Layer4.Add(CloseChunnel_Faction);
+GameMainWndGui_Layer4.Add(CloseChunnel_UserDefined);

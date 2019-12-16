@@ -1,0 +1,745 @@
+//===========================================================================================================
+// 文档说明:可镶嵌装备列表界面
+// 修改人: hanfei
+// 修改时间:2012-12-31-23：59
+// 心情：一个大火球在像（向）我飞来，有点热
+//=========================================================================================================== 
+
+//--- OBJECT WRITE BEGIN ---
+%guiContent =     new GuiBitmapWindowCtrl(EquipEmbedableListWnd) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      HorizSizing = "Proportion";
+      VertSizing = "Proportion";
+      position = "0 120";
+      Extent = "180 371";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "0";
+      mustPrerender = "0";
+      hovertime = "1000";
+      alpha = "0";
+      useFadeout = "1";
+      bitmap = "gameres/gui/images/GUIWindow50_1_002.png";
+      wrap = "0";
+      MoveHotspot = "0 0 1024 768";
+
+      new GuiTextCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyShowInfoTextProfile_8";
+         HorizSizing = "center";
+         VertSizing = "center";
+         position = "2 4";
+         Extent = "120 25";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "0";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "可镶嵌列表";
+         maxLength = "1024";
+      };
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCloseButtonProfile1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "151 9";
+         Extent = "21 21";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipEmbedableList_CloseWnd();";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiButtonCtrl(EquipEmbedGem_btnChooseWepons) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiXianZhuanNoteButtonProfile_2";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "9 31";
+         Extent = "40 21";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipEmbedableList_ChooseWeapons();EquipEmbedableList_RefreshWnd();";
+         hovertime = "1000";
+         text = "武器";
+         groupNum = "-1";
+         buttonType = "RadioButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiButtonCtrl(EquipEmbedGem_btnChooseEquipments) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiXianZhuanNoteButtonProfile_2";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "51 31";
+         Extent = "40 21";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipEmbedableList_ChooseEquipments();EquipEmbedableList_RefreshWnd();";
+         hovertime = "1000";
+         text = "防具";
+         groupNum = "-1";
+         buttonType = "RadioButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiButtonCtrl(EquipEmbedGem_btnPageLeft) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiSystemSettingLeftBtnProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "53 316";
+         Extent = "14 14";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipEmbedableList_ClickLeftPage();";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiButtonCtrl(EquipEmbedGem_btnPageRigth) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiSystemSettingRightBtnProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "120 316";
+         Extent = "14 14";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipEmbedableList_ClickRightPage();";
+         hovertime = "1000";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiTextCtrl(EquipEmbedGem_txtPage) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyTextEditProfile_1";
+         HorizSizing = "center";
+         VertSizing = "center";
+         position = "72 314";
+         Extent = "32 16";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "0/0";
+         maxLength = "1024";
+      };
+      new GuiButtonCtrl(EquipEmbedGem_btnRefresh) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "21 339";
+         Extent = "56 22";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipEmbedableList_RefreshWnd();";
+         hovertime = "1000";
+         text = "刷新";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiButtonCtrl(EquipEmbedGem_btnPutIntoSlot) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiUpgradeButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "82 339";
+         Extent = "85 22";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipEmbedGem_OnClickPutIntoSlot();";
+         hovertime = "1000";
+         text = "放入镶嵌槽";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiControl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         Profile = "GuiModelessDialogProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "60 58";
+         Extent = "110 40";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+
+         new GuiRichTextCtrl(EquipEmbedGem_txtName1) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiCurrencyShowInfoTextProfile_1";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "0 10";
+            Extent = "110 40";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            LineHeight = "0";
+         };
+      };
+      new GuiButtonCtrl(EquipEmbedGem_btnCover1) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCoverImageButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "12 54";
+         Extent = "157 40";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipMountAble_SetSelectSlotIndex(0);";
+         hovertime = "1000";
+         groupNum = "2";
+         buttonType = "RadioButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new dGuiShortCut() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "17 59";
+         Extent = "38 38";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         slotType = "19";
+         slotCol = "0";
+         boudary = "0 0 32 32";
+         disabledrag = "0";
+         MouseOverCommand = "EquipEmbedGem_btnCover1.setMouseOver(true);";
+         MouseLeaveCommand = "EquipEmbedGem_btnCover1.setMouseOver(false);";
+      };
+      new GuiControl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         Profile = "GuiModelessDialogProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "60 101";
+         Extent = "110 40";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+
+         new GuiRichTextCtrl(EquipEmbedGem_txtName2) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiCurrencyShowInfoTextProfile_1";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "0 10";
+            Extent = "110 40";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            LineHeight = "0";
+         };
+      };
+      new GuiButtonCtrl(EquipEmbedGem_btnCover2) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCoverImageButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "12 97";
+         Extent = "157 40";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipMountAble_SetSelectSlotIndex(1);";
+         hovertime = "1000";
+         groupNum = "2";
+         buttonType = "RadioButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new dGuiShortCut() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "17 101";
+         Extent = "32 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         slotType = "19";
+         slotCol = "1";
+         boudary = "0 0 32 32";
+         disabledrag = "0";
+         MouseOverCommand = "EquipEmbedGem_btnCover2.setMouseOver(true);";
+         MouseLeaveCommand = "EquipEmbedGem_btnCover2.setMouseOver(false);";
+      };
+      new GuiControl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         Profile = "GuiModelessDialogProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "60 146";
+         Extent = "110 40";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+
+         new GuiRichTextCtrl(EquipEmbedGem_txtName3) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiCurrencyShowInfoTextProfile_1";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "0 10";
+            Extent = "110 40";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            LineHeight = "0";
+         };
+      };
+      new GuiButtonCtrl(EquipEmbedGem_btnCover3) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCoverImageButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "12 138";
+         Extent = "157 40";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipMountAble_SetSelectSlotIndex(2);";
+         hovertime = "1000";
+         groupNum = "2";
+         buttonType = "RadioButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new dGuiShortCut() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "17 143";
+         Extent = "32 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         slotType = "19";
+         slotCol = "2";
+         boudary = "0 0 32 32";
+         disabledrag = "0";
+         MouseOverCommand = "EquipEmbedGem_btnCover3.setMouseOver(true);";
+         MouseLeaveCommand = "EquipEmbedGem_btnCover3.setMouseOver(false);";
+      };
+      new GuiControl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         Profile = "GuiModelessDialogProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "60 185";
+         Extent = "110 40";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+
+         new GuiRichTextCtrl(EquipEmbedGem_txtName4) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiCurrencyShowInfoTextProfile_1";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "0 10";
+            Extent = "110 40";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            LineHeight = "0";
+         };
+      };
+      new GuiButtonCtrl(EquipEmbedGem_btnCover4) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCoverImageButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "12 181";
+         Extent = "157 40";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipMountAble_SetSelectSlotIndex(3);";
+         hovertime = "1000";
+         groupNum = "2";
+         buttonType = "RadioButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new dGuiShortCut() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "17 185";
+         Extent = "32 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         slotType = "19";
+         slotCol = "3";
+         boudary = "0 0 32 32";
+         disabledrag = "0";
+         MouseOverCommand = "EquipEmbedGem_btnCover4.setMouseOver(true);";
+         MouseLeaveCommand = "EquipEmbedGem_btnCover4.setMouseOver(false);";
+      };
+      new GuiControl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         Profile = "GuiModelessDialogProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "60 226";
+         Extent = "110 40";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+
+         new GuiRichTextCtrl(EquipEmbedGem_txtName5) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiCurrencyShowInfoTextProfile_1";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "0 10";
+            Extent = "110 40";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            LineHeight = "0";
+         };
+      };
+      new GuiButtonCtrl(EquipEmbedGem_btnCover5) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCoverImageButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "12 222";
+         Extent = "157 40";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipMountAble_SetSelectSlotIndex(4);";
+         hovertime = "1000";
+         groupNum = "2";
+         buttonType = "RadioButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new dGuiShortCut() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "17 227";
+         Extent = "32 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         slotType = "19";
+         slotCol = "4";
+         boudary = "0 0 32 32";
+         disabledrag = "0";
+         MouseOverCommand = "EquipEmbedGem_btnCover5.setMouseOver(true);";
+         MouseLeaveCommand = "EquipEmbedGem_btnCover5.setMouseOver(false);";
+      };
+      new GuiControl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         Profile = "GuiModelessDialogProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "60 268";
+         Extent = "110 40";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+
+         new GuiRichTextCtrl(EquipEmbedGem_txtName6) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiCurrencyShowInfoTextProfile_1";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "0 10";
+            Extent = "110 40";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            mustPrerender = "0";
+            hovertime = "1000";
+            LineHeight = "0";
+         };
+      };
+      new GuiButtonCtrl(EquipEmbedGem_btnCover6) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCoverImageButtonProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "11 264";
+         Extent = "157 40";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         Command = "EquipMountAble_SetSelectSlotIndex(5);";
+         hovertime = "1000";
+         groupNum = "2";
+         buttonType = "RadioButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new dGuiShortCut() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "17 269";
+         Extent = "32 32";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         mustPrerender = "0";
+         hovertime = "1000";
+         slotType = "19";
+         slotCol = "5";
+         boudary = "0 0 32 32";
+         disabledrag = "0";
+         MouseOverCommand = "EquipEmbedGem_btnCover6.setMouseOver(true);";
+         MouseLeaveCommand = "EquipEmbedGem_btnCover6.setMouseOver(false);";
+      };
+   };
+//--- OBJECT WRITE END ---
+
+
+function EquipEmbedableList_UpdateTextCtrlContent()
+{
+	//设置列表的装备名称到TextCtrl
+	
+	//设置当前页和总页数到TextCtrl
+	%totalPage = EquipMountAble_GetTotalPage();
+	%curPage = EquipMountAble_GetCurrentPage() + 1;		//0开始的，需要加1
+	if (%totalPage == 0)
+	{
+		%curPage = 0;
+	}
+	EquipEmbedGem_txtPage.text = %curPage @ "/" @ %totalPage;
+	
+	EquipEmbedGem_txtName1.setContent( "<t h='1' v='1' c='" @ EquipMountAble_GetSlotItemColor(0) @ "'>" @ EquipMountAble_GetSlotItemName(0) @ "</t><b/>" );
+	EquipEmbedGem_txtName2.setContent( "<t h='1' v='1' c='" @ EquipMountAble_GetSlotItemColor(1) @ "'>" @ EquipMountAble_GetSlotItemName(1) @ "</t><b/>" );
+	EquipEmbedGem_txtName3.setContent( "<t h='1' v='1' c='" @ EquipMountAble_GetSlotItemColor(2) @ "'>" @ EquipMountAble_GetSlotItemName(2) @ "</t><b/>" );
+	EquipEmbedGem_txtName4.setContent( "<t h='1' v='1' c='" @ EquipMountAble_GetSlotItemColor(3) @ "'>" @ EquipMountAble_GetSlotItemName(3) @ "</t><b/>" );
+	EquipEmbedGem_txtName5.setContent( "<t h='1' v='1' c='" @ EquipMountAble_GetSlotItemColor(4) @ "'>" @ EquipMountAble_GetSlotItemName(4) @ "</t><b/>" );
+	EquipEmbedGem_txtName6.setContent( "<t h='1' v='1' c='" @ EquipMountAble_GetSlotItemColor(5) @ "'>" @ EquipMountAble_GetSlotItemName(5) @ "</t><b/>" );
+	
+	EquipEmbedGem_btnCover1.setStateOn(0);
+	EquipEmbedGem_btnCover2.setStateOn(0);
+	EquipEmbedGem_btnCover3.setStateOn(0);
+	EquipEmbedGem_btnCover4.setStateOn(0);
+	EquipEmbedGem_btnCover5.setStateOn(0);
+	EquipEmbedGem_btnCover6.setStateOn(0);
+	
+	EquipEmbedableListWnd.setvisible(1);
+}
+
+function EquipEmbedableList_ClickLeftPage()
+{
+	if (EquipMountAble_LeftPage())
+	{
+		EquipEmbedableList_UpdateTextCtrlContent();
+	}
+}
+
+function EquipEmbedableList_ClickRightPage()
+{
+	if (EquipMountAble_RightPage())
+	{
+		EquipEmbedableList_UpdateTextCtrlContent();
+	}
+}
+
+function EquipEmbedableList_ChooseWeapons()
+{
+	if (EquipMountAble_GetSelectType() != 1)
+	{
+		EquipMountAble_SetSelectType(1);
+		EquipMountAble_ShowSlots();
+		EquipEmbedableList_UpdateTextCtrlContent();
+	}
+}
+
+function EquipEmbedableList_ChooseEquipments()
+{
+	if (EquipMountAble_GetSelectType() != 2)
+	{
+		EquipMountAble_SetSelectType(2);
+		EquipMountAble_ShowSlots();
+		EquipEmbedableList_UpdateTextCtrlContent();
+	}
+}
+
+function EquipEmbedableList_OpenWnd()
+{
+	EquipEmbedableList_RefreshWnd();
+}
+
+function EquipEmbedableList_CloseWnd()
+{
+	EquipEmbedableListWnd.setvisible(0);
+}
+
+function EquipEmbedGem_OnClickPutIntoSlot()
+{
+	if (EquipMountAble_MoveToEquipMountGem())
+	{
+		EquipEmbedGemWnd_OpenWnd();	//显示客户端镶嵌界面
+	}
+}
+
+function EquipEmbedableList_RefreshWnd()
+{
+	EquipMountAble_Refresh();
+	EquipEmbedableList_UpdateTextCtrlContent();
+}
+
+GameMainWndGui_Layer3.Add(EquipEmbedableListWnd);
+//--- OBJECT WRITE END ---

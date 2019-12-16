@@ -1,0 +1,683 @@
+//===========================================================================================================
+// 文档说明:显示人物信息
+// 创建时间:2009-3-24
+// 创建人: soar
+//=========================================================================================================== 
+//--- OBJECT WRITE BEGIN ---
+new GuiPlayerIcon(PlayerIconGui) {
+   horizSizing = "right";
+   vertSizing = "bottom";
+   position = "0 0";
+   extent = "250 90";
+   minExtent = "8 8";
+   visible = "1";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+  
+  // BarBackgroundFileName = "gameres/gui/images/GUIWindow02_1_002";
+ //  BarBackgroundBoundary = "67 36 136 37";
+   
+   HpBarFileName = "gameres/gui/images/GUIWindow02_1_006";
+   HpBarBoundary = "83 35 130 9";
+   
+   MpBarFileName = "gameres/gui/images/GUIWindow02_1_009";
+   MpBarBoundary = "89 48 130 9";
+   
+   BileBarFileName = "gameres/gui/images/GUIWindow02_1_010";
+   BileBarBoundary = "106 67 106 5";
+  
+   BackgroundFileName = "gameres/gui/images/GUIWindow02_1_001";
+   BackgroundBoundary = "4 0 227 84";
+   
+   //IconFileName = "gameres/gui/images/GUIWindow02_1_021"; 
+   //IconFileName1 = "gameres/gui/images/GUIWindow02_1_022";
+   IconBoundary = "12 18 57 60";
+   
+   FamilyFileName[0] = "gameres/gui/images/GUIWindow02_1_023";
+   FamilyFileName[1] = "gameres/gui/images/GUIWindow02_1_013";
+   FamilyFileName[2] = "gameres/gui/images/GUIWindow02_1_015";
+   FamilyFileName[3] = "gameres/gui/images/GUIWindow02_1_014";
+   FamilyFileName[4] = "gameres/gui/images/GUIWindow02_1_017";
+   FamilyFileName[5] = "gameres/gui/images/GUIWindow02_1_019";
+   FamilyFileName[6] = "gameres/gui/images/GUIWindow02_1_016";
+   FamilyFileName[7] = "gameres/gui/images/GUIWindow02_1_018";
+   FamilyFileName[8] = "gameres/gui/images/GUIWindow02_1_020";
+   FamilyBoundary = "65 3 24 24";
+   
+   CaptainFileName = "gameres/gui/images/GUIWindow14_1_006";
+   CaptainBoundary = "29 2 19 15";
+   
+   NameBoundary = "101 17 89 13";
+   
+   LevelBackFileName = "gameres/gui/images/GUIWindow02_1_011";
+   LevelBackBoundary = "0 18 70 68";
+   
+   LevelBoundary = "5 67 16 7";
+   
+   new GuiButtonCtrl(PKOpenButton) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiPKOpenButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      Position = "215 18";
+      Extent = "28 28";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "0";
+      Command = "ChangePKState();";
+      hovertime = "1000";
+      text = "";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+   new GuiButtonCtrl(PKCloseButton) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiPKCloseButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      Position = "215 18";  
+      Extent = "28 28";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "ChangePKState();";
+      hovertime = "1000";
+      text = "";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+      
+   //new GuiButtonCtrl(OpenSetFlagButton) {
+   //   canSaveDynamicFields = "0";
+   //   Enabled = "1";
+   //   isContainer = "0";
+   //   Profile = "GuiTeamAdministerButtonProfile";
+   //   HorizSizing = "center";
+   //   VertSizing = "bottom";
+   //   Position = "40 75";
+   //   Extent = "60 34";
+   //   MinExtent = "8 8";
+   //   canSave = "1";
+   //   Visible = "0";
+   //   Command = "OpenSetFlagWnd();";
+   //   hovertime = "1000";
+   //   text = "设置标记";
+   //   groupNum = "-1";
+   //   buttonType = "PushButton";
+   //};
+   
+};
+
+new GuiControlExt(PlayerIconGui_MinimizeButton) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "bottom";
+   position = "0 0";
+   extent = "34 32";
+   minExtent = "8 8";
+   visible = "1";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+   
+   new GuiButtonCtrl(PlayerMinimizeButton) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiPlayerMinimizeButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      Position = "0 0";
+      Extent = "34 34";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "MinimizePlayerIcon();";
+      hovertime = "1000";
+      text = "";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   }; 
+   
+   new GuiButtonCtrl(PlayerMaxmizeButton) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiPlayerMinimizeButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      Position = "0 0";
+      Extent = "34 34";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "0";
+      Command = "MaxmizePlayerIcon();";
+      hovertime = "1000";
+      text = "";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   }; 
+};
+
+new GuiObjectIcon(TargetPlayerIconGui) {
+   horizSizing = "right";
+   vertSizing = "bottom";
+   position = "250 0";
+   extent = "250 90";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+  
+   //BarBackgroundFileName = "gameres/gui/images/GUIWindow03_1_006";
+  // BarBackgroundBoundary = "73 36 128 26";
+  
+   HpBarFileName = "gameres/gui/images/GUIWindow02_1_006";
+   HpBarBoundary = "83 35 130 9";
+   
+   MpBarFileName = "gameres/gui/images/GUIWindow02_1_009";
+   MpBarBoundary = "89 48 130 9";
+  
+   BackgroundFileName = "gameres/gui/images/GUIWindow03_1_001";
+   BackgroundBoundary = "4 0 227 84";
+   
+   //IconFileName = "gameres/gui/images/GUIWindow02_1_021"; 
+   //IconFileName1 = "gameres/gui/images/GUIWindow02_1_022";
+   IconBoundary = "12 18 57 60";
+   
+   IngroupFileNmae = "gameres/gui/images/GUIWindow02_1_013";
+   IngroupBoundary = "67 3 24 24";
+   
+   NameBoundary = "94 17 89 13";
+   
+   LevelBackFileName = "gameres/gui/images/GUIWindow02_1_011";
+   LevelBackBoundary = "0 18 70 68";
+   
+   LevelBoundary = "5 67 16 7";
+	 
+	 new GuiControl(ObjectIcon_PlayerCommand) {
+      profile = "GuiDefaultProfile";
+      horizSizing = "center";
+      vertSizing = "bottom";
+      position = "80 59";
+      extent = "142 20";
+      minExtent = "8 8";
+      visible = "1";
+      helpTag = "0";
+      useVariable = "0";
+      tile = "0";
+	 
+	    new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiObjectButtonProfile";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         Position = "0 0";
+         Extent = "37 20";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         Command = "TeamBuild();";
+         hovertime = "1000";
+         text = "组队";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };
+      
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiObjectButtonProfile";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         Position = "35 0";
+         Extent = "37 20";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         Command = "applytrade();";
+         hovertime = "1000";
+         text = "交易";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };
+      
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiObjectButtonProfile";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         Position = "70 0";
+         Extent = "37 20";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         Command = "SecretChat();";
+         hovertime = "1000";
+         text = "密语";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };
+      
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiObjectButtonProfile";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         Position = "105 0";
+         Extent = "37 20";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         Command = "AddFriendById();";
+         hovertime = "1000";
+         text = "好友";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };
+   };
+};
+
+new GuiControlExt(TeammateIconGui) {
+   profile = "GuiModelessDialogProfile";
+   horizSizing = "right";
+   vertSizing = "bottom";
+   position = "0 135";
+   extent = "209 275";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+   
+   new GuiButtonCtrl(TeammateHideButton) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiTeamAdministerButtonProfile_1";
+      HorizSizing = "center";
+      VertSizing = "bottom";
+      Position = "5 0";
+      Extent = "32 39";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "HideTeammateBackWnd();";
+      hovertime = "1000";
+      //text = "队伍";
+      groupNum = "-1";
+      buttonType = "ToggleButton";
+   };
+   
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiTeamAdministerButtonProfile_2";
+      HorizSizing = "center";
+      VertSizing = "bottom";
+      Position = "40 0";
+      Extent = "46 28";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "SptTeam_LeaveRequest();";
+      hovertime = "1000";
+      text = "离队";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+  
+   new GuiControl(TeammateBackWnd) {
+      profile = "GuiModelessDialogProfile";
+      horizSizing = "right";
+      vertSizing = "bottom";
+      position = "0 40";
+      extent = "209 235";
+      minExtent = "8 8";
+      visible = "1";
+      helpTag = "0";
+      useVariable = "0";
+      tile = "0";
+   
+   		new GuiTeammateIcon(TeammateIcon) {
+         profile = "GuiModelessDialogProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "0 0";
+         extent = "209 235";
+         minExtent = "8 8";
+         visible = "1";
+         helpTag = "0";
+         useVariable = "0";
+         tile = "0";
+        
+       	 //BarBackgroundFileName = "gameres/gui/images/GUIWindow14_1_002";
+        // BarBackgroundBoundary = "59 13 116 19";
+   
+         HpBarFileName = "gameres/gui/images/GUIWindow14_1_003";
+         HpBarBoundary = "75 22 125 14";
+         
+         MpBarFileName = "gameres/gui/images/GUIWindow14_1_004";
+         MpBarBoundary = "75 38 123 5";
+         
+         BackgroundFileName = "gameres/gui/images/GUIWindow14_1_001";
+         BackgroundBoundary = "15 9 196 47";
+       	  
+       	 CaptainFileName = "gameres/gui/images/GUIWindow14_1_006";
+       	 CaptainBoundary = "30 0 19 15";
+       	 
+       	 //IconFileName = "gameres/gui/images/GUIWindow02_1_021"; 
+   			 //IconFileName1 = "gameres/gui/images/GUIWindow02_1_022";
+   			 IconBoundary = "24 11 35 41";
+       	  
+       	 TeammateBoundary[0] = "0 0 196 47";
+       	 TeammateBoundary[1] = "0 57 196 47";
+       	 TeammateBoundary[2] = "0 114 196 47";
+       	 TeammateBoundary[3] = "0 171 196 47";
+       	 TeammateBoundary[4] = "0 228 196 47";
+       	 
+       	 NameBoundary = "75 24 116 10";
+       	 
+       	 LevelBackFileName = "gameres/gui/images/GUIWindow14_1_002";
+         LevelBackBoundary = "5 16 52 40";
+       	 
+       	 LevelBoundary = "10 38 17 6";
+      };
+   };
+};
+
+new GuiControlExt(SetFlagWnd) {
+	 profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "bottom";
+   position = "160 0";
+   extent = "60 120";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+   
+   new GuiBitmapCtrl() {
+      profile = "GuiDefaultProfile";
+      horizSizing = "right";
+      vertSizing = "bottom";
+      position = "0 0";                      
+      extent = "60 120";                     
+      minExtent = "8 8";                      
+      visible = "1";                          
+      helpTag  = "0";                          
+      //bitmap = "./images/GUIWindow15_1_001";
+   };
+   
+   new GuiButtonCtrl(FlagButton_0) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiTeamAdministerButtonProfile";
+      HorizSizing = "center";
+      VertSizing = "bottom";
+      Position = "0 0";
+      Extent = "60 20";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      //Command = "OpenSetFlagWnd();";
+      hovertime = "1000";
+      text = "标记1";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+   new GuiButtonCtrl(FlagButton_1) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiTeamAdministerButtonProfile";
+      HorizSizing = "center";
+      VertSizing = "bottom";
+      Position = "0 20";
+      Extent = "60 20";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      //Command = "OpenSetFlagWnd();";
+      hovertime = "1000";
+      text = "标记2";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+   new GuiButtonCtrl(FlagButton_2) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiTeamAdministerButtonProfile";
+      HorizSizing = "center";
+      VertSizing = "bottom";
+      Position = "0 40";
+      Extent = "60 20";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      //Command = "OpenSetFlagWnd();";
+      hovertime = "1000";
+      text = "标记3";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+   new GuiButtonCtrl(FlagButton_3) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiTeamAdministerButtonProfile";
+      HorizSizing = "center";
+      VertSizing = "bottom";
+      Position = "0 60";
+      Extent = "60 20";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      //Command = "OpenSetFlagWnd();";
+      hovertime = "1000";
+      text = "标记4";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+   new GuiButtonCtrl(FlagButton_4) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiTeamAdministerButtonProfile";
+      HorizSizing = "center";
+      VertSizing = "bottom";
+      Position = "0 80";
+      Extent = "60 20";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      //Command = "OpenSetFlagWnd();";
+      hovertime = "1000";
+      text = "标记5";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   
+   new GuiButtonCtrl(FlagButton_5) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiTeamAdministerButtonProfile";
+      HorizSizing = "center";
+      VertSizing = "bottom";
+      Position = "0 100";
+      Extent = "60 20";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      //Command = "OpenSetFlagWnd();";
+      hovertime = "1000";
+      text = "标记6";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+};
+
+new GuiObjectIcon(PetIconGui) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "bottom";
+   position = "40 78";
+   extent = "200 90";
+   minExtent = "8 8";
+   visible = "0";
+   helpTag = "0";
+   useVariable = "0";
+   tile = "0";
+   ObjectType = "2";
+  
+   //BarBackgroundFileName = "gameres/gui/images/GUIWindow05_1_002";
+   //BarBackgroundBoundary = "62 29 109 18";
+  
+   HpBarFileName = "gameres/gui/images/GUIWindow05_1_003";
+   HpBarBoundary = "66 30 97 11";
+   
+   MpBarFileName = "gameres/gui/images/GUIWindow05_1_016";
+   MpBarBoundary = "60 42 108 7";
+  
+   BackgroundFileName = "gameres/gui/images/GUIWindow05_1_001";
+   BackgroundBoundary = "14 0 163 56";
+   
+   //IconFileName = "gameres/gui/images/GUIWindow05_1_009"; 
+   IconBoundary = "21 15 34 36";
+   
+   LevelBackFileName = "gameres/gui/images/GUIWindow05_1_002";
+   LevelBackBoundary = "1 15 53 39";
+   
+   NameBoundary = "68 12 80 16";
+   
+   LevelBoundary = "5 37 18 6";
+   
+   new GuiButtonCtrl(FeedPetButton) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiObjectButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      Position = "49 51";
+      Extent = "37 20";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "";
+      hovertime = "1000";
+      text = "喂食";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      command = "Quick_WeiShi();";
+   };
+      
+   new GuiButtonCtrl(PetBuqiButton) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiObjectButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      Position = "86 51";
+      Extent = "37 20";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "";
+      hovertime = "1000";
+      text = "补气";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      command = "Quick_BuQi();";
+   };
+   
+   new GuiButtonCtrl(PetCloseButton) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiObjectButtonProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      Position = "123 51";
+      Extent = "37 20";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      Command = "";
+      hovertime = "1000";
+      text = "收回";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      command = "Quick_Disband();";
+   };
+   
+   new GuiButtonCtrl(PetDefendButton) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiPlayerIconButtonProfile_2";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      Position = "160 50";
+      Extent = "26 26";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "0";
+      Command = "OpenPetAttack();";
+      hovertime = "1000";
+      text = "";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+   new GuiButtonCtrl(PetAttackButton) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiPlayerIconButtonProfile_3";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      Position = "165 50";
+      Extent = "26 26";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "0";
+      Command = "OpenPetDefend();";
+      hovertime = "1000";
+      text = "";
+      groupNum = "-1";
+      buttonType = "PushButton";
+   };
+};
+//--- OBJECT WRITE END ---
+GameMainWndGui_Layer2.Add(PetIconGui);
+GameMainWndGui_Layer2.Add(TargetPlayerIconGui);
+GameMainWndGui_Layer2.Add(PlayerIconGui);
+GameMainWndGui_Layer2.Add(PlayerIconGui_MinimizeButton);
+GameMainWndGui_Layer2.Add(TeammateIconGui);
+GameMainWndGui_Layer4.Add(SetFlagWnd);
+
+

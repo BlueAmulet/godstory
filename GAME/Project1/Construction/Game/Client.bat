@@ -1,0 +1,1 @@
+start Game_03d.exe -console -connect 192.168.1.123:21000

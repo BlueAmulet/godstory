@@ -1,0 +1,625 @@
+//===========================================================================================================
+// 文档说明:选择服务器
+// 创建时间:2009-3-3
+// 创建人: soar
+//=========================================================================================================== 
+new GuiChunkedBitmapCtrl(ServerSelectGui) {
+   profile = "GuiContentProfile";
+   horizSizing = "width";
+   vertSizing = "height";
+   position = "0 0";
+   extent = "800 600";
+   minExtent = "8 8";
+   visible = "1";
+   helpTag = "0";
+  // bitmap = "~/gui/images/GUIlogin03_1_002";  
+   useVariable = "0";
+   tile = "0";
+   
+   new GuiMoveBitmapCtrl(BackCloudselect) {
+       profile = "GuiDefaultProfile";
+       horizSizing = "Relative";
+       vertSizing = "Relative";
+       position = "-800 0";                      
+       extent = "1600 600";                     
+       minExtent = "8 8";                      
+       visible = "1";                          
+       helpTag  = "0";   
+       MoveSpeed = "0.01"; 
+       IsXDirection = "1";
+       IsYDirection = "0";  
+       IsMove = "1";    
+       MoveType = "0";           
+       bitmap = "./images/GUIlogin02_1_000";
+    };
+    
+   new dGuiObjectView(SelectObjectView)
+   {
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      //relative
+      position = "0 0";
+      Extent = "800 600";
+   };
+ 
+    new GuiControl() {
+      profile = "GuiDefaultProfile";
+      horizSizing = "center";
+      vertSizing = "top";
+      position = "320 495";
+      extent = "200 96";
+      minExtent = "8 8";
+      visible = "1";
+      helpTag = "0";
+   
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiGeneralButtonProfile_2";
+         HorizSizing = "center";
+         VertSizing = "top";
+         Position = "30 60";
+         Extent = "111 30";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         Accelerator = "Enter";
+         Command = "SptConnectGameServer();";
+         hovertime = "1000";
+         text = "开启神仙传";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };      
+      
+      new GuiButtonCtrl(PlayerLeftButton) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiShowPlayerLeftButtonProfile";
+         HorizSizing = "center";
+         VertSizing = "top";
+         Position = "136 0";
+         Extent = "38 62";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         MouseDownCommand = "SelectObjectView.AutoLeftRotation = 1;";
+         MouseUpCommand = "SelectObjectView.AutoLeftRotation = 0;";
+         hovertime = "1000";
+         text = "";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };
+      
+      new GuiButtonCtrl(PlayerRightButton) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiShowPlayerRightButtonProfile";
+         HorizSizing = "center";
+         VertSizing = "top";
+         Position = "10 0";
+         Extent = "38 62";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "1";
+         MouseDownCommand = "SelectObjectView.AutoRightRotation = 1;";
+         MouseUpCommand = "SelectObjectView.AutoRightRotation = 0;";
+         hovertime = "1000";
+         text = "";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      }; 
+      
+      new GuiButtonCtrl(PlayerAddButton) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiServerSelectButtonProfile_3";
+         HorizSizing = "center";
+         VertSizing = "top";
+         Position = "75 30";
+         Extent = "36 36";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "0";
+         Command = "AddShowPlayerDistance();";
+         hovertime = "1000";
+         text = "";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };
+      
+      new GuiButtonCtrl(PlayerDesButton) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiServerSelectButtonProfile_4";
+         HorizSizing = "center";
+         VertSizing = "top";
+         Position = "75 30";
+         Extent = "36 36";
+         MinExtent = "8 8";
+         canSave = "1";
+         Visible = "0";
+         Command = "DesShowPlayerDistance();";
+         hovertime = "1000";
+         text = "";
+         groupNum = "-1";
+         buttonType = "PushButton";
+      };      
+    };
+   
+   new GuiControl(ServerSelectLeftWnd) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "0 0";
+      Extent = "260 768";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+
+      new GuiBitmapCtrl(ServerSelectLeftWnd_Texture1) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "0 0";
+         Extent = "254 144";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         bitmap = "gameres/gui/images/GUIlogin03_1_008.png";
+         wrap = "0";
+      };
+      new GuiBitmapCtrl(ServerSelectLeftWnd_Texture2) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "right";
+         VertSizing = "center";
+         position = "-3 170";
+         Extent = "261 549";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "0";
+         hovertime = "1000";
+         bitmap = "gameres/gui/images/GUIlogin03_1_009";
+         wrap = "0";
+         
+         new GuiControl(ServerSelectWnd) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "45 67";
+         Extent = "261 549";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "0";
+         hovertime = "1000";     
+         
+      new GuiListBoxAdvCtrl(LineSelectList1){
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "1 1";
+         Extent = "176 206";
+         MinExtent = "8 2";
+         canSave = "1";
+         columns = "126 50";
+         lineHeight= "20";         
+         TextListSelectImageFile = "./gameres/gui/images/GUIWINDOW99_1_016";
+         TextListMouseOnImageFile = "./gameres/gui/images/GUIWINDOW99_1_017";
+     };  
+   //         new GuiTextListCtrl(LineSelectList1) {
+   //         canSaveDynamicFields = "0";
+   //         Enabled = "1";
+   //         isContainer = "1";
+   //         Profile = "GuiTextListProfile";
+   //         HorizSizing = "right";
+   //         VertSizing = "bottom";
+   //         position = "0 0";
+   //         Extent = "176 204";
+   //         MinExtent = "8 2";
+   //         canSave = "1";
+   //         Visible = "1";
+   //         altCommand = "LineSelectList1.SelectIt();";
+   //         hovertime = "1000";
+   //         CellSize = "176 16";
+   //         enumerate = "0";
+   //         resizeCell = "1";
+   //         columns = "0 85";
+   //         fitParentWidth = "1";
+   //         clipColumnText = "0";
+   //         TextListSelectImageFile = "./gameres/gui/images/GUIWINDOW99_1_016";
+   //         TextListMouseOnImageFile = "./gameres/gui/images/GUIWINDOW99_1_017";
+   //         };
+            
+            new GuiButtonCtrl() {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiGeneralButtonProfile_1";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "32 415";
+            Extent = "111 30";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            command = "LineSelectList1.SelectIt();";
+            hovertime = "1000";
+            text = "选  择";
+            groupNum = "-1";
+            buttonType = "PushButton";
+            useMouseEvents = "0";
+            IsStateOn = "0";         
+         };         
+      };               
+    };
+      new GuiTextCtrl(ShowServerMassage) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiCurrencyWndNameTextProfile_1";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "80 62";
+         Extent = "101 21";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         Margin = "0 0 0 0";
+         Padding = "0 0 0 0";
+         AnchorTop = "1";
+         AnchorBottom = "0";
+         AnchorLeft = "1";
+         AnchorRight = "0";
+         text = "";
+         maxLength = "1024";
+      };
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiGeneralButtonProfile_1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "72 93";
+         Extent = "111 30";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "OpenServerSelectWnd();";
+         hovertime = "1000";
+         text = "更换线路";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      
+   };
+   
+   new GuiControl(ServerSelectRightWnd) {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "left";
+      VertSizing = "bottom";
+      position = "565 0";
+      Extent = "239 800";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+//右背景
+      new GuiBitmapCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiDefaultProfile";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "0 0";
+         Extent = "239 800";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+         bitmap = "gameres/gui/images/GUIlogin03_1_001.png";
+         wrap = "0";
+      };
+         	
+      new GuiControl(PlayerListCtrl) {
+        canSaveDynamicFields = "0";
+        Enabled = "1";
+        isContainer = "1";
+        Profile = "GuiDefaultProfile";
+        HorizSizing = "right";
+        VertSizing = "bottom";
+        position = "26 103";
+        Extent = "205 445";
+        MinExtent = "8 2";
+        canSave = "1";
+        Visible = "1";
+        hovertime = "1000";    
+       }; 
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiGeneralButtonProfile_2";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "70 657";
+         Extent = "111 30";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "EnterCreatePlayer();";
+         hovertime = "1000";
+         text = "创建角色";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };
+      new GuiButtonCtrl() {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "0";
+         Profile = "GuiGeneralButtonProfile_1";
+         HorizSizing = "center";
+         VertSizing = "bottom";
+         position = "70 688";
+         Extent = "111 30";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         Command = "SptDeletePlayer();ShowPlayerList();";
+         hovertime = "1000";
+         text = "删除角色";
+         groupNum = "-1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+         IsStateOn = "0";
+      };        
+		};  
+ 
+   new GuiButtonCtrl() {
+          canSaveDynamicFields = "0";
+          Enabled = "1";
+          isContainer = "0";
+          Profile = "GuiGeneralButtonProfile_1";
+          HorizSizing = "left";
+          VertSizing = "top";
+          position = "636 552";
+          Extent = "111 30";
+          MinExtent = "8 2";
+          canSave = "1";
+          Visible = "1";
+          Command = "BackToMainMenu();";
+          hovertime = "1000";
+          text = "返回登录界面";
+          groupNum = "-1";
+          buttonType = "PushButton";
+          useMouseEvents = "0";
+          IsStateOn = "0";
+      };   
+};
+
+////////////////////////////////////////////////////////////////////////////////////填充PlayerList      
+for(%i=0; %i<5; %i++)
+{
+	new GuiButtonCtrl("PlayerButton" @(%i)) {
+            Profile = "GuiGeneralButtonProfile_3";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = 0 SPC (%i*77);
+            Extent = "186 77";
+            Visible = "0";          
+            Command = "SptSelectPlayer(" @ %i @ "); PlayChooseActorSound();" ;
+            groupNum = "-1";
+            buttonType = "RadioButton";       
+         };
+	new GuiBitmapCtrl("PlayerListBckImg" @(%i)) {
+        canSaveDynamicFields = "0";
+        Enabled = "1";
+        isContainer = "1";
+        HorizSizing = "right";
+        VertSizing = "bottom";
+        position = 0 SPC (%i*77);
+        Extent = "186 77";
+        MinExtent = "8 2";
+        canSave = "1";
+        Visible = "1";
+        mustPrerender = "0";
+        hovertime = "1000";
+        alpha = "255";
+        useFadeout = "1";
+        bitmap  = "./images/GUIlogin03_1_003";
+        wrap = "0";     
+       
+        new GuiBitmapButtonCtrl("NoPlayerButton" @(%i)) {
+            Profile = "GuiButtonProfile";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "0 0";
+            Extent = "186 77";
+            Visible = "1";
+            command = "EnterCreatePlayer();";
+            groupNum = "-1";
+            buttonType = "PushButton";
+            bitmap = "gameres/gui/images/GUIlogin03_1_003";
+         };
+        new GuiTextCtrl("PlayerHint" @(%i)) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiCurrencyShowInfoTextProfile_2";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "26 26";
+            Extent = "186 50";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "1";
+            hovertime = "1000";
+            Margin = "0 0 0 0";
+            Padding = "0 0 0 0";
+            AnchorTop = "1";
+            AnchorBottom = "0";
+            AnchorLeft = "1";
+            AnchorRight = "0";
+            text = "";
+            maxLength = "1024";
+         };
+        new GuiTextCtrl("PlayerName" @(%i)) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiCurrencyShowInfoTextProfile_9";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "17 6";
+            Extent = "115 20";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "0";
+            hovertime = "1000";
+            Margin = "0 0 0 0";
+            Padding = "0 0 0 0";
+            AnchorTop = "1";
+            AnchorBottom = "0";
+            AnchorLeft = "1";
+            AnchorRight = "0";
+            text = "";
+            maxLength = "1024";
+         };
+        new GuiTextCtrl("PlayerLevel" @(%i)) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiCurrencyShowInfoTextProfile_2";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "10 26";
+            Extent = "40 20";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "0";
+            hovertime = "1000";
+            Margin = "0 0 0 0";
+            Padding = "0 0 0 0";
+            AnchorTop = "1";
+            AnchorBottom = "0";
+            AnchorLeft = "1";
+            AnchorRight = "0";
+            text = "";
+            maxLength = "1024";
+         };
+        new GuiTextCtrl("PlayerFamilyName" @(%i)) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiCurrencyShowInfoTextProfile_2";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "6 46";
+            Extent = "58 20";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "0";
+            hovertime = "1000";
+            Margin = "0 0 0 0";
+            Padding = "0 0 0 0";
+            AnchorTop = "1";
+            AnchorBottom = "0";
+            AnchorLeft = "1";
+            AnchorRight = "0";
+            text = "";
+            maxLength = "1024";
+         };
+        new GuiBitmapCtrl("PlayerFamilySign" @(%i)) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiModelessDialogProfile";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "36 46";
+            Extent = "64 64";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "0";
+            hovertime = "1000";
+            //bitmap = "gameres/gui/images/GUIlogin03_1_002.png";
+            wrap = "0";
+         }; 
+        new GuiTextCtrl("PlayerSoulName" @(%i)) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiCurrencyShowInfoTextProfile_2";
+            HorizSizing = "right";
+            VertSizing = "bottom";
+            position = "68 60";
+            Extent = "40 20";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "0";
+            hovertime = "1000";
+            Margin = "0 0 0 0";
+            Padding = "0 0 0 0";
+            AnchorTop = "1";
+            AnchorBottom = "0";
+            AnchorLeft = "1";
+            AnchorRight = "0";
+            text = "";
+            maxLength = "1024";
+         };
+        new GuiTextCtrl("PlayerSoulLevel" @(%i)) {
+            canSaveDynamicFields = "0";
+            Enabled = "1";
+            isContainer = "0";
+            Profile = "GuiCurrencyShowInfoTextProfile_2";
+            HorizSizing = "left";
+            VertSizing = "bottom";
+            position = "70 60";
+            Extent = "72 20";
+            MinExtent = "8 2";
+            canSave = "1";
+            Visible = "0";
+            hovertime = "1000";
+            Margin = "0 0 0 0";
+            Padding = "0 0 0 0";
+            AnchorTop = "1";
+            AnchorBottom = "0";
+            AnchorLeft = "1";
+            AnchorRight = "0";
+            text = "";
+            maxLength = "1024";
+         };
+      }; 
+      PlayerListCtrl.add("PlayerListBckImg" @(%i));
+      PlayerListCtrl.add("PlayerButton" @(%i));
+}
+

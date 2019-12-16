@@ -1,0 +1,1837 @@
+//--- OBJECT WRITE BEGIN ---
+
+new GuiChunkedBitmapCtrl(guiObjectViewer) {
+   profile = "GuiContentProfile";
+   horizSizing = "width";
+   vertSizing = "height";
+   position = "0 0";
+   extent = "800 600";
+   minExtent = "8 8";
+   visible = "1";
+   helpTag = "0";
+   //bitmap = "./ShapeEditorBitMap.jpg";
+   useVariable = "0";
+   tile = "0";
+    		
+ 	 new CObjectViewer(EditorObjectView)
+   {
+      Profile = "GuiDefaultProfile";
+      HorizSizing = "relative";
+      VertSizing = "relative";
+      position = "0 30";
+      Extent = "580 600";
+   };               
+   
+   new GuiContainer() {
+      canSaveDynamicFields = "0";
+      isContainer = "1";
+      Profile = "GuiFrameSetProfile";
+      HorizSizing = "width";
+      VertSizing = "relative";
+      position = "0 0";
+      Extent = "2000 22";
+      MinExtent = "8 8";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      docking="Top";
+      
+      new GuiButtonCtrl(LineModeButton) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "160 2";
+         extent = "40 18";
+         minExtent = "8 8";
+         visible = "1";
+         command = "LineMode();";
+         helpTag = "0";
+         text = "线框";
+         groupNum = "2";
+         buttonType = "RadioButton";
+         useMouseEvents = "0";
+      };
+      
+      new GuiButtonCtrl(PointModeButton) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "210 2";
+         extent = "40 18";
+         minExtent = "8 8";
+         visible = "1";
+         command = "PointMode();";
+         helpTag = "0";
+         text = "节点";
+         groupNum = "2";
+         buttonType = "RadioButton";
+         useMouseEvents = "0";
+      };
+      
+      new GuiButtonCtrl(CommonModeButton) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "260 2";
+         extent = "40 18";
+         minExtent = "8 8";
+         visible = "1";
+         command = "CommonMode();";
+         helpTag = "0";
+         text = "正常";
+         groupNum = "2";
+         buttonType = "RadioButton";
+         useMouseEvents = "0";
+         isStateOn = 1;
+      };
+      
+      new GuiButtonCtrl(BoundsButton) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "310 2";
+         extent = "50 18";
+         minExtent = "8 8";
+         visible = "1";
+         command = "OpenBounds();";
+         helpTag = "0";
+         text = "Bounds";
+         groupNum = "2";
+         buttonType = "ToggleButton";
+         useMouseEvents = "0";   
+         isStateOn = 1;
+      };
+      
+      new GuiButtonCtrl(CollisionButton) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "370 2";
+         extent = "50 18";
+         minExtent = "8 8";
+         visible = "1";
+         command = "OpenCollision();";
+         helpTag = "0";
+         text = "碰撞体";
+         groupNum = "2";
+         buttonType = "ToggleButton";
+         useMouseEvents = "0";   
+      };
+      
+      new GuiButtonCtrl(LightWayButton) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "430 2";
+         extent = "50 18";
+         minExtent = "8 8";
+         visible = "1";
+         command = "OpenLightWay();";
+         helpTag = "0";
+         text = "光线方向";
+         groupNum = "2";
+         buttonType = "ToggleButton";
+         useMouseEvents = "0";
+         isStateOn = 1;
+      };
+
+			new GuiButtonCtrl(PlayActionButton) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "top";
+         position = "500 2";
+         extent = "60 18";
+         minExtent = "8 8";
+         visible = "1";
+         command = "PlayAction();";
+         helpTag = "0";
+         text = "播放动画";
+         groupNum = "1";
+         buttonType = "ToggleButton";
+         useMouseEvents = "0";
+         isStateOn = 1;
+      };
+
+      new GuiButtonCtrl(RevertCameraButton) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "570 2";
+         extent = "70 18";
+         minExtent = "8 8";
+         visible = "1";
+         command = "RevertCamera();";
+         helpTag = "0";
+         text = "复位摄像机";
+         groupNum = "1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+      new GuiButtonCtrl(LinkCameraButton) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "650 2";
+         extent = "70 18";
+         minExtent = "8 8";
+         visible = "1";
+         command = "LinkCamera();";
+         helpTag = "0";
+         text = "Link摄像机";
+         groupNum = "1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+      
+      new GuiButtonCtrl(OverButton) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "20 2";
+         extent = "80 18";
+         minExtent = "8 8";
+         visible = "1";
+         command = "Canvas.setContent(MainMenuGui);EditorObjectView.onQuit();";
+         helpTag = "0";
+         text = "退出";
+         groupNum = "1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+      
+   };
+   
+   new GuiWindowCtrl() {
+   	   canSaveDynamicFields = "0";
+       isContainer = "1";
+       Profile = "GuiWindowProfile";
+       HorizSizing = "left";
+       VertSizing =  "Relative";
+       position = "495 0";
+       Extent = "305 600";
+       MinExtent = "8 8";
+       canSave = "1";
+       Visible = "1";
+       hovertime = "1000";
+       text = "模型信息";
+       maxLength = "1024";
+       resizeWidth = "0";
+       resizeHeight = "0";
+       canMove = "0";
+       canClose = "0";
+       canMinimize = "0";
+       canMaximize = "0";
+       minSize = "50 50";
+       closeCommand = "";    
+       
+       new GuiTabBookCtrl(ShapeTabBook) {
+           canSaveDynamicFields = "0";
+           Enabled = "1";
+           isContainer = "1";
+           Profile = "GuiTabBookProfile";
+           HorizSizing = "width";
+           VertSizing = "Relative";
+           position = "5 20";
+           Extent = "295 580";
+           MinExtent = "8 2";
+           canSave = "1";
+           Visible = "1";
+           hovertime = "1000";
+           TabPosition = "Top";
+           TabMargin = "7";
+           MinTabWidth = "70";
+           
+           new GuiTabPageCtrl(FilePage) {
+               canSaveDynamicFields = "0";
+               isContainer = "1";
+               Profile = "GuiTabPageProfile";
+               HorizSizing = "width";
+               VertSizing = "relative";
+               position = "0 24";
+               Extent = "295 550";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               //Command = "TerrainEditirEvent();";
+               hovertime = "1000";
+               text = "文件";
+               textID = "Tab1";
+               maxLength = "100";
+               
+               new GuiRadioCtrl(LoadBaseShapeButton) {
+                  profile = "GuiRadioProfile";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  position = "10 5";
+                  extent = "40 20";
+                  minExtent = "8 8";
+                  canSave = "1";
+                  visible = "1";
+                  //command = "LoadBaseShape();";
+                  hovertime = "1000";
+                  text = "重载";
+                  groupNum = "1";
+                  buttonType = "RadioButton";
+                  IsStateOn = true;
+               };
+               
+               new GuiRadioCtrl(LinkShapeButton) {
+                  profile = "GuiRadioProfile";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  position = "80 5";
+                  extent = "40 20";
+                  minExtent = "8 8";
+                  canSave = "1";
+                  visible = "1";
+                  //command = "OpenLinkPointInput();";
+                  hovertime = "1000";
+                  text = "链接";
+                  groupNum = "1";
+                  buttonType = "RadioButton";
+               };
+               
+               new GuiButtonCtrl(RefLoadShapeTreeButton) {
+                  profile = "GuiButtonProfile";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  position = "150 5";
+                  extent = "40 18";
+                  minExtent = "8 8";
+                  visible = "1";
+                  command = "RefLoadShapeTree();";
+                  helpTag = "0";
+                  text = "刷新";
+                  groupNum = "2";
+                  buttonType = "PushButton";
+                  useMouseEvents = "0";
+               };
+               
+               new GuiControl() {
+                   canSaveDynamicFields = "0";
+                   isContainer = "1";
+                   Profile = "GuiDefaultProfile";
+                   HorizSizing = "width";
+                   VertSizing = "Relative";
+                   position = "0 30";
+                   Extent = "290 520";
+                   MinExtent = "8 8";
+                   canSave = "1";
+                   Visible = "1";
+                   hovertime = "1000";
+                  
+			 		         new GuiScrollCtrl() {
+                       canSaveDynamicFields = "0";
+                       isContainer = "1";
+                       Profile = "GuiScrollProfile";
+                       HorizSizing = "width";
+                       VertSizing = "Relative";
+                       position = "0 0";
+                       Extent = "290 520";
+                       MinExtent = "8 8";
+                       canSave = "1";
+                       Visible = "1";
+                       hovertime = "1000";
+                       willFirstRespond = "1";
+                       hScrollBar = "alwaysOff";
+                       vScrollBar = "alwaysOn";
+                       constantThumbHeight = "0";
+                       childMargin = "0 0";
+                       
+                       new GuiTreeViewCtrl(LoadShapeTree) {
+                           canSaveDynamicFields = "0";
+                           isContainer = "1";
+                           Profile = "GuiTreeViewProfile";
+                           HorizSizing = "right";
+                           VertSizing = "bottom";
+                           position = "2 2";
+                           Extent = "131 84";
+                           MinExtent = "8 8";
+                           canSave = "1";
+                           Visible = "1";
+                           hovertime = "1000";
+                           tabSize = "16";
+                           textOffset = "2";
+                           fullRowSelect = "0";
+                           itemHeight = "21";
+                           destroyTreeOnSleep = "1";
+                           MouseDragging = "1";
+                           MultipleSelections = "1";
+                           DeleteObjectAllowed = "1";
+                           DragToItemAllowed = "1";
+                           Sorted = "1";
+                       };
+                   };
+               }; 
+           };
+           new GuiTabPageCtrl(ShapePage) {
+               canSaveDynamicFields = "0";
+               isContainer = "1";
+               Profile = "GuiTabPageProfile";
+               HorizSizing = "relateve";
+               VertSizing = "relative";
+               position = "0 24";
+               Extent = "295 550";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               //Command = "ShapePreTree.open(ShapeGroup,true);";
+               hovertime = "1000";
+               text = "模型";
+               textID = "Tab1";
+               maxLength = "100";
+                   
+               new GuiControl(ShapePre) {
+                   canSaveDynamicFields = "0";
+                   isContainer = "1";
+                   Profile = "GuiDefaultProfile";
+                   HorizSizing = "width";
+                   VertSizing = "Relative";
+                   position = "0 0";
+                   Extent = "290 130";
+                   MinExtent = "8 8";
+                   canSave = "1";
+                   Visible = "1";
+                   hovertime = "1000";
+                  
+			 		         new GuiScrollCtrl() {
+                       canSaveDynamicFields = "0";
+                       isContainer = "1";
+                       Profile = "GuiScrollProfile";
+                       HorizSizing = "width";
+                       VertSizing = "Relative";
+                       position = "0 0";
+                       Extent = "290 130";
+                       MinExtent = "8 8";
+                       canSave = "1";
+                       Visible = "1";
+                       hovertime = "1000";
+                       willFirstRespond = "1";
+                       hScrollBar = "alwaysOff";
+                       vScrollBar = "alwaysOn";
+                       constantThumbHeight = "0";
+                       childMargin = "0 0";
+                       
+                       new GuiTreeViewCtrl(ShapePreTree) {
+                           canSaveDynamicFields = "0";
+                           isContainer = "1";
+                           Profile = "GuiTreeViewProfile";
+                           HorizSizing = "right";
+                           VertSizing = "bottom";
+                           position = "2 2";
+                           Extent = "131 84";
+                           MinExtent = "8 8";
+                           canSave = "1";
+                           Visible = "1";
+                           hovertime = "1000";
+                           tabSize = "16";
+                           textOffset = "2";
+                           fullRowSelect = "0";
+                           itemHeight = "21";
+                           destroyTreeOnSleep = "1";
+                           MouseDragging = "1";
+                           MultipleSelections = "1";
+                           DeleteObjectAllowed = "1";
+                           DragToItemAllowed = "1";
+                           Sorted = "1";
+                       };
+                   };
+               }; 
+               
+               new GuiButtonCtrl(DelectShapeButton) {
+                   profile = "GuiButtonProfile";
+                   horizSizing = "right";
+                   vertSizing = "relative";
+                   position =  "100 133";
+                   extent = "80 18";
+                   minExtent = "8 8";
+                   visible = "1";
+                   command = "DelectShape();";
+                   helpTag = "0";
+                   text = "删除当前模型";
+                   groupNum = "1";
+                   buttonType = "PushButton";
+                   useMouseEvents = "0";
+               }; 
+               
+               new GuiTabBookCtrl(ShapeInfoTabBook) {
+                  canSaveDynamicFields = "0";
+                  Enabled = "1";
+                  isContainer = "1";
+                  Profile = "GuiTabBookProfile";
+                  HorizSizing = "width";
+                  VertSizing = "Relative";
+                  position = "2 153";
+                  Extent = "290 400";
+                  MinExtent = "8 2";
+                  canSave = "1";
+                  Visible = "1";
+                  hovertime = "1000";
+                  TabPosition = "Top";
+                  TabMargin = "7";
+                  MinTabWidth = "60";   
+                  
+                  new GuiTabPageCtrl(BitMapListPage) {
+                     canSaveDynamicFields = "0";
+                     isContainer = "1";
+                     Profile = "GuiTabPageProfile";
+                     HorizSizing = "width";
+                     VertSizing = "relative";
+                     position = "0 19";
+                     Extent = "290 400";
+                     MinExtent = "8 2";
+                     canSave = "1";
+                     Visible = "1";
+                     //Command = "TerrainEditirEvent();";
+                     hovertime = "1000";
+                     text = "贴图列表";
+                     textID = "Tab2";
+                     maxLength = "100";
+                     
+                     new GuiControl(BitMapListWnd) {
+                         canSaveDynamicFields = "0";
+                         isContainer = "1";
+                         Profile = "GuiDefaultProfile";
+                         HorizSizing = "width";
+                         VertSizing = "Relative";
+                         position = "0 0";
+                         Extent = "290 380";
+                         MinExtent = "8 8";
+                         canSave = "1";
+                         Visible = "1";
+                         hovertime = "1000";
+                        
+		        	           new GuiScrollCtrl() {
+                             canSaveDynamicFields = "0";
+                             isContainer = "1";
+                             Profile = "GuiScrollProfile";
+                             HorizSizing = "width";
+                             VertSizing = "Relative";
+                             position = "0 0";
+                             Extent = "290 380";
+                             MinExtent = "8 8";
+                             canSave = "1";
+                             Visible = "1";
+                             hovertime = "1000";
+                             willFirstRespond = "1";
+                             hScrollBar = "alwaysOn";
+                             vScrollBar = "alwaysOn";
+                             constantThumbHeight = "0";
+                             childMargin = "0 0";
+                             
+                             new GuiTextListCtrl(BitMapList) {
+                                profile = "GuiTextArrayProfile";
+                                horizSizing = "right";
+                                vertSizing = "bottom";
+                                position = "0 0";
+                                extent = "500 500";
+                                minExtent = "8 8";
+                                visible = "1";
+                                helpTag = "0";
+                                enumerate = "0";
+                                resizeCell = "1";
+                                columns = "0";
+                                //altCommand = "BitMapList::SelectIt();";
+                                fitParentWidth = "1";
+                                clipColumnText = "0";
+                                noDuplicates = "false";
+                             };
+                         };
+                     };
+                  }; 
+                  
+                  new GuiTabPageCtrl(LinkPointListPage) {
+                     canSaveDynamicFields = "0";
+                     isContainer = "1";
+                     Profile = "GuiTabPageProfile";
+                     HorizSizing = "width";
+                     VertSizing = "relative";
+                     position = "0 19";
+                     Extent = "290 400";
+                     MinExtent = "8 2";
+                     canSave = "1";
+                     Visible = "1";
+                     //Command = "TerrainEditirEvent();";
+                     hovertime = "1000";
+                     text = "连接点";
+                     textID = "Tab2";
+                     maxLength = "100";
+                     
+                     new GuiControl(LinkPointListWnd) {
+                         canSaveDynamicFields = "0";
+                         isContainer = "1";
+                         Profile = "GuiDefaultProfile";
+                         HorizSizing = "width";
+                         VertSizing = "Relative";
+                         position = "0 0";
+                         Extent = "290 380";
+                         MinExtent = "8 8";
+                         canSave = "1";
+                         Visible = "1";
+                         hovertime = "1000";
+                        
+		        	           new GuiScrollCtrl() {
+                             canSaveDynamicFields = "0";
+                             isContainer = "1";
+                             Profile = "GuiScrollProfile";
+                             HorizSizing = "width";
+                             VertSizing = "Relative";
+                             position = "0 0";
+                             Extent = "290 380";
+                             MinExtent = "8 8";
+                             canSave = "1";
+                             Visible = "1";
+                             hovertime = "1000";
+                             willFirstRespond = "1";
+                             hScrollBar = "alwaysOn";
+                             vScrollBar = "alwaysOn";
+                             constantThumbHeight = "0";
+                             childMargin = "0 0";
+                             
+                             new GuiTextListCtrl(LinkPointList) {
+                                profile = "GuiTextArrayProfile";
+                                horizSizing = "right";
+                                vertSizing = "bottom";
+                                position = "0 0";
+                                extent = "290 85";
+                                minExtent = "8 8";
+                                visible = "1";
+                                helpTag = "0";
+                                enumerate = "0";
+                                resizeCell = "1";
+                                columns = "0";
+                                Command = "LinkPointList::SelectIt();";
+                                fitParentWidth = "1";
+                                clipColumnText = "0";
+                                noDuplicates = "false";
+                             };             
+                         };
+                     }; 
+                  };
+                  
+                  new GuiTabPageCtrl(ShowShapeDataPage) {
+                     canSaveDynamicFields = "0";
+                     isContainer = "1";
+                     Profile = "GuiTabPageProfile";
+                     HorizSizing = "width";
+                     VertSizing = "relative";
+                     position = "0 19";
+                     Extent = "290 400";
+                     MinExtent = "8 2";
+                     canSave = "1";
+                     Visible = "1";
+                     //Command = "TerrainEditirEvent();";
+                     hovertime = "1000";
+                     text = "模型数据";
+                     textID = "Tab2";
+                     maxLength = "100";
+                     
+                     new GuiControl(DetailAndMesh) {
+                         canSaveDynamicFields = "0";
+                         isContainer = "1";
+                         Profile = "GuiDefaultProfile";
+                         HorizSizing = "width";
+                         VertSizing = "Relative";
+                         position = "0 0";
+                         Extent = "290 250";
+                         MinExtent = "8 8";
+                         canSave = "1";
+                         Visible = "1";
+                         hovertime = "1000";
+                        
+			 		               new GuiScrollCtrl() {
+                             canSaveDynamicFields = "0";
+                             isContainer = "1";
+                             Profile = "GuiScrollProfile";
+                             HorizSizing = "width";
+                             VertSizing = "Relative";
+                             position = "0 0";
+                             Extent = "290 250";
+                             MinExtent = "8 8";
+                             canSave = "1";
+                             Visible = "1";
+                             hovertime = "1000";
+                             willFirstRespond = "1";
+                             hScrollBar = "alwaysOff";
+                             vScrollBar = "alwaysOn";
+                             constantThumbHeight = "0";
+                             childMargin = "0 0";
+                             
+                             new GuiTreeViewCtrl(DetailAndMeshTree) {
+                                 canSaveDynamicFields = "0";
+                                 isContainer = "1";
+                                 Profile = "GuiTreeViewProfile";
+                                 HorizSizing = "right";
+                                 VertSizing = "bottom";
+                                 position = "2 2";
+                                 Extent = "131 84";
+                                 MinExtent = "8 8";
+                                 canSave = "1";
+                                 Visible = "1";
+                                 hovertime = "1000";
+                                 tabSize = "16";
+                                 textOffset = "2";
+                                 fullRowSelect = "0";
+                                 itemHeight = "21";
+                                 destroyTreeOnSleep = "1";
+                                 MouseDragging = "1";
+                                 MultipleSelections = "1";
+                                 DeleteObjectAllowed = "1";
+                                 DragToItemAllowed = "1";
+                                 Sorted = "1";
+                             };
+                         };
+                     }; 
+                     
+                     new GuiControl(ShowShapeDataWnd) {
+                         canSaveDynamicFields = "0";
+                         isContainer = "1";
+                         Profile = "GuiDefaultProfile";
+                         HorizSizing = "width";
+                         VertSizing = "top";
+                         position = "0 220";
+                         Extent = "290 80";
+                         MinExtent = "8 8";
+                         canSave = "1";
+                         Visible = "1";
+                         hovertime = "1000";
+                         
+                         new GuiTextCtrl(){
+	                       		 Profile = "GuiTextProfile_1";
+                             HorizSizing = "width";
+                             VertSizing = "top";
+                             position = "10 0";
+                             Extent = "80 18";
+                             MinExtent = "8 2";
+                             canSave = "1";
+                             Visible = "1";
+                             text   = "碰撞体数量";
+                             hovertime = "1000";
+	                       };   
+                         
+                         new GuiControl() {
+                             canSaveDynamicFields = "0";
+                             isContainer = "1";
+                             Profile = "GuiTextProfile_1";
+                             HorizSizing = "width";
+                             VertSizing = "top";
+                             position = "10 20";
+                             Extent = "80 18";
+                             MinExtent = "8 8";
+                             canSave = "1";
+                             Visible = "1";
+                             hovertime = "1000";
+                         
+                             new GuiTextCtrl(CollisionObjectNum){
+	                           		 Profile = "GuiTextProfile_1";
+                                 HorizSizing = "width";
+                                 VertSizing = "top";
+                                 position = "0 0";
+                                 Extent = "80 18";
+                                 MinExtent = "8 2";
+                                 canSave = "1";
+                                 Visible = "1";
+                                 text   = "0";
+                                 hovertime = "1000";
+	                           };     
+	                       };
+	                       
+	                       new GuiTextCtrl(){
+	                       		 Profile = "GuiTextProfile_1";
+                             HorizSizing = "width";
+                             VertSizing = "top";
+                             position = "105 0";
+                             Extent = "80 18";
+                             MinExtent = "8 2";
+                             canSave = "1";
+                             Visible = "1";
+                             text   = "Mesh数量";
+                             hovertime = "1000";
+	                       };   
+	                       
+	                       new GuiControl() {
+                             canSaveDynamicFields = "0";
+                             isContainer = "1";
+                             Profile = "GuiTextProfile_1";
+                             HorizSizing = "width";
+                             VertSizing = "top";
+                             position = "105 20";
+                             Extent = "80 18";
+                             MinExtent = "8 8";
+                             canSave = "1";
+                             Visible = "1";
+                             hovertime = "1000";
+                         
+                             new GuiTextCtrl(MeshNum){
+	                           		 Profile = "GuiTextProfile_1";
+                                 HorizSizing = "width";
+                                 VertSizing = "top";
+                                 position = "0 0";
+                                 Extent = "80 18";
+                                 MinExtent = "8 2";
+                                 canSave = "1";
+                                 Visible = "1";
+                                 text   = "0";
+                                 hovertime = "1000";
+	                           };     
+	                       };
+	                       
+	                       new GuiTextCtrl(){
+	                       		 Profile = "GuiTextProfile_1";
+                             HorizSizing = "width";
+                             VertSizing = "top";
+                             position = "200 0";
+                             Extent = "80 18";
+                             MinExtent = "8 2";
+                             canSave = "1";
+                             Visible = "1";
+                             text   = "Detail数量";
+                             hovertime = "1000";
+	                       };    
+	                       
+	                       new GuiControl() {
+                             canSaveDynamicFields = "0";
+                             isContainer = "1";
+                             Profile = "GuiTextProfile_1";
+                             HorizSizing = "width";
+                             VertSizing = "top";
+                             position = "200 20";
+                             Extent = "80 18";
+                             MinExtent = "8 8";
+                             canSave = "1";
+                             Visible = "1";
+                             hovertime = "1000";
+                         
+                             new GuiTextCtrl(DetailNum){
+	                           		 Profile = "GuiTextProfile_1";
+                                 HorizSizing = "width";
+                                 VertSizing = "top";
+                                 position = "0 0";
+                                 Extent = "80 18";
+                                 MinExtent = "8 2";
+                                 canSave = "1";
+                                 Visible = "1";
+                                 text   = "0";
+                                 hovertime = "1000";
+	                           };     
+	                       };
+	                       
+	                       new GuiTextCtrl(){
+	                       		 Profile = "GuiTextProfile_1";
+                             HorizSizing = "width";
+                             VertSizing = "top";
+                             position = "10 40";
+                             Extent = "80 18";
+                             MinExtent = "8 2";
+                             canSave = "1";
+                             Visible = "1";
+                             text   = "父节点名";
+                             hovertime = "1000";
+	                       };   
+	                       
+	                       new GuiControl() {
+                             canSaveDynamicFields = "0";
+                             isContainer = "1";
+                             Profile = "GuiTextProfile_1";
+                             HorizSizing = "width";
+                             VertSizing = "top";
+                             position = "10 60";
+                             Extent = "80 18";
+                             MinExtent = "8 8";
+                             canSave = "1";
+                             Visible = "1";
+                             hovertime = "1000";
+                         
+                             new GuiTextCtrl(FNodeName){
+	                           		 Profile = "GuiTextProfile_1";
+                                 HorizSizing = "width";
+                                 VertSizing = "top";
+                                 position = "0 0";
+                                 Extent = "80 18";
+                                 MinExtent = "8 2";
+                                 canSave = "1";
+                                 Visible = "1";
+                                 text   = "";
+                                 hovertime = "1000";
+	                           };     
+	                       };
+	                       
+	                       new GuiTextCtrl(){
+	                       		 Profile = "GuiTextProfile_1";
+                             HorizSizing = "width";
+                             VertSizing = "top";
+                             position = "105 40";
+                             Extent = "80 18";
+                             MinExtent = "8 2";
+                             canSave = "1";
+                             Visible = "1";
+                             text   = "自身点名";
+                             hovertime = "1000";
+	                       };   
+	                       
+	                       new GuiControl() {
+                             canSaveDynamicFields = "0";
+                             isContainer = "1";
+                             Profile = "GuiTextProfile_1";
+                             HorizSizing = "width";
+                             VertSizing = "top";
+                             position = "105 60";
+                             Extent = "80 18";
+                             MinExtent = "8 8";
+                             canSave = "1";
+                             Visible = "1";
+                             hovertime = "1000";
+                         
+                             new GuiTextCtrl(SelfNodeName){
+	                           		 Profile = "GuiTextProfile_1";
+                                 HorizSizing = "width";
+                                 VertSizing = "top";
+                                 position = "0 0";
+                                 Extent = "80 18";
+                                 MinExtent = "8 2";
+                                 canSave = "1";
+                                 Visible = "1";
+                                 text   = "";
+                                 hovertime = "1000";
+	                           };     
+	                       };
+                     };
+                     
+                     new GuiControl(ShowShapePathWnd) {
+                         canSaveDynamicFields = "0";
+                         isContainer = "1";
+                         Profile = "GuiDefaultProfile";
+                         HorizSizing = "width";
+                         VertSizing = "top";
+                         position = "0 320";
+                         Extent = "290 60";
+                         MinExtent = "8 8";
+                         canSave = "1";
+                         Visible = "1";
+                         hovertime = "1000";
+                         
+                         new GuiControl() {
+                             canSaveDynamicFields = "0";
+                             isContainer = "1";
+                             Profile = "GuiTextProfile_1";
+                             HorizSizing = "width";
+                             VertSizing = "top";
+                             position = "0 0";
+                             Extent = "290 20";
+                             MinExtent = "8 8";
+                             canSave = "1";
+                             Visible = "1";
+                             hovertime = "1000";
+                         
+                             new GuiTextCtrl(CollisionObjectPath){
+	                           		 Profile = "GuiTextProfile_1";
+                                 HorizSizing = "width";
+                                 VertSizing = "top";
+                                 position = "0 0";
+                                 Extent = "290 20";
+                                 MinExtent = "8 2";
+                                 canSave = "1";
+                                 Visible = "1";
+                                 text   = "";
+                                 hovertime = "1000";
+	                           };     
+	                       };
+	                       
+	                       new GuiControl() {
+                             canSaveDynamicFields = "0";
+                             isContainer = "1";
+                             Profile = "GuiTextProfile_1";
+                             HorizSizing = "width";
+                             VertSizing = "top";
+                             position = "0 20";
+                             Extent = "290 20";
+                             MinExtent = "8 8";
+                             canSave = "1";
+                             Visible = "1";
+                             hovertime = "1000";
+                         
+                             new GuiTextCtrl(MAXPath){
+	                           		 Profile = "GuiTextProfile_1";
+                                 HorizSizing = "width";
+                                 VertSizing = "top";
+                                 position = "0 0";
+                                 Extent = "290 20";
+                                 MinExtent = "8 2";
+                                 canSave = "1";
+                                 Visible = "1";
+                                 text   = "";
+                                 hovertime = "1000";
+	                           };     
+	                       };  
+	                   };
+                  };
+                  
+                  new GuiTabPageCtrl(ActionPage) {
+                     canSaveDynamicFields = "0";
+                     isContainer = "1";
+                     Profile = "GuiTabPageProfile";
+                     HorizSizing = "width";
+                     VertSizing = "relative";
+                     position = "0 19";
+                     Extent = "290 380";
+                     MinExtent = "8 2";
+                     canSave = "1";
+                     Visible = "1";
+                     //Command = "TerrainEditirEvent();";
+                     hovertime = "1000";
+                     text = "动画";
+                     textID = "Tab2";
+                     maxLength = "100";
+                     
+                     new GuiControl(LoadAction) {
+                         canSaveDynamicFields = "0";
+                         isContainer = "1";
+                         Profile = "GuiDefaultProfile";
+                         HorizSizing = "width";
+                         VertSizing = "Relative";
+                         position = "0 0";
+                         Extent = "290 310";
+                         MinExtent = "8 8";
+                         canSave = "1";
+                         Visible = "1";
+                         hovertime = "1000";
+                        
+			                   new GuiScrollCtrl() {
+                             canSaveDynamicFields = "0";
+                             isContainer = "1";
+                             Profile = "GuiScrollProfile";
+                             HorizSizing = "width";
+                             VertSizing = "Relative";
+                             position = "0 0";
+                             Extent = "290 310";
+                             MinExtent = "8 8";
+                             canSave = "1";
+                             Visible = "1";
+                             hovertime = "1000";
+                             willFirstRespond = "1";
+                             hScrollBar = "alwaysOff";
+                             vScrollBar = "alwaysOn";
+                             constantThumbHeight = "0";
+                             childMargin = "0 0";
+                             
+                             new GuiTreeViewCtrl(ActionTree) {
+                                 canSaveDynamicFields = "0";
+                                 isContainer = "1";
+                                 Profile = "GuiTreeViewProfile";
+                                 HorizSizing = "right";
+                                 VertSizing = "bottom";
+                                 position = "2 2";
+                                 Extent = "131 84";
+                                 MinExtent = "8 8";
+                                 canSave = "1";
+                                 Visible = "1";
+                                 hovertime = "1000";
+                                 tabSize = "16";
+                                 textOffset = "2";
+                                 fullRowSelect = "0";
+                                 itemHeight = "21";
+                                 destroyTreeOnSleep = "1";
+                                 MouseDragging = "1";
+                                 MultipleSelections = "1";
+                                 DeleteObjectAllowed = "1";
+                                 DragToItemAllowed = "1";
+                                 Sorted = "1";
+                             };
+                         };
+                     };                    
+                     
+                     new GuiTextCtrl() {
+                        profile = "GuiTextProfile";
+                        horizSizing = "right";
+                        vertSizing = "top";
+                        position = "35 300";
+                        extent = "85 18";
+                        minExtent = "8 2";
+                        visible = "1";
+                        text = "动画播放速度";
+                        maxLength = "255";
+                     };
+                     
+                     new GuiSliderCtrl(ActionVolume) {
+                        canSaveDynamicFields = "0";
+                        Profile = "GuiSliderProfile";
+                        HorizSizing = "right";
+                        VertSizing = "top";
+                        Position = "25 325";
+                        Extent = "100 34";
+                        MinExtent = "8 8";
+                        canSave = "1";
+                        Visible = "1";
+                        Variable = "value";
+                        AltCommand = "updateActionVolume(ActionVolume.value);";
+                        hovertime = "1000";
+                        range = "0 3";
+                        ticks = "0";
+                        value = "0.01";
+                     };
+                     
+                     new GuiButtonCtrl(ActionLoopButton) {
+                        profile = "GuiButtonProfile";
+                        horizSizing = "right";
+                        vertSizing = "top";
+                        position = "170 300";
+                        extent = "80 18";
+                        minExtent = "8 8";
+                        visible = "1";
+                        command = "ActionLoop();";
+                        helpTag = "0";
+                        text = "Loop";
+                        groupNum = "1";
+                        buttonType = "ToggleButton";
+                        useMouseEvents = "0";
+                     };
+                     
+                     new GuiButtonCtrl(CloseActionButton) {
+                        profile = "GuiButtonProfile";
+                        horizSizing = "right";
+                        vertSizing = "top";
+                        position = "170 325";
+                        extent = "80 18";
+                        minExtent = "8 8";
+                        visible = "1";
+                        command = "EditorObjectView.clearCurrentAction();";
+                        helpTag = "0";
+                        text = "删除当前动画";
+                        groupNum = "1";
+                        buttonType = "PushButton";
+                        useMouseEvents = "0";
+                     };
+                     
+                     new GuiControl() {
+                         canSaveDynamicFields = "0";
+                         isContainer = "1";
+                         Profile = "GuiTextProfile_1";
+                         HorizSizing = "width";
+                         VertSizing = "top";
+                         position = "0 355";
+                         Extent = "290 20";
+                         MinExtent = "8 8";
+                         canSave = "1";
+                         Visible = "1";
+                         hovertime = "1000";
+                     
+                         new GuiTextCtrl(ActionPath){
+	                       		 Profile = "GuiTextProfile_1";
+                             HorizSizing = "width";
+                             VertSizing = "top";
+                             position = "0 0";
+                             Extent = "290 20";
+                             MinExtent = "8 2";
+                             canSave = "1";
+                             Visible = "1";
+                             text   = "";
+                             hovertime = "1000";
+	                       };     
+	                   };
+                  };            
+               };
+           };           
+           
+           new GuiTabPageCtrl(PartPage) {
+               canSaveDynamicFields = "0";
+               isContainer = "1";
+               Profile = "GuiTabPageProfile";
+               HorizSizing = "width";
+               VertSizing = "relative";
+               position = "0 24";
+               Extent = "295 550";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               Command = "";
+               hovertime = "1000";
+               text = "粒子";
+               textID = "Tab1";
+               maxLength = "100";           
+               
+               new GuiRadioCtrl(LoadBasePartButton) {
+                  profile = "GuiRadioProfile";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  position = "10 5";
+                  extent = "40 20";
+                  minExtent = "8 8";
+                  canSave = "1";
+                  visible = "1";
+                  //command = "EditorObjectView.onQuit();EditorObjectView.clearAllParts();";
+                  command = "EditorObjectView.clearParts();EditorObjectView.onQuit();";
+                  //command = "EditorObjectView.onQuit();";
+                  hovertime = "1000";
+                  text = "重载";
+                  groupNum = "1";
+                  buttonType = "RadioButton";
+                  IsStateOn = true;
+               };
+               
+               new GuiRadioCtrl(LinkPartButton) {
+                  profile = "GuiRadioProfile";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  position = "80 5";
+                  extent = "40 20";
+                  minExtent = "8 8";
+                  canSave = "1";
+                  visible = "1";
+                  command = "";
+                  hovertime = "1000";
+                  text = "链接";
+                  groupNum = "1";
+                  buttonType = "RadioButton";
+               };
+               
+               new GuiButtonCtrl(RefLoadPartTreeButton) {
+                  profile = "GuiButtonProfile";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  position = "150 5";
+                  extent = "40 18";
+                  minExtent = "8 8";
+                  visible = "1";
+                  command = "RefLoadPartTree();";
+                  helpTag = "0";
+                  text = "刷新";
+                  groupNum = "2";
+                  buttonType = "PushButton";
+                  useMouseEvents = "0";
+               };
+               
+               new GuiControl() {
+                   canSaveDynamicFields = "0";
+                   isContainer = "1";
+                   Profile = "GuiDefaultProfile";
+                   HorizSizing = "width";
+                   VertSizing = "Relative";
+                   position = "0 30";
+                   Extent = "290 520";
+                   MinExtent = "8 8";
+                   canSave = "1";
+                   Visible = "1";
+                   hovertime = "1000";
+                  
+			 		         new GuiScrollCtrl() {
+                       canSaveDynamicFields = "0";
+                       isContainer = "1";
+                       Profile = "GuiScrollProfile";
+                       HorizSizing = "width";
+                       VertSizing = "Relative";
+                       position = "0 0";
+                       Extent = "290 520";
+                       MinExtent = "8 8";
+                       canSave = "1";
+                       Visible = "1";
+                       hovertime = "1000";
+                       willFirstRespond = "1";
+                       hScrollBar = "alwaysOff";
+                       vScrollBar = "alwaysOn";
+                       constantThumbHeight = "0";
+                       childMargin = "0 0";
+                       
+                       new GuiTreeViewCtrl(LoadPartTree) {
+                           canSaveDynamicFields = "0";
+                           isContainer = "1";
+                           Profile = "GuiTreeViewProfile";
+                           HorizSizing = "right";
+                           VertSizing = "bottom";
+                           position = "2 2";
+                           Extent = "131 84";
+                           MinExtent = "8 8";
+                           canSave = "1";
+                           Visible = "1";
+                           hovertime = "1000";
+                           tabSize = "16";
+                           textOffset = "2";
+                           fullRowSelect = "0";
+                           itemHeight = "21";
+                           destroyTreeOnSleep = "1";
+                           MouseDragging = "1";
+                           MultipleSelections = "1";
+                           DeleteObjectAllowed = "1";
+                           DragToItemAllowed = "1";
+                           Sorted = "1";
+                       };
+                   };
+               }; 
+           };
+           
+           
+           new GuiTabPageCtrl(LightPage) {
+               canSaveDynamicFields = "0";
+               isContainer = "1";
+               Profile = "GuiTabPageProfile";
+               HorizSizing = "relateve";
+               VertSizing = "relative";
+               position = "0 24";
+               Extent = "295 550";
+               MinExtent = "8 2";
+               canSave = "1";
+               Visible = "1";
+               //Command = "ShapePreTree.open(ShapeGroup,true);";
+               hovertime = "1000";
+               text = "光照";
+               textID = "Tab1";
+               maxLength = "100";
+               
+               new GuiButtonCtrl(OpenLightButton) {
+                  profile = "GuiButtonProfile";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  position = "105 20";
+                  extent = "80 18";
+                  minExtent = "8 8";
+                  visible = "1";
+                  command = "OpenLight();";
+                  helpTag = "0";
+                  text = "开启光照";
+                  groupNum = "1";
+                  buttonType = "ToggleButton";
+                  useMouseEvents = "0";
+               };
+               
+               new GuiButtonCtrl(AppLightButton) {
+                  profile = "GuiButtonProfile";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  position = "105 270";
+                  extent = "80 18";
+                  minExtent = "8 8";
+                  visible = "1";
+                  command = "AppLight();";
+                  helpTag = "0";
+                  text = "应用";
+                  groupNum = "1";
+                  buttonType = "PushButton";
+                  useMouseEvents = "0";
+               };
+    
+	             new GuiTextCtrl(SetLightText){
+	             		 Profile = "GuiTextProfile_1";
+                   HorizSizing = "width";
+                   VertSizing = "bottom";
+                   position = "50 50";
+                   Extent = "80 20";
+                   MinExtent = "8 2";
+                   canSave = "1";
+                   Visible = "1";
+                   text   = "设置光线颜色";
+                   hovertime = "1000";
+	             };  
+	             
+	             new GuiTextCtrl(){
+	             		 Profile = "GuiTextProfile_1";
+                   HorizSizing = "width";
+                   VertSizing = "bottom";
+                   position = "45 80";
+                   Extent = "10 20";
+                   MinExtent = "8 2";
+                   canSave = "1";
+                   Visible = "1";
+                   text   = "R";
+                   hovertime = "1000";
+	             };  
+	             
+	             new GuiTextEditCtrl(Light_R) {
+                  Profile = "GuiTextEditProfile_1";
+                  HorizSizing = "width";
+                  VertSizing = "bottom";
+                  position = "65 80";
+                  Extent = "50 20";
+                  MinExtent = "8 2";
+                  canSave = "1";
+                  Visible = "1";
+                  text   = "";
+                  hovertime = "1000";
+                  maxLength = 40;
+                  tabComplete = 1;
+               };
+               
+               new GuiTextCtrl(){
+	             		 Profile = "GuiTextProfile_1";
+                   HorizSizing = "width";
+                   VertSizing = "bottom";
+                   position = "45 105";
+                   Extent = "10 20";
+                   MinExtent = "8 2";
+                   canSave = "1";
+                   Visible = "1";
+                   text   = "G";
+                   hovertime = "1000";
+	             };  
+               
+               new GuiTextEditCtrl(Light_G) {
+                  Profile = "GuiTextEditProfile_1";
+                  HorizSizing = "width";
+                  VertSizing = "bottom";
+                  position = "65 105";
+                  Extent = "50 20";
+                  MinExtent = "8 2";
+                  canSave = "1";
+                  Visible = "1";
+                  text   = "";
+                  hovertime = "1000";
+                  maxLength = 40;
+                  tabComplete = 1;
+               };
+               
+               new GuiTextCtrl(){
+	             		 Profile = "GuiTextProfile_1";
+                   HorizSizing = "width";
+                   VertSizing = "bottom";
+                   position = "45 130";
+                   Extent = "10 20";
+                   MinExtent = "8 2";
+                   canSave = "1";
+                   Visible = "1";
+                   text   = "B";
+                   hovertime = "1000";
+	             };  
+               
+               new GuiTextEditCtrl(Light_B) {
+                  Profile = "GuiTextEditProfile_1";
+                  HorizSizing = "width";
+                  VertSizing = "bottom";
+                  position = "65 130";
+                  Extent = "50 20";
+                  MinExtent = "8 2";
+                  canSave = "1";
+                  Visible = "1";
+                  text   = "";
+                  hovertime = "1000";
+                  maxLength = 40;
+                  tabComplete = 1;
+               };
+               
+               new GuiTextCtrl(SetAmbientText){
+	             		 Profile = "GuiTextProfile_1";
+                   HorizSizing = "width";
+                   VertSizing = "bottom";
+                   position = "160 50";
+                   Extent = "80 20";
+                   MinExtent = "8 2";
+                   canSave = "1";
+                   Visible = "1";
+                   text   = "设置环境光颜色";
+                   hovertime = "1000";
+	             };  
+	             
+	             new GuiTextCtrl(){
+	             		 Profile = "GuiTextProfile_1";
+                   HorizSizing = "width";
+                   VertSizing = "bottom";
+                   position = "155 80";
+                   Extent = "10 20";
+                   MinExtent = "8 2";
+                   canSave = "1";
+                   Visible = "1";
+                   text   = "R";
+                   hovertime = "1000";
+	             };  
+	             
+	             new GuiTextEditCtrl(Ambient_R) {
+                  Profile = "GuiTextEditProfile_1";
+                  HorizSizing = "width";
+                  VertSizing = "bottom";
+                  position = "175 80";
+                  Extent = "50 20";
+                  MinExtent = "8 2";
+                  canSave = "1";
+                  Visible = "1";
+                  text   = "";
+                  hovertime = "1000";
+                  maxLength = 40;
+                  tabComplete = 1;
+               };
+               
+               new GuiTextCtrl(){
+	             		 Profile = "GuiTextProfile_1";
+                   HorizSizing = "width";
+                   VertSizing = "bottom";
+                   position = "155 105";
+                   Extent = "10 20";
+                   MinExtent = "8 2";
+                   canSave = "1";
+                   Visible = "1";
+                   text   = "G";
+                   hovertime = "1000";
+	             };  
+               
+               new GuiTextEditCtrl(Ambient_G) {
+                  Profile = "GuiTextEditProfile_1";
+                  HorizSizing = "width";
+                  VertSizing = "bottom";
+                  position = "175 105";
+                  Extent = "50 20";
+                  MinExtent = "8 2";
+                  canSave = "1";
+                  Visible = "1";
+                  text   = "";
+                  hovertime = "1000";
+                  maxLength = 40;
+                  tabComplete = 1;
+               };
+               
+               new GuiTextCtrl(){
+	             		 Profile = "GuiTextProfile_1";
+                   HorizSizing = "width";
+                   VertSizing = "bottom";
+                   position = "155 130";
+                   Extent = "10 20";
+                   MinExtent = "8 2";
+                   canSave = "1";
+                   Visible = "1";
+                   text   = "B";
+                   hovertime = "1000";
+	             };  
+               
+               new GuiTextEditCtrl(Ambient_B) {
+                  Profile = "GuiTextEditProfile_1";
+                  HorizSizing = "width";
+                  VertSizing = "bottom";
+                  position = "175 130";
+                  Extent = "50 20";
+                  MinExtent = "8 2";
+                  canSave = "1";
+                  Visible = "1";
+                  text   = "";
+                  hovertime = "1000";
+                  maxLength = 40;
+                  tabComplete = 1;
+               };
+               
+               new GuiTextCtrl(){
+	             		 Profile = "GuiTextProfile_1";
+                   HorizSizing = "width";
+                   VertSizing = "bottom";
+                   position = "50 160";
+                   Extent = "80 20";
+                   MinExtent = "8 2";
+                   canSave = "1";
+                   Visible = "1";
+                   text   = "设置背景颜色";
+                   hovertime = "1000";
+	             };  
+	             
+	             new GuiTextCtrl(){
+	             		 Profile = "GuiTextProfile_1";
+                   HorizSizing = "width";
+                   VertSizing = "bottom";
+                   position = "45 190";
+                   Extent = "10 20";
+                   MinExtent = "8 2";
+                   canSave = "1";
+                   Visible = "1";
+                   text   = "R";
+                   hovertime = "1000";
+	             };	             
+	             
+	             new GuiTextEditCtrl(Bg_R) {
+                  Profile = "GuiTextEditProfile_1";
+                  HorizSizing = "width";
+                  VertSizing = "bottom";
+                  position = "65 190";
+                  Extent = "50 20";
+                  MinExtent = "8 2";
+                  canSave = "1";
+                  Visible = "1";
+                  text   = "0.28";
+                  hovertime = "1000";
+                  maxLength = 40;
+                  tabComplete = 1;
+                  };
+               
+               new GuiTextCtrl(){
+	             		 Profile = "GuiTextProfile_1";
+                   HorizSizing = "width";
+                   VertSizing = "bottom";
+                   position = "45 215";
+                   Extent = "10 20";
+                   MinExtent = "8 2";
+                   canSave = "1";
+                   Visible = "1";
+                   text   = "G";
+                   hovertime = "1000";
+	             };  
+               
+               new GuiTextEditCtrl(Bg_G) {
+                  Profile = "GuiTextEditProfile_1";
+                  HorizSizing = "width";
+                  VertSizing = "bottom";
+                  position = "65 215";
+                  Extent = "50 20";
+                  MinExtent = "8 2";
+                  canSave = "1";
+                  Visible = "1";
+                  text   = "0.28";
+                  hovertime = "1000";
+                  maxLength = 40;
+                  tabComplete = 1;
+               };
+               
+               new GuiTextCtrl(){
+	             		 Profile = "GuiTextProfile_1";
+                   HorizSizing = "width";
+                   VertSizing = "bottom";
+                   position = "45 240";
+                   Extent = "10 20";
+                   MinExtent = "8 2";
+                   canSave = "1";
+                   Visible = "1";
+                   text   = "B";
+                   hovertime = "1000";
+	             };  
+               
+               new GuiTextEditCtrl(Bg_B) {
+                  Profile = "GuiTextEditProfile_1";
+                  HorizSizing = "width";
+                  VertSizing = "bottom";
+                  position = "65 240";
+                  Extent = "50 20";
+                  MinExtent = "8 2";
+                  canSave = "1";
+                  Visible = "1";
+                  text   = "0.28";
+                  hovertime = "1000";
+                  maxLength = 40;
+                  tabComplete = 1;
+               };
+               
+               new GuiButtonCtrl(AnimBgColor) {
+                  profile = "GuiButtonProfile";
+                  horizSizing = "right";
+                  vertSizing = "bottom";
+                  position = "118 190";
+                  extent = "30 70";
+                  minExtent = "8 8";
+                  visible = "1";
+                  command = "";
+                  helpTag = "0";
+                  text = "循环";
+                  groupNum = "1";
+                  buttonType = "ToggleButton";
+                  useMouseEvents = "0";               
+                  };
+           };
+       };
+   };
+    
+   new GuiWindowCtrl(LinkPointInputWnd) {
+   	   canSaveDynamicFields = "0";
+       isContainer = "1";
+       Profile = "GuiWindowProfile";
+       HorizSizing = "center";
+       VertSizing =  "center";
+       position = "300 200";
+       Extent = "200 120";
+       MinExtent = "8 8";
+       canSave = "1";
+       Visible = "0";
+       hovertime = "1000";
+       text = "输入连接点";
+       maxLength = "1024";
+       resizeWidth = "0";
+       resizeHeight = "0";
+       canMove = "1";
+       canClose = "0";
+       canMinimize = "0";
+       canMaximize = "0";
+       minSize = "50 50";
+       closeCommand = "";  
+       
+       new GuiTextCtrl(){
+	     		 Profile = "GuiTextProfile";
+           HorizSizing = "right";
+           VertSizing = "top";
+           position = "5 30";
+           Extent = "80 20";
+           MinExtent = "8 2";
+           canSave = "1";
+           Visible = "1";
+           text   = "父节点";
+           hovertime = "1000";
+	     };  
+       
+       new GuiPopUpMenuCtrl(LinkPoint_1) {          
+          canSaveDynamicFields = "0";
+          //parentGroup = "2131";
+          isContainer = "0";
+          Profile = "GuiPopUpMenuProfile";
+          HorizSizing = "right";
+          VertSizing = "top";
+          Position = "60 30";
+          Extent = "130 20";
+          MinExtent = "8 2";
+          canSave = "1";
+          Visible = "1";
+          hovertime = "1000";
+          maxLength = "1024";
+          maxPopupHeight = "200";
+          sbUsesNAColor = "0";
+          reverseTextList = "0";
+          bitmapBounds = "16 16";
+       };
+       
+       new GuiTextCtrl(){
+	     		 Profile = "GuiTextProfile";
+           HorizSizing = "right";
+           VertSizing = "top";
+           position = "5 60";
+           Extent = "80 20";
+           MinExtent = "8 2";
+           canSave = "1";
+           Visible = "1";
+           text   = "自身节点";
+           hovertime = "1000";
+	     }; 
+       
+       new GuiPopUpMenuCtrl(LinkPoint_2) {          
+          canSaveDynamicFields = "0";
+          //parentGroup = "2131";
+          isContainer = "0";
+          Profile = "GuiPopUpMenuProfile";
+          HorizSizing = "right";
+          VertSizing = "top";
+          Position = "60 60";
+          Extent = "130 20";
+          MinExtent = "8 2";
+          canSave = "1";
+          Visible = "1";
+          hovertime = "1000";
+          maxLength = "1024";
+          maxPopupHeight = "200";
+          sbUsesNAColor = "0";
+          reverseTextList = "0";
+          bitmapBounds = "16 16";
+       };
+       
+       new GuiButtonCtrl(LinkPointOKButton) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "15 90";
+         extent = "80 20";
+         minExtent = "8 8";
+         visible = "1";
+         command = "LinkPointOK();";
+         helpTag = "0";
+         text = "确定";
+         groupNum = "1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+      
+      new GuiButtonCtrl(LinkPointCloseButton) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "105 90";
+         extent = "80 20";
+         minExtent = "8 8";
+         visible = "1";
+         command = "LinkPointClose();";
+         helpTag = "0";
+         text = "取消";
+         groupNum = "1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+       
+   };  
+   
+   
+      new GuiWindowCtrl(ParticleLinkPointInputWnd) {
+   	   canSaveDynamicFields = "0";
+       isContainer = "1";
+       Profile = "GuiWindowProfile";
+       HorizSizing = "center";
+       VertSizing =  "center";
+       position = "300 200";
+       Extent = "200 120";
+       MinExtent = "8 8";
+       canSave = "1";
+       Visible = "0";
+       hovertime = "1000";
+       text = "输入连接点";
+       maxLength = "1024";
+       resizeWidth = "0";
+       resizeHeight = "0";
+       canMove = "1";
+       canClose = "0";
+       canMinimize = "0";
+       canMaximize = "0";
+       minSize = "50 50";
+       closeCommand = "";  
+       
+       new GuiTextCtrl(){
+	     		 Profile = "GuiTextProfile";
+           HorizSizing = "right";
+           VertSizing = "top";
+           position = "5 30";
+           Extent = "80 20";
+           MinExtent = "8 2";
+           canSave = "1";
+           Visible = "1";
+           text   = "父节点";
+           hovertime = "1000";
+	     };  
+       
+       new GuiPopUpMenuCtrl(ParticleLinkPoint_1) {          
+          canSaveDynamicFields = "0";
+          //parentGroup = "2131";
+          isContainer = "0";
+          Profile = "GuiPopUpMenuProfile";
+          HorizSizing = "right";
+          VertSizing = "top";
+          Position = "60 30";
+          Extent = "130 20";
+          MinExtent = "8 2";
+          canSave = "1";
+          Visible = "1";
+          hovertime = "1000";
+          maxLength = "1024";
+          maxPopupHeight = "200";
+          sbUsesNAColor = "0";
+          reverseTextList = "0";
+          bitmapBounds = "16 16";
+       };
+       
+       new GuiButtonCtrl(ParticleLinkPointOKButton) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "15 90";
+         extent = "80 20";
+         minExtent = "8 8";
+         visible = "1";
+         command = "ParticleLinkPointOK();";
+         helpTag = "0";
+         text = "确定";
+         groupNum = "1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+      
+      new GuiButtonCtrl(ParticleLinkPointCloseButton) {
+         profile = "GuiButtonProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "105 90";
+         extent = "80 20";
+         minExtent = "8 8";
+         visible = "1";
+         command = "ParticleLinkPointClose();";
+         helpTag = "0";
+         text = "取消";
+         groupNum = "1";
+         buttonType = "PushButton";
+         useMouseEvents = "0";
+      };
+       
+   };     
+};
+
+EditorGui.Add(guiObjectViewer);
+//--- OBJECT WRITE END ---

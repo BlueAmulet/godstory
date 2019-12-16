@@ -1,0 +1,319 @@
+//===========================================================================================================
+// 文档说明:个人信息盒
+// 创建时间:2009-9-22
+// 创建人: Batcel
+//===========================================================================================================
+%guiContent = new GuiBitmapWindowCtrl(IndividualMsgBoxGui) {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   HorizSizing = "Proportion";
+   VertSizing = "Proportion";
+   position = "400 200";
+   Extent = "187 275";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+   bitmap = "gameres/gui/images/GUIWindow16_1_001.png";
+   wrap = "0";
+   MoveHotspot = "0 0 1024 768";
+
+ //  new GuiTextCtrl() {
+ //     canSaveDynamicFields = "0";
+ //     Enabled = "1";
+ //     isContainer = "0";
+ //     Profile = "GuiCurrencyShowInfoTextProfile_8";
+ //     HorizSizing = "right";
+ //     VertSizing = "bottom";
+ //     position = "50 9";
+ //     Extent = "86 18";
+ //     MinExtent = "8 2";
+ //     canSave = "1";
+ //     Visible = "1";
+ //     hovertime = "1000";
+ //     Margin = "0 0 0 0";
+ //     Padding = "0 0 0 0";
+ //     AnchorTop = "1";
+ //     AnchorBottom = "0";
+ //     AnchorLeft = "1";
+ //     AnchorRight = "0";
+ //     text = "个人信息";
+ //     maxLength = "1024";
+ //  };
+//  new GuiTextCtrl(IndividualMsgBoxText) {
+//     canSaveDynamicFields = "0";
+//     Enabled = "1";
+//     isContainer = "0";
+//     Profile = "GuiCurrencyShowInfoTextProfile_1";
+//     HorizSizing = "right";
+//     VertSizing = "bottom";
+//     position = "18 35";
+//     Extent = "90 18";
+//     MinExtent = "8 2";
+//     canSave = "1";
+//     Visible = "1";
+//     hovertime = "1000";
+//     Margin = "0 0 0 0";
+//     Padding = "0 0 0 0";
+//     AnchorTop = "1";
+//     AnchorBottom = "0";
+//     AnchorLeft = "1";
+//     AnchorRight = "0";
+//     text = "当前信息:";
+//     maxLength = "1024";
+//  };
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiCloseButtonProfile1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "153 8";
+      Extent = "21 21";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "CloseIndividualMsgBox();";
+   };
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiUpgradeButtonProfile_1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "14 238";
+      Extent = "50 23";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      text = "打开";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "OpenIndividualMsgBoxItem();";
+   };
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiUpgradeButtonProfile_1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "68 238";
+      Extent = "50 23";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      text = "删除";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "DelIndividualMsgBoxItem();";
+   };
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiUpgradeButtonProfile_1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "122 238";
+      Extent = "50 23";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      text = "清空";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "ClearIndividualMsgBoxItem();";
+   };
+   new GuiScrollCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      Profile = "GuiCurrencyScrollProfile_4";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "13 57";
+      Extent = "159 170";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      willFirstRespond = "1";
+      hScrollBar = "alwaysOff";
+      vScrollBar = "dynamic";
+      constantThumbHeight = "0";
+      childMargin = "0 0";
+      new GuiControl(IndividualBox_Scroll) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "0 0";
+         Extent = "159 170";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+      };
+   };
+};
+
+//===========================================================================================================
+// 文档说明:系统信息盒
+// 创建时间:2009-9-22
+// 创建人: Batcel
+//===========================================================================================================
+%guiContent = new GuiBitmapWindowCtrl(SysMsgBoxGui) {
+   canSaveDynamicFields = "0";
+   Enabled = "1";
+   isContainer = "1";
+   HorizSizing = "Proportion";
+   VertSizing = "Proportion";
+   position = "400 200";
+   Extent = "187 275";
+   MinExtent = "8 2";
+   canSave = "1";
+   Visible = "0";
+   hovertime = "1000";
+   bitmap = "gameres/gui/images/GUIWindow16_1_004.png";
+   wrap = "0";
+   MoveHotspot = "0 0 1024 768";
+
+//   new GuiTextCtrl() {
+//      canSaveDynamicFields = "0";
+//      Enabled = "1";
+//      isContainer = "0";
+//      Profile = "GuiCurrencyShowInfoTextProfile_8";
+//      HorizSizing = "right";
+//      VertSizing = "bottom";
+//      position = "50 9";
+//      Extent = "86 18";
+//      MinExtent = "8 2";
+//      canSave = "1";
+//      Visible = "1";
+//      hovertime = "1000";
+//      Margin = "0 0 0 0";
+//      Padding = "0 0 0 0";
+//      AnchorTop = "1";
+//      AnchorBottom = "0";
+//      AnchorLeft = "1";
+//      AnchorRight = "0";
+//      text = "系统信息";
+//      maxLength = "1024";
+//   };
+//   new GuiTextCtrl(SysMsgBoxText) {
+//      canSaveDynamicFields = "0";
+//      Enabled = "1";
+//      isContainer = "0";
+//      Profile = "GuiCurrencyShowInfoTextProfile_1";
+//      HorizSizing = "right";
+//      VertSizing = "bottom";
+//      position = "18 35";
+//      Extent = "90 18";
+//      MinExtent = "8 2";
+//      canSave = "1";
+//      Visible = "1";
+//      hovertime = "1000";
+//      Margin = "0 0 0 0";
+//      Padding = "0 0 0 0";
+//      AnchorTop = "1";
+//      AnchorBottom = "0";
+//      AnchorLeft = "1";
+//      AnchorRight = "0";
+//      text = "当前信息:";
+//      maxLength = "1024";
+//   };
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiCloseButtonProfile1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "153 8";
+      Extent = "21 21";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command ="CloseSysMsgBox();";
+   };
+   new GuiButtonCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "0";
+      Profile = "GuiUpgradeButtonProfile_1";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "122 238";
+      Extent = "50 23";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      text = "打开";
+      groupNum = "-1";
+      buttonType = "PushButton";
+      useMouseEvents = "0";
+      IsStateOn = "0";
+      Command = "OpenSysMsgBoxItem();";
+   };
+   new GuiScrollCtrl() {
+      canSaveDynamicFields = "0";
+      Enabled = "1";
+      isContainer = "1";
+      Profile = "GuiCurrencyScrollProfile_4";
+      HorizSizing = "right";
+      VertSizing = "bottom";
+      position = "13 57";
+      Extent = "159 170";
+      MinExtent = "8 2";
+      canSave = "1";
+      Visible = "1";
+      hovertime = "1000";
+      willFirstRespond = "1";
+      hScrollBar = "alwaysOff";
+      vScrollBar = "dynamic";
+      constantThumbHeight = "0";
+      childMargin = "0 0";
+      new GuiControl(SysMsgBox_Scroll) {
+         canSaveDynamicFields = "0";
+         Enabled = "1";
+         isContainer = "1";
+         HorizSizing = "right";
+         VertSizing = "bottom";
+         position = "0 0";
+         Extent = "159 170";
+         MinExtent = "8 2";
+         canSave = "1";
+         Visible = "1";
+         hovertime = "1000";
+      };
+   };
+};
+
+
+GameMainWndGui_Layer4.Add(IndividualMsgBoxGui);
+GameMainWndGui_Layer4.Add(SysMsgBoxGui);
